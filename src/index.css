@@ -1,17 +1,9 @@
+@import 'inter-font/Inter.css';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv02" on;
   color: #213547;
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
