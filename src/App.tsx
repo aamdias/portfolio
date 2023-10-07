@@ -1,5 +1,4 @@
-import Intro from './components/intro.tsx';
-import './App.css'
+import Intro from './components/Intro/intro.tsx';
 
 function App() {
 

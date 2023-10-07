@@ -1,5 +1,3 @@
-@import 'inter-font/Inter.css';
-
 :root {
   font-family: 'Inter', sans-serif;
   font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv02" on;
@@ -10,6 +8,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
   background:#F9F9F9;
