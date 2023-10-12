@@ -14,8 +14,9 @@ function Intro() {
                 <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
                     <img src={linkedinLogo} className="social-logo"></img>
                 </a>
-                <a href="https://github.com/aamdias" target="_blank"></a>
+                <a href="https://github.com/aamdias/" target="_blank">
                 <img src={githubLogo} className="social-logo"></img>
+                </a>
             </div>
             <div className="paper">
             Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> construindo o futuro da educação de tecnologia na <a href="https://www.betrybe.com" target="_blank" className="text-link">Trybe</a><br/><br/>
