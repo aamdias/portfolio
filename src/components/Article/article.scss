@@ -29,7 +29,7 @@
 .article {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 552px;
     margin: 16px 0px 16px;
     justify-content: center;
     align-items: flex-start;
