@@ -132,7 +132,13 @@
         }
         &__thumbnail{
             width:100%;
+            min-height: 240px;
             margin: 0px;
         }
+    }
+    .subtitle{
+      max-width: calc(100% - 64px);
+      padding: 0px 8px 0px;
+      text-align: center;
     }
   }

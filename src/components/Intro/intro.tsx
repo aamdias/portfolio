@@ -14,7 +14,7 @@ function Intro() {
                 <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
                     <img src={linkedinLogo} className="social-logo"></img>
                 </a>
-                <a href="https://github.com/adias7882" target="_blank"></a>
+                <a href="https://github.com/aamdias" target="_blank"></a>
                 <img src={githubLogo} className="social-logo"></img>
             </div>
             <div className="paper">
