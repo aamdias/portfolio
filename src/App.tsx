@@ -7,11 +7,13 @@ function App() {
   return (
     <>
       <Intro />
-      <div className = "subtitle">Gosto de escrever sobre meus aprendizados. Dá uma olhada:</div>
-      <div className =" articles">
-        {articlesData.map((article) => (
-          <Article key={article.title} {...article} />
-        ))}
+        <div className = "content-wrapper">
+        <div className = "subtitle">Gosto de escrever sobre meus aprendizados. Dá uma olhada:</div>
+        <div className =" articles">
+          {articlesData.map((article) => (
+            <Article key={article.title} {...article} />
+          ))}
+        </div>
       </div>
     </>
   )
