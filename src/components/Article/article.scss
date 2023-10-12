@@ -1,0 +1,138 @@
+.subtitle{
+    color: #555555;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    margin: 8px 0px 8px 0px;
+    max-width: 552px;
+    text-align: center;
+}
+
+.paper {
+    display: block;
+    max-width: 520px;
+    padding: 16px;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 16px 0px 16px;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 16px;
+    letter-spacing: 0.9px;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  
+    &__contentwithphoto{
+        display: flex;
+        padding: 16px;
+    }
+
+    &__content {
+        flex: 1;
+        width: 295px;
+        height: 130px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    &__title {
+      font-size: 18px;
+      font-family: Inter;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #4F4F4F;
+    }
+
+    &__thumbnail {
+        min-width: 200px;
+        align-self: stretch;
+        height: 130px;
+        margin-left:16px;
+        margin-top: 12px;
+        border-radius: 8px;
+        border: 0.5px solid #E0E0E0;
+      }
+  
+    &__description {
+      color: 828282;
+      font-size: 16px;
+      font-family: Inter;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+  
+    &__date {
+       color: #BDBDBD;
+       font-family: Inter;
+       font-size: 14px;
+       font-style: normal;
+       font-weight: 300;
+    }
+  
+    &__link {
+      color: #4F4F4F;
+      font-family: Inter;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 8px;
+      margin: 4px;
+      background: #F1F1F1;
+      text-decoration: none;
+      &:hover {
+        background: #333; 
+        color: #F1F1F1;
+      }
+    }
+
+    &__divider {
+      width: 100%;
+      border-bottom: 0.5px solid #E0E0E0;
+    }
+
+    &__footer {
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    }
+    
+  }
+
+  @media (max-width: 540px) {
+    .article{
+        max-width: 100%;
+        &__contentwithphoto{
+            display:flex;
+            flex-direction: column-reverse;
+        }
+
+        &__content{
+            width: 100%;
+            height: 130px;
+            margin-bottom: 8px;
+        }
+        &__thumbnail{
+            width:100%;
+            margin: 0px;
+        }
+    }
+  }
