@@ -1,0 +1,30 @@
+import './service.scss';
+
+type ServiceProps = {
+    title: string;
+    description: string;
+    availableSlots: string;
+    price: string;
+    externalLink: string;
+};
+
+function Article({title, description, availableSlots, price, externalLink}:ServiceProps) {
+    return(
+        <div className="service">
+            <div className="service__content">
+                <h2 className="service__title">{title}</h2>
+                <p className="service__description">{description}</p>
+            </div>
+            <div className="service__divider"></div>
+            <div className="service__footer">
+            {/* <p className="service__slots"> {availableSlots}</p> */}
+            <p className="service__price"> {price}</p>
+            <a href={externalLink} target="_blank" rel="noopener noreferrer" className="service__link">
+            Tenho interesse
+            </a>
+            </div>
+      </div>
+    );
+}
+
+export default Article;

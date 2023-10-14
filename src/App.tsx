@@ -1,24 +1,17 @@
-import Intro from './components/Intro/intro.tsx';
-import Article from './components/Article/article.tsx';
-import Footer from './components/Footer/footer.tsx';
-import articlesData from './data/articles.json';
+import About from './pages/About';
+import WorkWithMe from './pages/WorkWithMe';
+
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-
   return (
-    <>
-      <Intro />
-      <div className = "content-wrapper">
-        <div className = "subtitle">Gosto de escrever sobre meus aprendizados. Dá uma olhada:</div>
-        <div className =" articles">
-          {articlesData.map((article) => (
-            <Article key={article.title} {...article} />
-          ))}
-        </div>
-      </div>
-      <Footer />
-    </>
-  )
+    <div className = "app">
+      < Routes>
+        <Route path = "/" element = {<About />}/>
+        <Route path = "/construacomigo" element = {<WorkWithMe />}/>
+      </Routes>
+    </div>
+  );
 }
 
 export default App

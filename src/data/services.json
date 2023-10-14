@@ -1,0 +1,16 @@
+[
+    {
+      "title": "Product Critique",
+      "description": "Sou bom em criticar produtos alheios. Inclui: \n- 1 call de 30min entender o contexto e desafios que o produto digital se insere e qual o estado atual e limitações do produto \n- 1 call de 30min (1 semana depois) para fornecer caminhos para melhorar o seu produto não só do ponto de vista de UX/UI, mas principalmente com sugestões para que ele gere mais resultado para o seu negócio",
+      "availableSlots": "03 slots disponíveis",
+      "price":"R$300",
+      "externalLink": "www.google.com"
+    },
+    {
+        "title": "Mentoria",
+        "description": "Nos ajudando, geramos mais oportunidades. Hoje me sinto apto a atuar principalmente como: \nComo advisor de startups de tecnologia early stage no mercado de educação e empregabilidade \nComo mentor de carreira para PMs Júniores e Plenos e para quem pensa ou gostaria de conhecer mais sobre a carreira de produto",
+        "availableSlots": "Indisponível",
+        "price":"R$250/h",
+        "externalLink": "www.google.com"
+    }
+  ]

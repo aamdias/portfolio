@@ -1,0 +1,27 @@
+.navbar {
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+    left: 50%;          
+    transform: translateX(-50%);
+    background: #F2F2F2;
+    border-radius: 24px;
+    padding: 0px 16px 0px;
+    width: 211px;
+    height: 41px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #000;
+    font: Inter;
+    &__active{
+        background: #FFF;
+        padding: 4px 8px;
+        border-radius: 24px;
+    }
+}
