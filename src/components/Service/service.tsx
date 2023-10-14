@@ -8,7 +8,7 @@ type ServiceProps = {
     externalLink: string;
 };
 
-function Article({title, description, availableSlots, price, externalLink}:ServiceProps) {
+function Article({title, description, price, externalLink}:ServiceProps) {
     return(
         <div className="service">
             <div className="service__content">
@@ -17,7 +17,6 @@ function Article({title, description, availableSlots, price, externalLink}:Servi
             </div>
             <div className="service__divider"></div>
             <div className="service__footer">
-            {/* <p className="service__slots"> {availableSlots}</p> */}
             <p className="service__price"> {price}</p>
             <a href={externalLink} target="_blank" rel="noopener noreferrer" className="service__link">
             Tenho interesse
