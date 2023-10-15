@@ -9,11 +9,15 @@
     background: #F2F2F2;
     border-radius: 24px;
     padding: 0px 16px 0px;
-    width: 240px;
+    width: 380px;
     height: 41px;
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
+
+    @media(max-width: 540px){
+        width: 160px;
+    }
 }
 
 .navlink {
@@ -25,6 +29,25 @@
     &__label{
         z-index: 3;
         position: relative;
+    }
+    &__icon{
+        height: auto;
+        z-index: 3;
+        position: relative;
+        display: inline-flex; 
+        align-items: center; 
+        svg {
+            color:#333;
+            height: 16px; 
+            width: auto;  
+        }
+    }
+    &__wrapper{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
     }
 }
 
