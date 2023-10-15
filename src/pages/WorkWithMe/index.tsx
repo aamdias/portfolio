@@ -5,6 +5,7 @@ import Service from '../../components/Service/service.tsx';
 import { FaCopy } from 'react-icons/fa';
 import { useState } from 'react';
 import copy from 'clipboard-copy';
+import { motion } from 'framer-motion';
 
 type ServiceProps = {
     title: string;
@@ -13,6 +14,17 @@ type ServiceProps = {
     price: string;
     externalLink: string;
 };
+
+const fadeInVariants = {
+    hidden: {
+      opacity: 0,
+      y: -10, // Optional: Adding a slight move upwards
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    }
+  };
 
 export default function WorkWithMe () {
     const [isCopied,setIsCopied] = useState(false);
@@ -26,8 +38,19 @@ export default function WorkWithMe () {
     }
 
     return(
-        <div className = "buildwithme">
+        <>
             <Navbar />
+            <motion.div 
+            className = "buildwithme"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
+            transition={{ 
+                ease: "linear",
+                type: "spring", 
+                stiffness: 100,
+                duration: 1 }}   
+            >
             <h1 className="title"> Gostaria de ajuda de um Product Manager experiente, sem ter que contratar um full-time? </h1>
             <h2 className="subtitle"> Serviços disponíveis </h2>
             <div className =" services">
@@ -41,7 +64,8 @@ export default function WorkWithMe () {
                 <FaCopy onClick={handleCopy} style={{ cursor: 'pointer' }} />
                 {isCopied && <span>Copiado!</span>}
             </div>
+            </motion.div>
             <Footer />
-        </div>
+        </>
     );
 }
