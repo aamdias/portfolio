@@ -9,19 +9,32 @@
     background: #F2F2F2;
     border-radius: 24px;
     padding: 0px 16px 0px;
-    width: 211px;
+    width: 240px;
     height: 41px;
     justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
 }
 
 .navlink {
     text-decoration: none;
     color: #000;
+    padding: 4px 8px;
+    position: relative;
     font: Inter;
-    &__active{
-        background: #FFF;
-        padding: 4px 8px;
-        border-radius: 24px;
+    &__label{
+        z-index: 3;
+        position: relative;
     }
+}
+
+.pill{
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; 
+    z-index: 1;
+    border-radius: 9999px; 
+    background-color: #fff; 
 }
