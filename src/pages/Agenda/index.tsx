@@ -1,7 +1,6 @@
 import Navbar from '../../components/Navbar/navbar.tsx';
 import {  useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Footer from '../../components/Footer/footer.tsx';
 
 const fadeInVariants = {
     hidden: {
