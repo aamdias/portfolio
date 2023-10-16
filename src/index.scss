@@ -20,8 +20,15 @@ body {
 .agenda{
   display:flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding-top: 142px; 
+  &__content{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .buildwithme{

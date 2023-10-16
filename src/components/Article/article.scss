@@ -135,10 +135,16 @@
             min-height: 240px;
             margin: 0px;
         }
+        &__date{
+            font-size: 12px;
+        }
+        &__link{
+            font-size: 14px;
+        }
     }
     .subtitle{
       max-width: calc(100% - 64px);
-      padding: 0px 8px 0px;
+      width: auto;
       text-align: center;
     }
   }
