@@ -26,7 +26,7 @@ const fadeInVariants = {
 
 export default function About () {
     return(
-        <>
+        <div className= "aboutcontainer">
             <Navbar />
             <motion.div 
             initial="hidden"
@@ -37,7 +37,7 @@ export default function About () {
                 type: "spring", 
                 stiffness: 100,
                 duration: 1 }}  
-            className="About"
+            className="about"
             >
             <Intro />
             <div className = "content-wrapper">
@@ -51,6 +51,6 @@ export default function About () {
             </div>
             <Footer />
             </motion.div>
-        </>
+        </div>
     );
 }

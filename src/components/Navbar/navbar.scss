@@ -1,3 +1,13 @@
+.navcontainer {
+    display: flex;
+    height:58px;
+    background: transparent;
+    flex-direction: column;
+    position: fixed;
+    width:100vw;
+    transform: translate3d(0, 0, 0);
+}
+
 .navbar {
     font-size: 16px;
     display: flex;
@@ -14,6 +24,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
+    overflow-x: hidden;
 
     @media(max-width: 540px){
         width: 160px;

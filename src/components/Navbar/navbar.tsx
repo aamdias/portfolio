@@ -32,33 +32,51 @@ function Navbar() {
         };
     }, []);
 
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const blurEffect = scrollY > 4 ? 'blur(5px)' : 'none';
+
     return (
-        <div className="navbar">
-            {tabs.map((tab) => (
-                <Link 
-                key={tab.id}
-                to={tab.path}
-                className = "navlink"
-                >
-                <div className="navlink__wrapper">
-                    {isScreenWidthLarge && <span className="navlink__label">{tab.label}</span>}
-                    <span className = "navlink__icon">{tab.icon}</span>
-                    {isActive(tab.path) && (
-                        <motion.div
-                            layoutId = "active-pill"
-                            className = "pill"
-                            transition={{
-                                ease: "linear",
-                                type: "spring", 
-                                stiffness: 100,
-                                duration: 1,
-                                x: { duration: 1 }
-                              }}
-                        />
-                    )}
-                </div>
-                </Link>
-            ))}
+        <div className = "navcontainer" style={{ backdropFilter: blurEffect }}>
+            <div className="navbar">
+                {tabs.map((tab) => (
+                    <Link 
+                    key={tab.id}
+                    to={tab.path}
+                    className = "navlink"
+                    >
+                    <div className="navlink__wrapper">
+                        {isScreenWidthLarge && <span className="navlink__label">{tab.label}</span>}
+                        <span className = "navlink__icon">{tab.icon}</span>
+                        {isActive(tab.path) && (
+                            <motion.div
+                                layoutId = "active-pill"
+                                className = "pill"
+                                transition={{
+                                    ease: "linear",
+                                    type: "spring", 
+                                    stiffness: 100,
+                                    duration: 1,
+                                    x: { duration: 1 }
+                                }}
+                            />
+                        )}
+                    </div>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }
