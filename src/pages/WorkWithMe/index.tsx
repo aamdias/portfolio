@@ -38,7 +38,7 @@ export default function WorkWithMe () {
     }
 
     return(
-        <>
+        <div className = "workwithmecontainer">
             <Navbar />
             <motion.div 
             className = "buildwithme"
@@ -66,6 +66,6 @@ export default function WorkWithMe () {
             </div>
             </motion.div>
             <Footer />
-        </>
+        </div>
     );
 }
