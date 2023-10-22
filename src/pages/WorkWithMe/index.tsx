@@ -3,7 +3,7 @@ import servicesData from '../../data/services.json';
 import Footer from '../../components/Footer/footer.tsx';
 import Service from '../../components/Service/service.tsx';
 import { FaCopy } from 'react-icons/fa';
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import copy from 'clipboard-copy';
 import { motion } from 'framer-motion';
 
