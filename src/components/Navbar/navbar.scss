@@ -1,7 +1,9 @@
+@import './../../styles/variables';
+
 .navcontainer {
     display: flex;
     height:58px;
-    background: transparent;
+    background: $white-gradient;
     flex-direction: column;
     position: fixed;
     width:100vw;
@@ -16,15 +18,18 @@
     top: 20px;
     left: 50%;          
     transform: translateX(-50%);
-    background: #F2F2F2;
+    background: $extra-light-gray;
     border-radius: 24px;
     padding: 0px 16px 0px;
-    width: 380px;
+    width: 400px;
     height: 41px;
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
     overflow-x: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    position: relative;
 
     @media(max-width: 540px){
         width: 160px;
@@ -33,7 +38,7 @@
 
 .navlink {
     text-decoration: none;
-    color: #000;
+    color: $dark-gray;
     padding: 4px 8px;
     position: relative;
     font: Inter;
@@ -48,7 +53,7 @@
         display: inline-flex; 
         align-items: center; 
         svg {
-            color:#333;
+            color:$dark-gray;
             height: 16px; 
             width: auto;  
         }
@@ -69,6 +74,6 @@
     bottom: 0;
     left: 0; 
     z-index: 1;
-    border-radius: 9999px; 
-    background-color: #fff; 
+    border-radius: 999px; 
+    background-color: $white; 
 }

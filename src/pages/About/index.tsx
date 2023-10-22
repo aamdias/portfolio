@@ -16,7 +16,7 @@ type ArticleProps = {
 const fadeInVariants = {
     hidden: {
       opacity: 0,
-      y: -10, // Optional: Adding a slight move upwards
+      y: -50, 
     },
     visible: {
       opacity: 1,
@@ -33,10 +33,12 @@ export default function About () {
             animate="visible"
             variants={fadeInVariants}
             transition={{ 
-                ease: "linear",
+                ease: "easeOut", 
                 type: "spring", 
-                stiffness: 100,
-                duration: 1 }}  
+                stiffness: 80,   
+                delay: 0.2,      
+                duration: 2.5    
+            }}  
             className="about"
             >
             <Intro />

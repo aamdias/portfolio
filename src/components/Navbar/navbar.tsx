@@ -26,30 +26,24 @@ function Navbar() {
     
         window.addEventListener('resize', handleResize);
     
-        // Clean up the event listener when the component unmounts
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    const [scrollY, setScrollY] = useState(0);
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const blurEffect = scrollY > 4 ? 'blur(5px)' : 'none';
+        scrollToTop();
+    }, [location.pathname]);
 
     return (
-        <div className = "navcontainer" style={{ backdropFilter: blurEffect }}>
+        <div className = "navcontainer">
             <div className="navbar">
                 {tabs.map((tab) => (
                     <Link 
