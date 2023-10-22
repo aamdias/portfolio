@@ -7,11 +7,11 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div className = "app">
-      < Routes>
-        <Route path = "/" element = {<About />}/>
-        <Route path = "/construacomigo" element = {<WorkWithMe />}/>
-        <Route path = "/agenda" element = {<Agenda />}/>
-      </Routes>
+        < Routes>
+          <Route path = "/" element = {<About />}/>
+          <Route path = "/construacomigo" element = {<WorkWithMe />}/>
+          <Route path = "/agenda" element = {<Agenda />}/>
+        </Routes>
     </div>
   );
 }

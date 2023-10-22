@@ -18,7 +18,7 @@ type ServiceProps = {
 const fadeInVariants = {
     hidden: {
       opacity: 0,
-      y: -10, // Optional: Adding a slight move upwards
+      y: -50, 
     },
     visible: {
       opacity: 1,
@@ -46,10 +46,12 @@ export default function WorkWithMe () {
             animate="visible"
             variants={fadeInVariants}
             transition={{ 
-                ease: "linear",
+                ease: "easeOut", 
                 type: "spring", 
-                stiffness: 100,
-                duration: 1 }}   
+                stiffness: 80,   
+                delay: 0.2,      
+                duration: 2.5  
+            }}   
             >
             <h1 className="title"> Gostaria de ajuda de um Product Manager experiente, sem ter que contratar um full-time? </h1>
             <h2 className="subtitle"> Serviços disponíveis </h2>

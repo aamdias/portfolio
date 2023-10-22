@@ -56,13 +56,38 @@
 
 .social-logo{
     margin: 0 8px;
+    width: 28px;
     transition: transform 0.3s;
     &:hover {
         transform: scale(1.1); 
     }
+    @media(max-width: 540px){
+        width: 24px;
+    }
+}
+
+.profile-pic-container{
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 50%;
+    margin: 8px;
+    overflow: hidden;
+    margin: 0;
+    padding-bottom: 0px;
+    display: block;
 }
 
 .profile-pic{
+    max-width: 180px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 8px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.blur-load{
     max-width: 180px;
     border-radius: 50%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -106,4 +131,9 @@
     .profile-pic {
         max-width: 120px;
     }
+    .profile-pic-container{
+        max-width: 120px;
+        max-height: 120px;
+    }
+
 }

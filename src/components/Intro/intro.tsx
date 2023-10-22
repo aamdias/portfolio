@@ -1,13 +1,52 @@
 import profilePic from '/new-profile-pic.png';
 import linkedinLogo from '/linkedin-icon.svg';
 import githubLogo from '/github-icon.svg';
+import { useEffect,useState } from 'react';
+import { Blurhash } from 'react-blurhash';
 
 import './intro.scss';
 
 function Intro() {
+
+    const [isImageLoaded,setImageLoaded] = useState(false);
+
+    useEffect(()=>{
+        const img = new Image();
+        img.onload = () => {
+            setImageLoaded(true);
+        }
+        img.src = profilePic;
+    },[profilePic])
+
+    const [isScreenWidthLarge, setIsScreenWidthLarge] = useState(window.innerWidth > 540);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsScreenWidthLarge(window.innerWidth > 540);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return(
         <div className ="intro">
-            <img src={profilePic} alt="Profile of Alan Dias" className="profile-pic"></img>
+            <div className="profile-pic-container" style={{display: isImageLoaded ? 'none': 'inline'}}>
+                <Blurhash 
+                        hash="Lj9S-,uhPWo_tTjXRkafNHj]xCW="
+                        width={isScreenWidthLarge? 180: 120}
+                        height={isScreenWidthLarge? 180: 120}
+                        resolutionX={32}
+                        resolutionY={32}
+                        punch={1}
+                />
+            </div>
+            <div className="profile-pic-container" style={{display:isImageLoaded?'inline':'none'}}>
+                <img src={profilePic} alt="Profile of Alan Dias" loading="lazy" className="profile-pic"></img>
+            </div>
             <h1 className="name_title">Alan Dias</h1>
             <h2 className="subtitle">Entusiasta de empreendedorismo, educação e tecnologia. Adoro construir produtos digitais que fazem a diferença</h2>
             <div className="social-logos">
