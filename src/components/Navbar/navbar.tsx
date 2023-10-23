@@ -56,15 +56,12 @@ function Navbar() {
                         <span className = "navlink__icon">{tab.icon}</span>
                         {isActive(tab.path) && (
                             <motion.div
-                                layoutId = "active-pill"
                                 className = "pill"
-                                layout="position"
+                                initial={{ opacity: 0, scale: 0.9 }} 
+                                animate={{ opacity: 1, scale: 1 }}  
                                 transition={{
-                                    ease: "linear",
-                                    type: "spring", 
-                                    stiffness: 100,
-                                    duration: 1,
-                                    x: { duration: 1 }
+                                    ease: "easeInOut",
+                                    duration: 0.5
                                 }}
                             />
                         )}

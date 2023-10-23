@@ -62,7 +62,7 @@ export default function WorkWithMe () {
             </div>
             <h2 className="subtitle"> Gostaria de minha ajuda outra forma? </h2>
             <div className = "email-copy">
-                <span className = "email-text">adias7882@gmail.com</span>
+                <span className = "email-text">alan.dias@betrybe.com</span>
                 <FaCopy onClick={handleCopy} style={{ cursor: 'pointer' }} />
                 {isCopied && <span>Copiado!</span>}
             </div>
