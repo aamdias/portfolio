@@ -58,6 +58,10 @@ function Navbar() {
                             <motion.div
                                 layoutId = "active-pill"
                                 className = "pill"
+                                layout="position"
+                                onBeforeLayoutMeasure={(box) => {
+                                    box.target.y = box.source.y;
+                                }}
                                 transition={{
                                     ease: "linear",
                                     type: "spring", 

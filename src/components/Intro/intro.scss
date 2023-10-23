@@ -1,3 +1,5 @@
+@import './../../styles/variables';
+
 .content-wrapper{
     display:flex;
     flex-direction: column;
@@ -56,13 +58,16 @@
 
 .social-logo{
     margin: 0 8px;
-    width: 28px;
+    width: 24px;
+    height: 24px;
+    background-color: $white;
+    border-radius: 99999px;
+    padding: 8px;
+    color: $black;
     transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     &:hover {
-        transform: scale(1.1); 
-    }
-    @media(max-width: 540px){
-        width: 24px;
+        transform: scale(1.2); 
     }
 }
 
