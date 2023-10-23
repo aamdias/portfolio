@@ -58,6 +58,7 @@ function Navbar() {
                             <motion.div
                                 layoutId = "active-pill"
                                 className = "pill"
+                                layout="position"
                                 transition={{
                                     ease: "linear",
                                     type: "spring", 

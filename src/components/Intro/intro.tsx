@@ -1,6 +1,6 @@
 import profilePic from '/new-profile-pic.png';
-import linkedinLogo from '/linkedin-icon.svg';
-import githubLogo from '/github-icon.svg';
+import { BsLinkedin } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
 import { useEffect,useState } from 'react';
 import { Blurhash } from 'react-blurhash';
 
@@ -51,10 +51,10 @@ function Intro() {
             <h2 className="subtitle">Entusiasta de empreendedorismo, educação e tecnologia. Adoro construir produtos digitais que fazem a diferença</h2>
             <div className="social-logos">
                 <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
-                    <img src={linkedinLogo} className="social-logo"></img>
+                    <BsLinkedin className="social-logo"/>
                 </a>
                 <a href="https://github.com/aamdias/" target="_blank">
-                <img src={githubLogo} className="social-logo"></img>
+                    <BsGithub className="social-logo"/>
                 </a>
             </div>
             <div className="paper">
