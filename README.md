@@ -1,6 +1,6 @@
 # Porfólio
 
-Esse projeto é um portfólio pessoal de Alan Dias feito usando a seguinte stack:
+Esse projeto é um site pessoal de Alan Dias feito usando a seguinte stack:
 - React
 - Typescript
 - SCSS
