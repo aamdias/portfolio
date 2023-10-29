@@ -102,6 +102,59 @@ body {
   margin-top: 16px;
 }
 
+.article-page{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  background: $white;
+}
+
+.post-layout{
+  font-family: Inter;
+  font-weight: 200;
+  color: $dark-gray;
+  line-height: 200%;
+  font-size: 18px;
+}
+
+.article-top-navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.back-home-button{
+  text-decoration: none;
+  font-size: medium;
+  background-color: $extra-light-gray;
+  color: $dark-gray;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__icon{
+    position:relative;
+    bottom: -10%;
+  }
+}
+
+.read-in-medium-button{
+  text-decoration: none;
+  font-size: medium;
+  background-color: $extra-light-gray;
+  color: $dark-gray;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__icon{
+    position:relative;
+    bottom: -10%;
+  }
+}
+
 @font-face {
   font-family: 'Inter';
   src: url('../node_modules/inter-font/ttf/Inter-Black.ttf') format('truetype');

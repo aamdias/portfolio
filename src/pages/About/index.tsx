@@ -10,6 +10,7 @@ type ArticleProps = {
     description: string;
     publishedDate: string;
     externalLink: string;
+    slug: string;
     thumbnail: string;
 };
 

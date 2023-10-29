@@ -4,6 +4,7 @@
       "description": "Após contribuir com um crescimento de 30x da Trybe, compartilhei os 4 principais aprendizados que tive sobre como provar seu valor como PM",
       "publishedDate": "02 de Abril de 2023",
       "thumbnail":"/prove-seu-valor-thumbnail.png",
+      "slug":"prove-seu-valor-como-pm",
       "externalLink": "https://medium.com/@aamdias/prove-seu-valor-como-product-manager-98cb396a6bab"
     },
     {
@@ -11,6 +12,7 @@
       "description": "Aprendizados sobre um conceito simples, mas poderoso, que ajuda a trabalhar com datas em desenvolvimento de software",
       "publishedDate": "27 de Maio de 2023",
       "thumbnail":"/apetite-thumbnail.png",
+      "slug":"apetite",
       "externalLink": "https://medium.com/@aamdias/apetite-o-ant%C3%ADdoto-para-estimativas-e0a0876b1dd9"
     },
     {
@@ -18,6 +20,7 @@
       "description": "Cuidados para evitar acumular software que gera pouco valor e custa caro para manter",
       "publishedDate": "01 de Outubro de 2023",
       "thumbnail":"/custo-oculto-thumbnail.png",
+      "slug":"custo-oculto",
       "externalLink": "https://medium.com/@aamdias/o-custo-oculto-que-drena-produtividade-a43b34c502a7"
     }
   ]

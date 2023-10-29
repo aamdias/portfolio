@@ -1,0 +1,134 @@
+<div className="post-layout">
+
+# O custo oculto que drena a produtividade 
+
+___Cuidados para evitar acumular software que gera pouco valor e custa caro para manter___
+
+Depois de 3 anos como Product Manager construindo produtos digitais que interagem diariamente com milhares de pessoas na Trybe, especialmente em um ritmo acelerado de crescimento de pessoas envolvidas e aumento de complexidade de soluções, pude viver em primeira mão um grande aprendizado sobre um custo que muitas vezes é subestimado no início do ciclo de desenvolvimento de produtos: O **custo de manutenção de soluções**.
+
+Times mais lentos para iterar, alta complexidade na base de código, time de tecnologia gastando um tempo considerável resolvendo bugs e solicitações que são necessários somente para a operação continuar rodando… Se esses problemas já não forem familiares, a principal mensagem aqui é que eles podem se tornar.
+
+Parece simples, mas na minha experiência, temos uma tendência a subestimar os esforços, recursos e o tempo necessário para manutenção de determinadas soluções e isso custa caro. Nesse texto, vou destacar os 4 sinais que acredito que são as** raízes desse problema:**
+
+1. Apego por soluções in-house
+2. Agilidade a todo custo sem continuidade
+3. Tomadores de decisão têm baixa régua para produtos de qualidade
+4. Simplificar ou mesmo matar produtos nunca é uma decisão fácil
+
+Tenho confiança que entender mais sobre esses sinais pode facilitar a criação de um ambiente produtivo de desenvolvimento de produtos que causam impacto no negócio e geram valor na ponta.
+
+Pensando nisso, vou entrar em mais detalhe sobre cada um desses sinais, qual a relação que eles têm com um aumento do custo para manter soluções no tempo e trazer conselhos práticos de como aplicar esses aprendizados. Chegue mais.
+
+## Apego por soluções in-house
+
+Convenhamos. Quem não quer fazer parte do time que botou de pé aquela aplicação que resolveu um problema específico melhor do que as soluções já disponíveis no mercado? Quem não olha para o seu time e acredita que qualquer desafio está ao nosso alcance? Que as soluções existentes não são suficientes por que não foram feitas pelo time que você conhece a competência? 
+
+Assim como você, eu também já pensei nisso. E não vejo problema em pensar assim, na real acredito ser importante ter essa confiança, mas precisamos ter cautela para não nos deixar levar por isso na tomada de decisão na construção de produtos.
+
+A realidade é que escolher construir uma solução internamente pode custar **muito** e tem uma complexidade de construção e manutenção desconhecida na largada. 
+
+Não é só o tempo para implementar uma v1. É o tempo de:
+
+* **Desenhar uma solução inicial** que atenda o caso de uso específico, com as dores, público alvo, objetivo e limitações específicas ao contexto cujo o produto vai ser criado;
+* **Implementar essa solução de uma forma que ela se integre** a base de código já existente, o que pode agilizar certas partes do desenvolvimento, mas também pode dificultar ainda mais, dado que na prática temos que lidar com débitos de implementações passadas;
+* Conduzir a **gestão da melhoria contínua desse produto**, o que exige um esforço contínuo tanto de produto e design para entender e priorizar evoluções no produto alinhadas com o contexto de negócio e com as necessidades que surgem no tempo, quanto um esforço contínuo de engenharia de implementar essas melhorias sempre pensando em como aquela unidade se encaixa no todo
+
+Em resumo, ao tomar essa decisão, estamos na prática **alocando** permanentemente - ou enquanto a solução existir - **mais responsabilidade** de criação e evolução de um produto e isso é muito caro.
+
+Mas claro, muitas vezes esse é o custo que se paga para ter soluções que realmente são essenciais para o negócio prosperar e aumentar sua diferenciação em relação ao resto das soluções do mercado. Quando isso ocorre, o custo pode ser elevado, mas o retorno que isso traz acaba compensando. 
+
+A mensagem principal aqui é: Pense bem no que realmente vale a pena construir - no sentido de _desenvolver_ melhorias no software existente. Para ajudar com essa reflexão, seguem alguns conselhos mais práticos.
+
+_Na prática:_
+
+* **Foco em usar tecnologia para** **aumentar o diferencial competitivo**. Existem vários casos de uso que já existem soluções prontas por serem problemas mais recorrentes no mercado (ex: Produtos para gestão de acesso e permissionamento, CRMs, produtos para apoiar com o ciclo de DevOps...). Você não precisa ficar reinventando a roda para problemas que não são essenciais para o seu negócio. Nesses casos, vale mais a pena avaliar a contratação dessas soluções. 
+* **O custo de manutenção afeta o retorno do investimento.** Pondere o quão dependente de manutenção aquela solução vai exigir. Quanto mais dependente, maior é o custo total para desenvolver e manter internamente, o que pode justificar a alocação de mais recursos em uma solução terceira. 
+* **Considere outras alternativas para desenvolver primeiras soluções**. Existe um meio meio termo aqui que pode ser usado para validar ideias mais rápido mas que tem suas vantagens e desvantagens que é o universo de soluções low-code. Isso dá um artigo por si só, mas como sugestão inicial, sugiro conhecer mais sobre Bubble, Zapier e Retool.
+
+## Agilidade a todo custo sem continuidade
+
+Já dizia o playbook do vale do silício para startups de tecnologia de sucesso: Faça o produto mínimo viável (MVP) e lance rápido. Ou mesmo o lema do Facebook em sua época crescimento acelerado: "Move fast and break things".
+
+Certamente são lemas que permeiam os corredores de empresas de tecnologia e pessoalmente, não tenho dúvidas da importância dessa mentalidade. Afinal, quando se está construindo um produto, até que esse produto esteja sendo utilizado de fato, todo o resto são hipóteses e essa proximidade e empatia com o usuário final são traços comuns das melhores empresas tech do mundo.
+
+Entretanto, o ponto de atenção que eu trago aqui é a aplicação desenfreada dessa mentalidade e de possíveis consequências que essa mentalidade pode gerar se não formos cautelosos. Como tudo na vida, na prática não é tão simples assim. Até a Meta chegou a revisar seu lema no tempo para "Move fast with stable infra" rsrs. Mais sobre isso [nesse](https://boz.com/articles/stable-infra) artigo do CTO da Meta.
+
+Na minha experiência, enxergo dois grandes sinais de alerta:
+
+1/ **Quando a metodologia vira desculpa para lançar qualquer solução.**
+
+Não podemos simplesmente ignorar o conhecimento adquirido ao longo do tempo em nome de lançar o mais rápido possível. À medida que uma startup vai rodando, entendo que maior pode ser a barra de qualidade do que é possível de ser entregue como MVP (_Produto Mínimo Viável_). Maior conhecimento é acumulado sobre as dores dos usuários finais, sobre a capacidade da tecnologia disponível e sobre o que já funcionou e o que não funcionou no passado. 
+
+
+    _Além disso, o "viável" presente na sigla do MVP dá muita margem a interpretação. Já vi variações aqui que minimizam isso como o MSP (Minimum Sellable Product - Produto mínimo **vendável**) e MLP (Minimum Lovable Product - Produto mínimo **amável**). Essas variações tentam reduzir o caráter subjetivo do "viável". _
+
+Agora sendo realista, mesmo com esses termos diferentes (MVP, MSP, MLP…), a decisão final do escopo de uma primeira solução acaba sendo subjetiva e isso faz parte. Afinal, se fosse objetivo e replicável, startups e produtos de muito sucesso não seriam tão raros como são, não é mesmo?
+
+Mas para tirar um pouco a subjetividade, acredito que existem sim alguns princípios norteadores. Por exemplo, acho importante sempre **delimitar o espaço do problema** que a primeira solução vai resolver e **delimitar o tempo** que o time irá investir na construção de uma primeira solução. Essas restrições são muito importantes para maximizar a criatividade e o resultado final. Mais sobre isso neste outro artigo que fiz!
+
+Agora, produtos que estão sendo desenvolvidos para novos mercados, especialmente aqueles que são muito mal servidos, agilidade para lançar uma primeira solução pouco escalável para aprender é crucial e provavelmente o mais importante. O ponto aqui é ter atenção que os mesmos critérios para definir uma primeira versão do que vai a mercado podem não fazer sentido à medida que esse produto vai alcançando diferentes patamares. 
+
+2/ **Quando existe pouca continuidade em produtos já existentes e se cria um portfólio grande de MVPs.**
+
+Outro sinal de alerta da aplicação desenfreada dessa metodologia de forma isolada é quando o lançamento do MVP com sucesso - isto é com demanda comprovada e que resolve a dor para o qual o produto foi projetado - é enxergado como o fim. Isso na verdade é só o começo! Se tivermos essa mentalidade corremos o risco de ter um portfólio de diversos MVPs, cada um resolvendo um problema de uma forma muitas vezes incompleta e não escalável (o que para um MVP faz sentido, mas não para um produto de necessidade comprovada).  
+
+Mas quais as consequências de ter um portfólio de soluções incompletas? Bem, a arquitetura do software como um todo fica mais complexa. "Puxadinhos" são feitos para atender casos de usos não previstos, a comunicação entre os serviços vai ficando mais complexa, menor é a resiliência do sistema a erros e mais tempo é gasto para correção de bugs. Isso impacta também o tempo de rampagem das pessoas devs para contribuir e deixa o fluxo como um todo bem menos produtivo. Na ponta, fica cada vez mais difícil de iterar e implementar melhorias contínuas no produto.
+
+_Na prática_:
+
+* Ao tomar a decisão de cortar o escopo de uma entrega em prol de agilidade, sugiro já agendar um momento no futuro para tomar decisão sobre a evolução ou descontinuidade dessa solução! É uma atitude simples, mas ajuda a garantir continuidade no momento que o corte de escopo é feito.
+* Separe períodos no tempo e/ou rotinas para remover débitos técnicos. Pense nisso como um investimento no longo prazo para aumentar a produtividade e satisfação das pessoas devs e como forma de prevenir a situação de um produto difícil de iterar. 
+
+## Tomadores de decisão tem uma baixa régua para produtos de qualidade
+
+Construir e reconhecer produtos bons, elegantes, com UX/UI bem pensada, é algo que exige bagagem. É um conhecimento acumulado de gestão e contato direto com produtos que têm um papel primordial na geração de valor de um negócio.
+
+Além de bagagem, isso exige também uma grande mudança de mentalidade de como executivos e tomadores de decisão enxergam o papel da tecnologia. Por muitos anos, a tecnologia foi vista apenas como um custo, como um setor que é responsável por criar e manter sistemas que viabilizam o funcionamento das outras áreas do negócio. Gosto de me referir a essa mentalidade como quando tecnologia é enxergada apenas como o "setor de TI". É uma boa referência especialmente por ajudar a identificar tomadores de decisão que ainda usam esse termo.
+
+
+    Especialmente em países que estão anos à frente do Brasil na aplicação de tecnologia nos negócios, como o EUA, existem inúmeras evidências que corroboram com a conclusão que tratar tecnologia como um custo, especialmente dependendo do setor e natureza do modelo de negócio, pode ser um grande desperdício de recursos.   
+
+O ponto não é só usar tecnologia para aumentar produtividade, mas sim usar tecnologia para gerar valor na ponta. Não é a toa que olhando para evolução das Top 10 maiores empresas em valor de mercado dos EUA nos últimos 40 anos, é isso que encontramos:
+
+Feito pelo autor, com base em dados de: [Companies Market Cap](https://www.companiesmarketcap.com/) e [CNN](https://www.money.cnn.com)
+
+Atualmente, 5 das Top 10 empresas nos EUA tecnologia não é custo, mas sim o principal meio pelo qual essas empresas geram valor para os seus consumidores finais. No Brasil, para contraste, somos um país onde petróleo, gás e serviços financeiros são os setores das maiores empresas em valor de mercado. Empresas de tecnologia representam apenas 3% do PIB, conforme o [Digital Transformation Report](https://www.atlantico.vc/latin-america-digital-transformation-report-2023), divulgado pelo Atlantico em Agosto de 2023.
+
+
+Feito pelo autor, com base em dados de: [Companies Market Cap](https://www.companiesmarketcap.com/)
+
+E qual a consequência disso tudo? Líderes e tomadores de decisão não estão acostumados a construir experiências e produtos digitais de ponta e melhorar isso faz parte do desenvolvimento de um país. Simplesmente faltam mais referências locais (por enquanto).
+
+Isso influencia diretamente as experiências digitais que construímos. E se não aumentarmos a barra de qualidade das pessoas que efetivamente estão responsáveis por alocar recursos, produtos incompletos, cheios de bugs e com alto custo de manutenção irão continuar pairando pela internet e consumindo a produtividade de diversos times. 
+
+_Na prática_:
+
+* É importante que não só os contribuintes individuais se desenvolvam em produtos digitais, mas também as lideranças de empresas onde a tecnologia tem um papel cada vez mais relevante. Para não deixar de sugerir um pontapé nessa jornada, sugiro esse artigo [aqui](https://www.lennysnewsletter.com/p/product-sense) sobre Product Sense, que é a capacidade de identificar bons produtos.
+* À medida que uma empresa escala, e a depender da natureza do negócio, lideranças podem se afastar da experiência digital que é entregue na ponta. Para isso, sugiro pensar em mecanismos para sempre re-aproximar essas pessoas com a experiência digital que está sendo entregue para criar uma maior empatia com a pessoa usuária. Um bom exemplo disso é separar momentos para Dogfooding (termo que faz referência a "comer a comida que é dada para o seu cachorro" ) onde a parte da empresa testa suas próprias soluções. 
+
+## Simplificar ou mesmo matar produtos nunca é uma decisão fácil 
+
+Por fim, erros fazem parte da construção de empresas de sucesso. Entendo que alguns dos problemas que eu citei nesse texto muitas vezes acabam acontecendo mesmo quando temos ciência deles, dado que na prática existem vários outros trade offs que devem ser considerados e que são muito específicos para o contexto e o momento de cada empresa. 
+
+Mas como errar faz parte, e estamos sempre em melhoria contínua, também temos que evitar ter um apego muito grande pela forma como as decisões foram tomadas no passado e entender que muitas vezes o que nos trouxe até certo ponto, não vai ser o que vai nos levar adiante. 
+
+Reconhecer isso e desapegar de soluções não é fácil, vai de encontro ao nosso instinto de evitar "perder o esforço gasto" e de evitar "perder o benefício que essas soluções ainda geram". Além disso, não se esqueça que sempre existe um custo de oportunidade envolvido nessas situações. O tempo que está sendo gasto para manter um produto que gera pouco valor, poderia estar sendo alocado integralmente para a criação de outro produto com muito menos amarras e com um maior conhecimento sobre o que vale a pena construir. 
+
+É difícil, mas muitas vezes o melhor a ser feito para garantir foco e recomeçar de uma forma mais eficiente é descontinuar soluções.
+
+_Na prática_:
+
+* Estabeleça métricas de sucesso na criação de cada produto ou feature e acompanhe essas métricas. Se um produto foi feito para ter pelo menos 20% de adoção pelo seu público alvo e após meses em produção não ultrapassa 3% de adoção, isso já pode ser um forte sinal de que não vale a pena mantê-lo.
+* Não encare a descontinuidade de um produto ou feature como uma derrota. É uma ótima fonte de aprendizado, e aprendizado contínuo e rápido é o que leva ao sucesso no final. 
+
+Nesse artigo, espero ter facilitado a digestão desses aprendizados para mais pessoas através da minha perspectiva sobre esse assunto :) 
+
+Agradeço a quem chegou até aqui! Espero que tenha provocado boas reflexões e trazido sugestões que possam ser aplicáveis no seu dia a dia. Quem tiver interesse, adoraria ouvir sugestões e comentários sobre esse texto. Vamos juntos.
+
+## Apêndice
+
+_Sobre a Trybe:_
+
+Nossa visão é ser a primeira escolha de preparação para profissões digitais na América Latina. Hoje temos uma formação de Desenvolvimento Full Stack que já empregou aproximadamente 2 mil pessoas desde nossa fundação em 2019. Nos vejo como uma escola obstinada com o sucesso profissional das nossas pessoas estudantes e que não mede esforços para construir produtos e serviços baseados em tecnologia que cobrem toda a jornada das pessoas estudantes conosco, desde o processo de seleção, curso, experiência de aprendizado, procura por trabalho e financiamento dos estudos. É uma escola de tech que é construída com as melhores práticas de startups tech, não se limitando as estruturas tradicionais de ensino. Para mais informações: betrybe.com.
+
+</div>
