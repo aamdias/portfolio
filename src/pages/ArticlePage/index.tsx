@@ -25,12 +25,13 @@ export default function ArticlePage () {
                 >
                 <span className ="back-home-button__icon">< BsPersonCircle /></span>
                 </Link>
-                <Link
-                    to={external_link}
+                <a
+                    href={external_link}
+                    target="_blank"
                     className="read-in-medium-button"
                 >
                 <span className ="read-in-medium-button__icon"><AiFillMediumSquare /></span>
-                </Link>
+                </a>
             </div>
             <React.Suspense fallback={<div>Preparando o artigo...</div>}>
                 <MDXProvider>
