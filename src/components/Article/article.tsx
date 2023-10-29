@@ -10,7 +10,7 @@ type ArticleProps = {
     thumbnail: string;
 };
 
-function Article({title, description, publishedDate, externalLink, slug, thumbnail}:ArticleProps) {
+function Article({title, description, publishedDate, slug, thumbnail}:ArticleProps) {
     return(
         <div className="article">
             <div className = "article__contentwithphoto">
