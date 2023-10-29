@@ -1,0 +1,127 @@
+<div className="post-layout">
+
+# Apetite: O antídoto para estimativas
+
+___Aprendizados sobre um conceito simples, mas poderoso, que ajuda a trabalhar com datas em desenvolvimento de software.___
+
+Os seres humanos são horríveis em dar estimativas para projetos de desenvolvimento de software, especialmente quando estamos lidando com um problema cuja solução não é conhecida ou não foi executada muitas vezes anteriormente.
+
+Ainda assim, como Product Managers inseridos em startups de crescimento acelerado, é só questão de tempo até nos esbarramos em situações como: 
+"Hmm, e quando conseguimos entregar tudo isso?"
+"Para fechar esse projeto, só precisamos estimar a data que o time de desenvolvimento vai levar para implementar tudo"
+"Quanto tempo vocês acreditam que levam para implementar essa alteração?"
+
+Depois de lidar com essa situação várias vezes e estudar várias referências sobre esse tema ao longo de aproximadamente 3 anos como Product Manager na Trybe, resolvi escrever por aqui sobre uma alternativa ao modelo tradicional de estimar o tempo e esforço de uma determinada tarefa. Estou me referindo a um conceito simples, mas poderoso de apetite para solução.
+
+Apetite nesse caso não tem a ver com sua fome, pelo menos não literalmente, rs. Nesse contexto, apetite nada mais é do que a quantidade de tempo que um time está disposto a investir em uma solução. Parece simples, não? E é! Apesar de simples, esses foram os principais aprendizados que tive relacionados a aplicação desse conceito:
+
+- Certos problemas do modelo tradicional de estimativas são inevitáveis;
+- Vale mais a pena assumir que o prazo é uma restrição, do que dedicar esforços do time para encontrar uma estimativa melhor;
+- Usar apetite implica em autonomia para refinar o escopo, e autonomia gera maior motivação, criatividade e impacta qualidade;
+- O modelo de apetite gera maior responsabilidade coletiva pelo negócio através de uma maior preocupação com alocação de recursos.
+
+## Apetites: Prazo fixo, escopo variável.
+
+A ideia principal é de inverter a lógica comumente usada em estimativas. Em vez tentar adivinhar quanto tempo a implementação de um determinado escopo de solução vai levar, comece refletindo sobre o quanto de esforço você e o seu time está disposto em investir recursos em uma solução definindo o prazo final e assumindo um certo nível de flexibilidade no escopo que será entregue.
+
+Você não entendeu errado. O segredo é gastar menos tempo estimando e, ao invés disso, estabelecer um prazo razoável e ajustar tudo para caber nele. Outra forma de entender é que o prazo, desde que razoável, deixa de ser um output e passa a ser um input no processo.
+
+Ou seja, o prazo, definido pelo apetite, é fixo, e o escopo, variável. Ao longo desse texto, espero que isso faça cada vez mais sentido, vamos aos poucos.
+
+### Certos problemas do modelo tradicional de estimativas são inevitáveis
+
+O ponto de partida, como sempre, são aprendizados dos problemas que muitas vezes só conseguimos perceber no dia a dia de um Squad. Por exemplo, como via de regra, gosto de assumir que imprevistos vão ocorrer, uma hora ou outra, e que a complexidade da solução inicial sempre cresce à medida que avançamos na implementação.
+
+Na prática, o escopo de uma solução raramente é previsível o suficiente para que boas estimativas de tempo e esforço sejam feitas. Tendemos a acreditar que o escopo está "dado" no início de um projeto, mas na realidade o escopo quase sempre aumenta.
+
+E esse problema pode ficar ainda maior, a depender de alguns fatores. Destaco três:
+
+- **Experiência do time de desenvolvimento:** Qual o nível de senioridade do time? Mesmo com um time sênior, qual o nível de familiaridade que as pessoas de engenharia daquele time tem com o repositório do projeto? Existem muitos débitos e dependências no código não resolvidas? A quanto tempo essas pessoas trabalham juntos? Em um contexto com pouca familiaridade com o repositório, um código cheio de dependências e débitos, e pessoas com pouca experiência trabalhando junto, a complexidade de novas implementações tende a crescer em um ritmo ainda maior.
+
+- **Presença de vieses cognitivos:** Atalhos mentais inconscientes (como o Viés do Otimismo Irracional) nos levam a ser mais otimistas, confiar em nossa memória e ignorar riscos. Por mais que tenhamos consciência disso, especialmente em grupo, quando existe ainda um desejo de agradar nossos pares (o que também está associado a um viés, o Viés da Conformidade), agir de forma racional se torna ainda mais desafiador.
+
+- **Antecedência do planejamento:** Problemas se intensificam quando a distância entre o planejamento e a execução cresce. Por um lado, negócio precisa estimar o tempo gasto em iniciativas para alocar recursos, mas geralmente isso precisa ocorrer enquanto o time responsável pela implementação ainda está entendendo com profundidade o escopo. Esse descasamento é inevitável, dado que o negócio precisa ser diligente com os recursos disponíveis, mas varia dependendo do estágio, agilidade e porte da empresa.
+
+O ponto é: O escopo vai mudar e isso faz parte. Muitas vezes isso inclusive é o que permite que a entrega final tenha melhor qualidade e/ou gere mais resultados.
+
+Entretanto, quando usamos métodos tradicionais de estimativas podemos estar gastando tempo em cima de premissas que não se sustentam, como a premissa de que o escopo já está dado desde o começo ou, complementando as ideias já apresentadas, a premissa de que estimar no micro (no nível da tarefa) vai sempre nos gerar melhores estimativas no macro (no nível do projeto).
+
+### Vale mais a pena assumir que o prazo é uma restrição, do que dedicar esforços do time para encontrar uma estimativa melhor
+
+Se for para levar apenas um aprendizado desse texto, esse seria o aprendizado.
+
+Pausa para você que está dando uma olhada rápida no texto! O maior aprendizado está logo aqui em cima. Se tiver interesse em saber mais, recomendo voltar.
+
+Ao alocar tempo e energia do time melhorando estimativas, estamos conscientemente alocando recursos em uma atividade que somos, por natureza, ruins. A depender do tempo, experiência, método e contexto de um time, até conseguimos gradativamente diminuir esse problema, mas ainda assim, não acho que essa é a melhor forma de investir nosso tempo.
+
+No modelo mental de Apetites de Solução, o tempo vira uma restrição. Partindo do pressuposto que essa restrição é razoável, podemos interpretar essa restrição como qualquer outra restrição em um projeto de desenvolvimento de software. Com isso, o tempo é investido no espaço da solução, em vez do espaço imaginário das estimativas.
+
+Certo, mas o que seria um apetite razoável? Já usei esse termo nesse texto e assim como você, também acho que adjetivos podem ser muitos vagos.. Pensando nisso, no final desse texto dedico uma seção inteira para explicar melhor como definir esse apetite. Por hora, vamos assumir que ele foi bem definido e seguir com os principais aprendizados, ok?
+
+Retomando: Agora com um apetite em mãos, você poupa todo o tempo que seria gasto com estimativas e foca na atividade que qualquer pessoa designer ou desenvolvedora sabe fazer melhor: dado um problema bem definido, construir uma solução obedecendo um conjunto de restrições.
+
+### Usar apetite implica em autonomia para refinar o escopo, e autonomia gera maior motivação, criatividade e impacta qualidade
+
+Dado que o escopo inicial quase sempre cresce, como vimos acima, enxergo dois caminhos:
+
+1. Ou o acréscimo do escopo no tempo é liderado pelas pessoas que não estão envolvidas diretamente com a implementação → Cenário comum quando, por exemplo, um time de negócio acredita que deve ser o mais prescritivo possível com a solução e que produto e engenharia devem atuar de forma reativa, sempre estimando com base num conjunto de requisitos.
+
+2. Ou o acréscimo do escopo no tempo é liderado pelo próprio time responsável pela implementação → Cenário que ocorre quando o direcional e os elementos mínimos de uma determinada construção foram estabelecidos desde o começo, assim como um apetite razoável para que o trabalhe na construção de uma solução de qualidade.
+
+Nesse segundo cenário, o time se empodera para refinar a solução final. Isso está intrinsecamente relacionado com a motivação, uma vez que pessoas de desenvolvimento, produto e design, têm uma tendência a se motivar mais quando elas têm participação na definição da solução.
+
+Além disso, existem achados de que a capacidade de conceber soluções criativas aumenta em um contexto com restrições moderadas. Quando as restrições estão muito baixas, existe menos incentivo para que pessoas troquem entre si sobre como resolver um problema e menos foco para direcionar o trabalho. Por outro lado, em um contexto com restrições demais, nem sequer há um mínimo de espaço para liberdade criativa.
+
+Controlando o tempo que será alocado para uma solução, podemos, de uma forma simples, chegar em uma zona ótima de criatividade.
+
+### O modelo de apetite gera maior responsabilidade coletiva pelo negócio através de uma maior preocupação com alocação de recurso 
+
+Conforme já aprofundei neste artigo, compartilhar responsabilidade sobre a empresa é essencial para provar seu valor como profissional. Nessa linha, se ater ao modelo tradicional de estimativas pode ser ainda mais prejudicial. Entenda.
+
+No fim do dia, acredito que o pior problema no modelo tradicional de estimativas nem está no resultado ruim que esse processo está fadado a dar, mas sim na mentalidade que ele cultiva. Ao tentar estimar um projeto com um escopo mais fechado, o time de desenvolvimento tende a entrar em um modo de prestação de serviço. 
+
+Isso é perceptível quando o time acredita que não tem influência nenhuma no escopo e que portanto deve “proteger” a sua reputação de uma possível quebra de expectativa com o resto da empresa. Se a estimativa estiver errada, por exemplo, podemos entrar em um cenário em que um time culpa o outro pela quebra de expectativa.
+
+Esse modelo mental é prejudicial. Em um contexto de startups de alto crescimento, é sabido que as empresas vão mais longe e que as pessoas trabalham mais satisfeitas quando compartilham responsabilidade das soluções que são construídas.
+
+Com isso, em oposição a esse modelo, ao trabalhar com apetites, cultivamos a mentalidade de alocação de recursos, que é uma preocupação chave e presente na alta liderança de toda e qualquer empresa.
+
+É um caminho com alta probabilidade de sucesso? Várias lideranças estão compradas com essa frente? Estamos dispostos a dedicar as melhores pessoas para esse problema? O quanto estamos dispostos a investir agora, dado o contexto presente? E se formos de fato investir, qual a expectativa de retorno nesse investimento? São perguntas que naturalmente andam de mãos dadas com o modelo mental de pensar com apetites para solução.
+
+### Hmm, interessante! E como aplicar esse conceito?
+
+Como definir um apetite na prática? Cada contexto é único, então é difícil prescrever um caminho único na hora de definir o apetite para cada solução. Entretanto, acredito sim que existem principais elementos que devemos levar em consideração para estabelecer um apetite de solução. São eles:
+
+- Expectativa mínima de problemas a resolver, focando neles e não nas primeiras soluções que foram propostas para esses problemas. Nesse caso, quanto maior a gravidade e o número de pessoas usuárias impactadas pelo problema, maior deve ser o apetite.
+
+- Experiência e disponibilidade do time com aquele problema. Nesse caso, quanto maior for a experiência e maior a disponibilidade do time para o problema, menor o  apetite necessário. Afinal, nesse caso a incerteza é menor.
+
+- Expectativa de retorno do tempo investido naquela aposta em relação ao custo do time que está envolvido. Nesse caso, quanto maior for a expectativa de retorno, maior o apetite. Por outro lado, quanto maior for a senioridade, menor o apetite, devido ao aumento do custo do time envolvido.
+
+- Uma folga para manter a qualidade das entregas e a motivação da equipe, evitando prazos curtos demais.
+
+Para definir um apetite, você também irá precisar escolher uma unidade de tempo. Isso varia caso a caso, mas em geral sugiro usar para algo na ordem de grandeza de dias, semanas ou sprints (para times que trabalham com agile). Ex: "O apetite de solução para resolver tal problema é 2 sprints".
+
+Não é simples calibrar esse apetite inicial, mas o objetivo também não é que fique muito complexo. Com o tempo e com a prática em equipe acredito fortemente que nossa capacidade de definir esse apetite vai melhorando. 
+
+> __Atenção com prazos curtos.__ Vale um cuidado extra com a parte de "evitar prazos curtos demais". Prazos não realistas, quando usados recorrentemente, vão minando a satisfação da equipe e podem pôr por água abaixo os benefícios de trabalhar com apetites. 
+
+Tendo em vista esse modelo mental para definir o apetite, na perspectiva de uma pessoa Product Manager, sugiro dois principais casos de uso:
+
+- **Com Design.** Ao pedir ajuda para uma pessoa Designer, estabeleça um Apetite para alinhar o quanto de tempo que vale essa pessoa gastar perseguindo determinado entregável, seja uma pesquisa ou a prototipação de uma interface, por exemplo. Esse apetite deve ser influenciado pela relevância atual do problema que será resolvido e no grau de sofisticação que você acredita que a solução irá exigir de Design. Na dúvida, refine isso com essa pessoa. 
+
+- **Com Desenvolvimento.** A partir do contexto da empresa, nível de confiança em determinada frente, experiência do time, estabeleça o apetite inicial para o time de engenharia desenvolver determinada solução. Vá refinando esse apetite com uma pessoa sênior de tecnologia e com pessoas de negócio. Com a pessoa de tecnologia, tente entender se nesse espaço é possível fazer um entregável que cumpre com os requisitos mínimos mapeados e que ainda dê espaço para o time influenciar no produto final (Importante: A ideia não é ser exaustivo nesse apetite inicial aqui! Somos ruins em estimar). Com o time de negócio, refine a disposição para investir nessa frente de trabalho.
+
+Já chegando ao fim, quero fazer justa referência ao conteúdo original no qual fui apresentado a esse conceito pela primeira vez: O livro Shape Up, escrito pelos co-fundadores da 37 Signals (grupo por trás de produtos como Basecamp e Hey). Como falei no começo é um conceito relativamente simples, mas que só com o tempo e com a experiência que fui percebendo o seu real benefício e significado. 
+
+Nesse artigo, espero ter facilitado a digestão desses aprendizados para mais pessoas através da minha perspectiva sobre esse assunto. Em alguns casos, não temos como fugir de estimativas, mas pelo menos é bom ter uma opção a mais para considerar, não é? 
+
+Agradeço a quem chegou até aqui! Espero que tenha provocado boas reflexões e trazido sugestões que possam ser aplicáveis no seu dia a dia. Quem tiver interesse, adoraria ouvir sugestões e comentários sobre esse texto. Vamos juntos.
+
+## Apêndice
+
+### Sobre a Trybe:
+
+Nossa visão é ser a primeira escolha de preparação para profissões digitais na América Latina. Hoje temos um curso de Desenvolvimento Web que já empregou aproximadamente 2 pessoas desde nossa fundação em 2019. Nos vejo como uma escola obstinada com o sucesso profissional das nossas pessoas estudantes e que não mede esforços para construir produtos e serviços baseados em tecnologia que cobrem toda a jornada das pessoas estudantes que estudam conosco, desde o processo de seleção, curso, experiência de aprendizado, procura por trabalho e financiamento dos estudos. É uma escola de tecnologia construída com as melhores práticas de startups tech fugindo das estruturas tradicionais de ensino. Para mais informações, acesse o <a href="https://www.betrybe.com" target="_blank">nosso site</a>
+
+</div>

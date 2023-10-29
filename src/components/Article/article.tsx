@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './article.scss';
 
 type ArticleProps = {
@@ -5,10 +6,11 @@ type ArticleProps = {
     description: string;
     publishedDate: string;
     externalLink: string;
+    slug: string;
     thumbnail: string;
 };
 
-function Article({title, description, publishedDate, externalLink, thumbnail}:ArticleProps) {
+function Article({title, description, publishedDate, externalLink, slug, thumbnail}:ArticleProps) {
     return(
         <div className="article">
             <div className = "article__contentwithphoto">
@@ -21,9 +23,7 @@ function Article({title, description, publishedDate, externalLink, thumbnail}:Ar
             <div className="article__divider"></div>
             <div className="article__footer">
             <p className="article__date"> {publishedDate}</p>
-                <a href={externalLink} target="_blank" rel="noopener noreferrer" className="article__link">
-                Ler artigo
-                </a>
+                <Link to={`/artigos/${slug}`} className="article__link">Ler artigo</Link>
             </div>
       </div>
     );
