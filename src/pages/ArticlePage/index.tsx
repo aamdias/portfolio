@@ -2,7 +2,6 @@ import { MDXProvider } from '@mdx-js/react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { BsPersonCircle } from 'react-icons/bs';
 import { AiFillMediumSquare } from 'react-icons/ai';
 import articlesData from '../../data/articles.json';
 import { BiArrowBack } from 'react-icons/bi';
