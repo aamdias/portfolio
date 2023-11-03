@@ -5,6 +5,7 @@ import React from 'react';
 import { BsPersonCircle } from 'react-icons/bs';
 import { AiFillMediumSquare } from 'react-icons/ai';
 import articlesData from '../../data/articles.json';
+import { BiArrowBack } from 'react-icons/bi';
 
 
 export default function ArticlePage () {
@@ -23,7 +24,7 @@ export default function ArticlePage () {
                     to="/"
                     className="back-home-button"
                 >
-                <span className ="back-home-button__icon">< BsPersonCircle /></span>
+                <span className ="back-home-button__icon">< BiArrowBack /> Voltar </span>
                 </Link>
                 <a
                     href={external_link}
