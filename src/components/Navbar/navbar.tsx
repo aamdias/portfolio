@@ -2,15 +2,17 @@ import './navbar.scss';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BsPersonCircle } from 'react-icons/bs';
-import { MdOutlineWork } from 'react-icons/md';
-import { AiOutlineCalendar } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
+
+import { AiFillRead } from 'react-icons/ai';
+import { FiPackage } from 'react-icons/fi';
+
 
 function Navbar() {
     const tabs = [
-        {id: 'agenda', label: 'Agenda', path: '/agenda', icon: <AiOutlineCalendar/>},
+        {id: 'content', label: 'Conteúdo', path: '/conteudos', icon: <AiFillRead/>},
         {id: 'about', label: 'Sobre', path: '/', icon: <BsPersonCircle/>},
-        {id: 'build-with-me', label: 'Construa comigo' , path: '/construacomigo', icon: <MdOutlineWork/> },
+        {id: 'products', label: 'Produtos' , path: '/produtos', icon: <FiPackage/> },
     ]
 
     const location = useLocation();

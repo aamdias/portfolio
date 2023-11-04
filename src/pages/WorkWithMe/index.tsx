@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar/navbar.tsx';
 import servicesData from '../../data/services.json';
 import Footer from '../../components/Footer/footer.tsx';
 import Service from '../../components/Service/service.tsx';
@@ -6,6 +5,8 @@ import { FaCopy } from 'react-icons/fa';
 import { useState } from 'react';
 import copy from 'clipboard-copy';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { BiArrowBack } from 'react-icons/bi';
 
 type ServiceProps = {
     title: string;
@@ -39,7 +40,12 @@ export default function WorkWithMe () {
 
     return(
         <div className = "workwithmecontainer">
-            <Navbar />
+            <Link
+                to="/"
+                className="back-home-button"
+            >
+            <span className ="back-home-button__icon">< BiArrowBack /> Voltar </span>
+            </Link>
             <motion.div 
             className = "buildwithme"
             initial="hidden"

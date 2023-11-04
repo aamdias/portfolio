@@ -26,15 +26,25 @@ body {
   width: calc(100vw - 16px);
 }
 
+.about-menu{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .workwithmecontainer{
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
   align-items: center;
   width: calc(100vw - 16px);
+  .back-home-button{
+    margin-top: 12px;
+  }
 }
 
-.agenda{
+.products-page{
+  box-sizing: border-box;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -48,11 +58,44 @@ body {
   }
 }
 
+.content-page{
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100vw - 16px);
+  &__content{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 140px;
+  }
+}
+
+.agenda{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100vw - 16px);
+  &__content{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+  .back-home-button{
+    margin-top: 12px;
+  }
+}
+
 .buildwithme{
   display:flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px; 
+  padding-top: 80px; 
 }
 
 .title {
@@ -111,6 +154,15 @@ body {
   box-sizing: border-box;
 }
 
+.bookmarks-page{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  max-width: 604px;
+  box-sizing: border-box;
+}
+
 .post-layout{
   font-family: Inter;
   font-weight: 300;
@@ -123,6 +175,14 @@ body {
   h1 {
     margin-top: 16px;
     color: $black;
+  }
+  a {
+    color: $black;
+    :hover{
+      text-decoration: none;
+      font-style: bold;
+      cursor: pointer;
+    }
   }
 }
 
@@ -209,6 +269,40 @@ body {
   border-radius: 12px;
   font-size: 0.7rem;
   line-height: 0.7rem;
+}
+
+.lead-gen{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  padding: 16px;
+  color: $gray;
+  margin: 16px;
+  width: 100%;
+  &:hover{
+    color: $white;
+    background-color: $black;
+  }
+}
+
+.see-all-content-button{
+  color: #4F4F4F;
+  font-family: Inter;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px 0px;
+  background: #F1F1F1;
+  text-decoration: none;
+  &:hover {
+    background: #333; 
+    color: #F1F1F1;
+  }
 }
 
 @font-face {

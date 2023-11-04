@@ -1,18 +1,8 @@
 import Intro from '../../components/Intro/intro.tsx'; 
-import Article from '../../components/Article/article.tsx';
 import Footer from '../../components/Footer/footer.tsx';
-import articlesData from '../../data/articles.json';
 import Navbar from '../../components/Navbar/navbar.tsx';
 import { motion } from 'framer-motion';
-
-type ArticleProps = {
-    title: string;
-    description: string;
-    publishedDate: string;
-    externalLink: string;
-    slug: string;
-    thumbnail: string;
-};
+import MenuCard from '../../components/MenuCard/menucard.tsx';
 
 const fadeInVariants = {
     hidden: {
@@ -43,14 +33,29 @@ export default function About () {
             className="about"
             >
             <Intro />
-            <div className = "content-wrapper">
-                <div className = "title">Artigos</div>
-                <div className = "subtitle">Gosto de escrever sobre meus aprendizados. Dá uma olhada:</div>
-                <div className =" articles">
-                    {articlesData.map((article:ArticleProps) => (
-                    <Article key={article.title} {...article} />
-                    ))}
-                </div>
+            <div className="about-menu">
+                <div className="title"> O que encontrar por aqui </div>
+                <div className = "subtitle">Minha contribuições e como posso te ajudar</div>
+                <MenuCard 
+                    title="Conteúdos"
+                    description="Conteúdos originais produzidos por mim e uma curadoria de conteúdos que já me ajudaram"
+                    link="/conteudos"
+                />
+                <MenuCard 
+                    title="Produtos"
+                    description="Vezes que coloquei a mão na massa para construir produtos digitais que resolvem alguma dor"
+                    link="/produtos"
+                />
+                <MenuCard 
+                    title="Construa Comigo"
+                    description="Gostaria de ajuda de um Product Manager experiente, sem ter que contratar um Full Time?"
+                    link="/construacomigo"
+                />
+                <MenuCard 
+                    title="Agenda"
+                    description="Horários disponíveis para um call comigo. Aceito somente após contato prévio"
+                    link="/agenda"
+                />
             </div>
             <Footer />
             </motion.div>
