@@ -178,9 +178,10 @@ body {
   }
   a {
     color: $black;
-    :hover{
+    transition: color 0.1s, font-weight 0.1s;
+    &:hover{
       text-decoration: none;
-      font-style: bold;
+      font-weight: 500;
       cursor: pointer;
     }
   }
@@ -225,7 +226,7 @@ body {
     top: 2px;
   }
 
-  :hover{
+  &:hover{
     color: $black;
     transform: scale(1.05);
   }
@@ -287,6 +288,9 @@ body {
   &:hover{
     color: $white;
     background-color: $black;
+  }
+  @media(max-width:540px){
+    max-width:340px;
   }
 }
 
