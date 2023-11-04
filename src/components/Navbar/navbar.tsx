@@ -2,8 +2,6 @@ import './navbar.scss';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BsPersonCircle } from 'react-icons/bs';
-import { MdOutlineWork } from 'react-icons/md';
-import { AiOutlineCalendar } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 
 import { AiFillRead } from 'react-icons/ai';
