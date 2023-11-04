@@ -1,4 +1,5 @@
-import Navbar from '../../components/Navbar/navbar.tsx';
+import { Link } from 'react-router-dom';
+import { BiArrowBack } from 'react-icons/bi';
 import {  useEffect } from 'react';
 import { motion } from 'framer-motion';
 
@@ -32,7 +33,12 @@ export default function Agenda () {
 
     return(
         <div className = "agenda">
-            <Navbar />
+            <Link
+                to="/"
+                className="back-home-button"
+            >
+            <span className ="back-home-button__icon">< BiArrowBack /> Voltar </span>
+            </Link>
                 <motion.div 
                 className = "agenda__content"
                 initial="hidden"

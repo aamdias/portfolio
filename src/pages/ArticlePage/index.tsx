@@ -38,6 +38,12 @@ export default function ArticlePage () {
                     < ArticleContent />
                 </MDXProvider>
             </React.Suspense>
+            <Link
+                to="/conteudos"
+                className="see-all-content-button"
+            >
+                Ver mais conteúdo desse autor
+            </Link>
         </div>
     );
 }
