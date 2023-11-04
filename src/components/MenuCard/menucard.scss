@@ -13,6 +13,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     max-width: 552px;
     margin: 16px 0px 16px;
+    box-sizing: content-box;
     
     &:hover {
       transform: translateY(-5px);
@@ -47,9 +48,7 @@
     }
 
     @media (max-width: 540px){
-        max-width: calc(100% - 64px);
-        margin-right: 16px;
-        margin-left: 16px;
+        max-width: calc(100% - 48px);
     }
   }
   

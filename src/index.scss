@@ -272,28 +272,6 @@ body {
   line-height: 0.7rem;
 }
 
-.lead-gen{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid $light-gray;
-  border-radius: 8px;
-  padding: 16px;
-  color: $gray;
-  margin: 16px;
-  width: 100%;
-  &:hover{
-    color: $white;
-    background-color: $black;
-  }
-  @media(max-width:540px){
-    max-width:340px;
-  }
-}
-
 .see-all-content-button{
   color: #4F4F4F;
   font-family: Inter;

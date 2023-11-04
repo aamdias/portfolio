@@ -7,6 +7,8 @@ import copy from 'clipboard-copy';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 type ServiceProps = {
     title: string;
@@ -28,6 +30,20 @@ const fadeInVariants = {
   };
 
 export default function WorkWithMe () {
+
+    const location = useLocation();
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, [location.pathname]);
+
     const [isCopied,setIsCopied] = useState(false);
 
     const handleCopy = () => {
