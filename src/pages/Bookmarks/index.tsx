@@ -39,9 +39,6 @@ export default function BookmarksPage () {
                 < ArticleContent />
                 </MDXProvider>
             </React.Suspense>
-            <a href="#tally-open=w2Apq9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" className="lead-gen">
-                Tem interesse em uma lista 10x mais completa? <br/> Entre na lista de espera
-            </a>
         </div>
     );
 }

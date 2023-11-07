@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 import {  useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const fadeInVariants = {
     hidden: {
@@ -15,6 +16,19 @@ const fadeInVariants = {
   };
 
 export default function Agenda () {
+
+    const location = useLocation();
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, [location.pathname]);
 
     useEffect(() => {
 
