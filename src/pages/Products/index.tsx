@@ -35,9 +35,9 @@ export default function ProductsPage () {
                     <div className = "title">Produtos</div>
                     <div className = "subtitle">Soluções prontas, feitas do zero, por mim</div>
                     <MenuCard 
-                        title="aamdias.com"
-                        description="Esse site que você está navegando teve design e código feito do zero por mim, fique à vontade de usar ele como inspiração"
-                        link="https://github.com/aamdias/portfolio"
+                        title="TabTasks"
+                        description="ToDo list to help you focus on what you should accomplish in each browser tab"
+                        link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
                     />
                 </div>
                 <Footer />
