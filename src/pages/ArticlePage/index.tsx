@@ -5,10 +5,13 @@ import React from 'react';
 import { AiFillMediumSquare } from 'react-icons/ai';
 import articlesData from '../../data/articles.json';
 import { BiArrowBack } from 'react-icons/bi';
+import { FaCircleArrowRight } from "react-icons/fa6";
 
 
 export default function ArticlePage () {
     const { slug } = useParams<{ slug: string }>();
+
+    console.log(articlesData);
 
     const article = articlesData.find(article => article.slug === slug);
 
@@ -42,7 +45,8 @@ export default function ArticlePage () {
                 to="/conteudos"
                 className="see-all-content-button"
             >
-                Ver mais conteúdo desse autor
+                Ver mais conteúdo
+                <FaCircleArrowRight />
             </Link>
         </div>
     );
