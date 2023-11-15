@@ -29,7 +29,8 @@
 .article {
     display: flex;
     flex-direction: column;
-    max-width: 552px;
+    width: 552px;
+    box-sizing: border-box;
     margin: 16px 0px 16px;
     justify-content: center;
     align-items: flex-start;
@@ -120,6 +121,7 @@
   @media (max-width: 540px) {
     .article{
         max-width: 100%;
+        width: auto;
         &__contentwithphoto{
             display:flex;
             flex-direction: column-reverse;

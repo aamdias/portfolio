@@ -1,0 +1,115 @@
+import thumb from '/front-end-para-pms-thumb.png'
+import auxImg1 from '/front-end-para-pms-aux-img-1.png'
+import auxImg2 from '/front-end-para-pms-aux-img-2.png'
+import auxImg3 from '/front-end-para-pms-aux-img-3.png'
+
+<div className="post-layout">
+
+# Front-End para Product Managers
+
+**Guia sobre os principais conceitos e problemas que o Front se dispõe a resolver para Product Managers**
+
+<img src={thumb} alt="Imagem gerada por AI de um macbook na mesa" className="post-thumb"></img>
+
+Se você trabalha em um time onde tecnologia é usada para alcançar resultados de negócio, entender melhor como a tecnologia pode ser utilizada e saber co-construir com pessoas que têm essa capacidade é um diferencial.
+
+Como Product Manager de uma coding school (Trybe), tive a oportunidade de viver na pele a diferença que isso traz. E na minha visão, isso passa por entender melhor sobre alguns conceitos de áreas de conhecimento adjacentes à área de Product Management, como o universo de **desenvolvimento Front-End**.
+
+Meu objetivo aqui não é ensinar a programar Front e nem cuspir uma lista de termos usados por pessoas desenvolvedoras sem conexão, mas sim trazer os **principais conceitos** dessa área do conhecimento que ajudem uma pessoa de produto a:
+
+
+* Entender melhor que **problemas tecnologias Front-End resolvem** através de um melhor entendimento das suas capacidades e limitações;
+* Entender quais são as **principais tecnologias** usadas atualmente em aplicações **web**, para ser capaz de acompanhar limitações, atualizações e novas possibilidades; 
+* Ter uma **dimensão sobre a complexidade** de algumas mudanças, para saber quando se antecipar e/ou buscar mais informações;
+
+Se tudo ocorrer bem, após ler esse artigo e agir em cima desses aprendizados, a sua relação com pessoas que desenvolvem front-end nunca mais será a mesma. Chegue mais.
+
+<div className="three-dots">...</div>
+
+## O que é e quais problemas o Front-End resolve
+
+Indo direto ao ponto, o Front-End é a parte das aplicações que está "de frente" das pessoas usuárias. Tudo aquilo que as pessoas usuárias conseguem ver e interagir em uma determinada aplicação, seja através do celular ou computador, através de navegadores web ou aplicativos nativos, foi entregue através de tecnologias que fazem parte do Front-End. 
+
+Em alguns casos, uma aplicação pode sim ser composta somente por essa camada do Front-End. Entretanto, na grande maioria dos casos onde é exigida uma maior dinamicidade, segurança e personalização, Front-End por si só não é capaz de entregar todas as funcionalidades que essa aplicação exige. É nessa parte que entram outras camadas que compõem aplicações modernas, como o Back-End e o Banco de Dados.
+
+Para aterrizar um pouco, vou pegar um exemplo de um aplicativo que todos nós interagimos no dia a dia e entender o que é escopo de cada uma dessas camadas, e depois aprofundar no escopo do Front-End. Como amante de música que sou, vamos usar o **Spotify**.
+
+Essa é minha homepage do Spotify hoje (12 Nov 23):
+
+<img src={auxImg1} alt="Print screen do spotify na web" className="post-thumb"></img>
+
+Como dá pra ver, estou na fase de consumir conteúdo sobre negócios. Boas recomendações por aí inclusive! rs 
+
+Mas deixando o meu bom gosto de lado, essa tela tem muitas - mas muitas mesmo - funcionalidades que exigiram o uso de inúmeras tecnologias. Exemplos de funcionalidades contidas nesta tela:
+
+- Essa tela está protegida por email/senha e é única para cada pessoa usuária que acessá-la (**autenticação**)
+- As cores, fontes, espaçamentos e disposição dos elementos na página (layout) são únicas e conversam com a identidade visual do Spotify (**estilização**). 
+- Mesmo mudando o tamanho da tela, todos os elementos se re-organizam para garantir que a aplicação continue não só funcional, mas também intuitiva (**responsividade**)
+- Ao passar o mouse em cima dos elementos da página, esses elementos mudam levemente de estilo, dando um feedback para a pessoa usuária com o que ela está interagindo (**interatividade**). 
+- Ao clicar em vários desses elementos (como em qualquer podcast ou playlist), isso é utilizado como gatilho para navegação entre diferentes contextos (**navegação**)
+- Todos os elementos que foram utilizados nessa página se alimentam de dados dinâmicos e consistentes mesmo em diferentes dispositivos. Isto é, todas as playlists recomendadas, todos os podcasts listados e a música que estava em execução são dados que são os mesmos independentes se o acesso foi feito pelo computador ou pelo celular (**persistência de dados**)
+- Além disso, esses dados podem mudar para uma mesma pessoa usuária, à medida que ela usa usa o app, seja devido a recomendações personalizadas (**algoritmo de recomendação**) ou devido a regras embutidas na aplicação (**regras de negócio**), como sempre iniciar exibindo a playlist de "Liked Songs" no topo das playlists recomendadas no menu lateral.
+- O player presente na parte inferior da página é capaz de controlar a execução de qualquer música disponível na biblioteca do spotify, mesmo que o arquivo dessa música não exista no dispositivo que a pessoa usa para acessar a música (**streaming**)
+
+Isso tudo fica ainda mais surpreendente ao considerar que ela foi carregada por completo em poucos segundos (**performance**). Não é à toa que dizem que tecnologia parece magia!
+
+Tendo em vista isso, todas essas funcionalidades que eu citei e descrevi com exemplos, o que comumente é escopo de Front-End e o que é escopo de outras camadas (como Back-End e Banco de Dados)? Organizei isso no seguinte diagrama:
+
+<img src={auxImg2} alt="Diagrama comparando funcionalidades por tecnologia" className="post-thumb"></img>
+
+No bloco "Front-End" ficaram funcionalidades que comumente são resolvidas somente via alterações no Front-End. Já na interseção entre os blocos e no bloco "Back-End" ficaram funcionalidades que comumente exigem a atuação de outras tecnologias. Isso nos ajuda a entender que tecnologia é necessária a depender da funcionalidade que será adicionada :) 
+
+Com essa bagagem inicial em mente, agora podemos entender melhor quais tecnologias são usadas para resolver esses problemas.
+
+## Principais tecnologias atuais de Front-End na web
+
+As tecnologias usadas no front-end avançaram bastante nas últimas décadas. No início do século XXI, a internet era principalmente estática, com páginas web com foco em leitura, cheia de links e com pouca ou nenhuma interatividade. O site da amazon na época, por exemplo, era assim:
+
+<img src={auxImg3} alt="Print do site da Amazon no começo do século XXI" className="post-thumb"></img>
+
+Desde aquela época, os principais blocos de construção do front-end foram estabelecidos e são utilizados até hoje. São eles:
+
+- **HTML**: Linguagem de marcação para definir a hierarquia dos elementos de uma página web, responsável pela estrutura inicial de toda página e todo o seu conteúdo estático;
+- **CSS**: Linguagem de marcação responsável por estilizar os elementos usados no HTML
+- **Javascript**: Linguagem de programação criada para adicionar interatividade e dinamicidade nas páginas web. No início, apenas Javascript puro era utilizado, mas com o tempo tecnologias mais sofisticadas, mas baseadas em Javascript, foram entrando no mercado
+
+À medida que a necessidade por aplicações mais dinâmicas, interativas e intuitivas aumentou, a tecnologia foi acompanhando e o ferramental para construir novas aplicações foi ficando cada vez mais robusto! As peças do quebra cabeça ficaram cada vez mais sofisticadas.
+
+Nessa linha, esses são alguns dos principais exemplos de ferramentas que compõem o desenvolvimento de aplicações front-end para _web_:  
+
+- Frameworks de Javascript, como: **React**, **Vue**, **Angular**.Essas ferramentas são pacotes de soluções já prontas que aceleram bastante o desenvolvimento de aplicações dinâmicas e de fácil manutenção. Além disso, o padrão usado nessas tecnologias foi feito para a escala, onde muitas vezes várias seções se encontram **modularizadas**. Isso implica que o código para um botão, por exemplo, com toda a sua funcionalidade e estilo, foi feito apenas 1 vez mas pode ser reutilizado quantas vezes for necessário.
+- Bundlers de Javascript, como **Webpack**, **Vite**, **esbuild**. Essas ferramentas foram feitas para superar a limitação de como navegadores interpretam páginas web complexas. Eles transformam códigos facilmente compreensíveis por humanos em formatos otimizados para rápida interpretação e carregamento pelo navegador! São a "cola" entre o que a máquina entende e a base de código que pessoas que desenvolvem efetivamente trabalham.
+- Frameworks para gerenciamento de estado como **Redux**, **Zustand**. Em aplicações modernas é comum que um mesmo componente tenha diversos estados diferentes. Um mesmo botão pode mudar de cor, tamanho e conteúdo à medida que a pessoa interage com uma aplicação, e cada uma dessas mudanças está associada a um estado. À medida que o gerenciamento desses estados se tornou mais complexo, soluções prontas como Redux e Zustand foram criadas para facilitar esse gerenciamento em escala. 
+
+Esses foram alguns exemplos de tecnologias modernas e por que delas existem, mas a tendência é clara: Acelerar e potencializar o desenvolvimento de novas aplicações. 
+
+Por último, ainda em tendências do que está na ponta do desenvolvimento de front, especialmente no contexto de web, sugiro acompanhar a **Vercel**, os criados de um framework chamado **Next.js** que constroi em cima do React a capacidade de desenvolvimento de aplicações modernas, full-stack (contemplando o front e o back-end) e baseadas em uma mesma linguagem de programação (Javascript ou Typescript).
+
+## Avaliando melhor a complexidade de uma mudança no Front
+
+Com todo esse contexto em mente, conseguimos entender mais sobre o universo do Front-End e isso pode nos ajudar a ter um melhor senso sobre a complexidade de novas soluções.
+
+Avaliar a real complexidade de uma alteração no Front-end é uma tarefa para uma pessoa especialista na **área** e no **contexto** no qual essa tecnologia está sendo aplicada. Por aqui, vou compartilhar minha leitura de alguns ajustes comuns e como ter ao menos uma primeira interpretação:
+
+- "Precisamos alterar o **conteúdo** da página. Os textos não estão vendedores o suficiente" => Se a alteração for de textos estáticos - isto é, que não mudam independente de quem estiver acessando a aplicação, então isso geralmente é escopo de Front-end e é, em geral, uma alteração simples. Se envolver alteração em textos dinâmicos, vai depender de como o Front-End se comunica com o Back-end, o que é assunto para outro artigo.
+- "Precisamos ajustar a **disposição dos elementos** em uma página para destacar mais um elemento em detrimento de outro, sem mudar o conteúdo e/ou dados que esses elementos usam" **=>** Geralmente exige somente Front-end do ponto de vista de tecnologia. A complexidade aqui aumenta com o tamanho da alteração em relação ao layout atual e geralmente envolve a atuação de uma pessoa especialista em UX/UI
+- "Precisamos adaptar a **navegação** do nosso site. A atual está confusa e as pessoas não encontram tudo que tem acesso" => Se não envolver alteração de permissão para acesso de páginas específicas, então é um problema que geralmente exige somente Front-end do ponto de vista de tecnologia. Além disso, navegação antes de ser um problema de tecnologia é um problema de UX, então conceber uma boa solução aqui exige um bom trabalho prévio de entender a arquitetura da informação.
+- "Já temos uma listagem dinâmica de vários **elementos parecidos** no nosso site. São mais de 1000 elementos e precisamos ajustar o mais rápido possível" => Se a alteração for a mesma em todos esses elementos e eles estiverem modularizados - o que é uma prática comum nos frameworks que citei anteriormente - então isso é escopo de Front e é uma tarefa que não depende do número de elementos. Agora se alteração for nos dados que esses componentes utilizam ou na quantidade de elementos, então isso vira escopo de outras camadas tecnológicas.  
+
+Entender o que é escopo de Front e as tecnologias utilizadas, ajuda a fazer um primeiro filtro sobre complexidade. Agora na prática, para gerar resultados concretos e ser capaz de alinhar bem a expectativa de stakeholders de times de tecnologia, colaborar bem com pessoas especialistas é o mais importante.
+
+Não faça o trabalho de uma pessoa front-end no seu lugar. Use esse conhecimento para conversar melhor, ter mais empatia, e explorar as potencialidades e as formas de como essas pessoas podem gerar ainda mais valor no negócio.
+
+<div className="three-dots">...</div>
+
+Nesse artigo, espero ter facilitado a digestão desses aprendizados para mais pessoas através da minha perspectiva sobre esse assunto :) 
+
+Agradeço a quem chegou até aqui! Espero que tenha provocado boas reflexões e trazido sugestões que possam ser aplicáveis no seu dia a dia. Quem tiver interesse, adoraria ouvir sugestões e comentários sobre esse texto. Vamos juntos.
+
+**Apêndice**
+
+_Sobre a Trybe:_
+
+Nossa visão é ser a primeira escolha de preparação para profissões digitais na América Latina. Hoje temos uma formação de Desenvolvimento Full Stack que já empregou aproximadamente 2 mil pessoas desde nossa fundação em 2019. Nos vejo como uma escola obstinada com o sucesso profissional das nossas pessoas estudantes e que não mede esforços para construir produtos e serviços baseados em tecnologia que cobrem toda a jornada das pessoas estudantes conosco, desde o processo de seleção, curso, experiência de aprendizado, procura por trabalho e financiamento dos estudos. É uma escola de tech que é construída com as melhores práticas de startups tech, não se limitando às estruturas tradicionais de ensino. Para mais informações: betrybe.com.
+
+</div>

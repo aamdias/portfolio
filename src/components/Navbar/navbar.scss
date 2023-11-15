@@ -22,7 +22,7 @@
     backdrop-filter: blur(10px);
     border-radius: 24px;
     padding: 0px 16px 0px;
-    width: 360px;
+    width: 368px;
     height: 48px;
     justify-content: space-between;
     box-sizing: border-box;
@@ -41,7 +41,7 @@
 .navlink {
     text-decoration: none;
     color: $light-gray;
-    padding: 8px 8px;
+    padding: 6px 10px;
     position: relative;
     overflow: hidden;
     font: Inter;
@@ -67,6 +67,9 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+    }
+    @media(max-width:540px){
+        padding: 8px 8px;
     }
 }
 

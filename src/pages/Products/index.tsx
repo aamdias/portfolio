@@ -39,6 +39,11 @@ export default function ProductsPage () {
                         description="ToDo list to help you focus on what you should accomplish in each browser tab"
                         link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
                     />
+                    <MenuCard 
+                        title="Draft Mate"
+                        description="GPT made to assist non-fiction writers in creating awesome content"
+                        link="https://chat.openai.com/g/g-Hr3ns63JA-draft-mate"
+                    />
                 </div>
                 <Footer />
             </motion.div>

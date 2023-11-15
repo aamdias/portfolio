@@ -22,5 +22,13 @@
       "thumbnail":"/custo-oculto-thumbnail.png",
       "slug":"custo-oculto",
       "externalLink": "https://medium.com/@aamdias/o-custo-oculto-que-drena-produtividade-a43b34c502a7"
+    },
+    {
+      "title": "Front-End para Product Managers",
+      "description": "Guia sobre os principais conceitos e problemas que o Front se dispõe a resolver para Product Managers",
+      "publishedDate": "15 de Novembro de 2023",
+      "thumbnail":"/front-end-para-pms-thumb.png",
+      "slug":"front-end-para-pms",
+      "externalLink": "https://medium.com/@aamdias/"
     }
   ]
