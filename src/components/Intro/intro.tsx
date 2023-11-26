@@ -37,8 +37,8 @@ function Intro() {
             <div className="profile-pic-container" style={{display: isImageLoaded ? 'none': 'inline'}}>
                 <Blurhash 
                         hash="Lj9S-,uhPWo_tTjXRkafNHj]xCW="
-                        width={isScreenWidthLarge? 180: 120}
-                        height={isScreenWidthLarge? 180: 120}
+                        width={isScreenWidthLarge? 148: 120}
+                        height={isScreenWidthLarge? 148: 120}
                         resolutionX={32}
                         resolutionY={32}
                         punch={1}
