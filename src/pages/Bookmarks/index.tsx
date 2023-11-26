@@ -27,6 +27,7 @@ export default function BookmarksPage () {
     return(
         <div className = "bookmarks-page">
             <div className="bookmarks-top-navigation">
+                
                 <Link
                     to="/conteudos"
                     className="back-home-button"
