@@ -199,13 +199,49 @@ body {
   }
   a {
     color: $black;
-    transition: color 0.1s, font-weight 0.1s;
+
     &:hover{
       text-decoration: none;
-      font-weight: 500;
       cursor: pointer;
     }
   }
+}
+
+.update-date{
+  display: block;
+  line-height: 10px;
+  margin: 0px;
+  padding: 0px;
+  color:$light-gray;
+  font-size: 14px;
+}
+
+.post-badge{
+  display: flex;
+  flex-direction: row;
+  padding: 4px 12px;
+  border-radius: 32px;
+  align-items: center;
+  height: auto;
+  width: fit-content;
+  gap: 8px;
+  text-decoration: none;
+  background-color: $extra-light-gray;
+  border: 1px solid $light-gray;
+
+  &__img{
+    border-radius: 50%;
+    height: 28px;
+  }
+  &__text{
+    color: $dark-gray;
+    font-size: 14px;
+  }  
+  &:hover {
+      border: 1px solid $dark-gray;
+      text-decoration: none;
+  }
+
 }
 
 .article-top-navigation{
