@@ -7,7 +7,6 @@ import articlesData from '../../data/articles.json';
 import { BiArrowBack } from 'react-icons/bi';
 import { FaCircleArrowRight } from "react-icons/fa6";
 
-
 export default function ArticlePage () {
     const { slug } = useParams<{ slug: string }>();
 
@@ -22,6 +21,7 @@ export default function ArticlePage () {
     return(
         <div className = "article-page">
             <div className="article-top-navigation">
+            
                 <Link
                     to="/"
                     className="back-home-button"

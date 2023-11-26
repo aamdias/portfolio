@@ -207,6 +207,15 @@ body {
   }
 }
 
+.article-author-and-date{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  width: fit-content;
+  gap: 8px;
+}
+
 .update-date{
   display: block;
   line-height: 10px;
@@ -315,18 +324,6 @@ body {
   @media(max-witdh=600px){
     max-width: 320px;
   }
-}
-
-.date-tag{
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: $extra-light-gray;
-  color: $gray;
-  width: fit-content;
-  padding: 8px 10px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  line-height: 0.7rem;
 }
 
 .see-all-content-button{
