@@ -35,14 +35,14 @@ export default function ProductsPage () {
                     <div className = "title">Produtos</div>
                     <div className = "subtitle">Soluções prontas, feitas do zero, por mim</div>
                     <MenuCard 
+                        title="Jamflow"
+                        description="App to help musicians choose what to play next and engage with their audience"
+                        link="https://www.jamflow.io"
+                    />
+                    <MenuCard 
                         title="TabTasks"
                         description="ToDo list to help you focus on what you should accomplish in each browser tab"
                         link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
-                    />
-                    <MenuCard 
-                        title="Draft Mate"
-                        description="GPT made to assist non-fiction writers in creating awesome content"
-                        link="https://chat.openai.com/g/g-Hr3ns63JA-draft-mate"
                     />
                 </div>
                 <Footer />
