@@ -35,6 +35,11 @@ export default function ProductsPage () {
                     <div className = "title">Produtos</div>
                     <div className = "subtitle">Soluções prontas, feitas do zero, por mim</div>
                     <MenuCard 
+                        title="Plan My Sets"
+                        description="Ever found yourself unsure of what to do at the gym? Try this app"
+                        link="https://www.planmysets.com"
+                    />
+                    <MenuCard 
                         title="Jamflow"
                         description="App to help musicians choose what to play next and engage with their audience"
                         link="https://www.jamflow.io"
