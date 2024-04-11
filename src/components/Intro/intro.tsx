@@ -48,7 +48,7 @@ function Intro() {
                 <img src={profilePic} alt="Profile of Alan Dias" loading="lazy" className="profile-pic"></img>
             </div>
             <h1 className="name_title">Alan Dias</h1>
-            <h2 className="subtitle">Entusiasta de empreendedorismo, tecnologia e eeducação. Adoro construir produtos digitais que fazem a diferença</h2>
+            <h2 className="subtitle">Entusiasta de empreendedorismo, tecnologia e educação. Adoro construir produtos digitais que fazem a diferença</h2>
             <div className="social-logos">
                 <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
                     <BsLinkedin className="social-logo"/>
