@@ -48,7 +48,7 @@ function Intro() {
                 <img src={profilePic} alt="Profile of Alan Dias" loading="lazy" className="profile-pic"></img>
             </div>
             <h1 className="name_title">Alan Dias</h1>
-            <h2 className="subtitle">Entusiasta de empreendedorismo, educação e tecnologia. Adoro construir produtos digitais que fazem a diferença</h2>
+            <h2 className="subtitle">Entusiasta de empreendedorismo, tecnologia e eeducação. Adoro construir produtos digitais que fazem a diferença</h2>
             <div className="social-logos">
                 <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
                     <BsLinkedin className="social-logo"/>
@@ -58,7 +58,7 @@ function Intro() {
                 </a>
             </div>
             <div className="paper">
-            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> construindo o futuro da educação de tecnologia na <a href="https://www.betrybe.com" target="_blank" className="text-link">Trybe</a><br/><br/>
+            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> redesenhando a forma como usamos tecnologia para integir com informação jurídica na <a href="https://www.jusbrasil.com.br" target="_blank" className="text-link">Jusbrasil</a><br/><br/>
 
 Sou <span className="highlight">formado no ITA</span>, e profissionalmente tenho mais de <span className="highlight">5 anos de experiência</span> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados <br/><br/>
 
