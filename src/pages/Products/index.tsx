@@ -35,9 +35,9 @@ export default function ProductsPage () {
                     <div className = "title">Produtos</div>
                     <div className = "subtitle">Soluções prontas, feitas do zero, por mim</div>
                     <MenuCard 
-                        title="Plan My Sets"
-                        description="Ever found yourself unsure of what to do at the gym? Try this app"
-                        link="https://www.planmysets.com"
+                        title="Maromba AI"
+                        description="Nunca mais fique parado na academia. Criador de exercícios para academia com IA"
+                        link="https://www.marombaai.com"
                     />
                     <MenuCard 
                         title="Jamflow"
