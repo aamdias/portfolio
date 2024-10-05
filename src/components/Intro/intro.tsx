@@ -58,7 +58,7 @@ function Intro() {
                 </a>
             </div>
             <div className="paper">
-            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> redesenhando a forma como usamos tecnologia para integir com informação jurídica na <a href="https://www.jusbrasil.com.br" target="_blank" className="text-link">Jusbrasil</a><br/><br/>
+            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> redesenhando a forma como usamos tecnologia para interagir com informação jurídica no <a href="https://www.jusbrasil.com.br" target="_blank" className="text-link">Jusbrasil</a><br/><br/>
 
 Sou <span className="highlight">formado no ITA</span>, e profissionalmente tenho mais de <span className="highlight">5 anos de experiência</span> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados <br/><br/>
 
