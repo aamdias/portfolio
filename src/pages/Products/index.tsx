@@ -53,21 +53,24 @@ export default function ProductsPage() {
                 >
                     <MenuCard 
                         title="Maromba AI"
-                        description="Nunca mais fique parado na academia. Criador de exercícios para academia com IA"
+                        description="Crie treinos personalizados, acompanhe seu progresso e mude sua relação com a academia com o MarombaAI. Inteligência Artificial para o seu treino."
                         link="https://www.marombaai.com"
                         isExternalLink
+                        image="maromba-ai-screenshot.png"
                     />
                     <MenuCard 
                         title="dralorraine.com"
                         description="Website para divulgar serviços e produtos da Dra Lorraine, R1 de Dermato da UNICAMP e minha querida esposa"
                         link="https://www.dralorraine.com"
                         isExternalLink
+                        image="dralorraine-screenshot.png"
                     />
                     <MenuCard 
                         title="TabTasks"
                         description="ToDo list to help you focus on what you should accomplish in each browser tab"
                         link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
                         isExternalLink
+                        image="tabtasks-sreenshot.png"
                     />
                 </motion.div>
             </motion.div>
