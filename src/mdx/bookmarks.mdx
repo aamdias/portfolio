@@ -1,4 +1,5 @@
-import profilePic from '/new-profile-pic.png'
+import profilePic from '/alan-nyc-1.png'
+import BookmarkCard from '../components/BookmarkCard/bookmarkcard'
 
 <div className="post-layout">
 
@@ -10,9 +11,12 @@ Atualizado em 26 de Nov 2023
 
 Lista pública dos melhores conteúdos que eu já consumi separados por área do conhecimento
 
-<a className= "post-badge" href="/">
-    <img src={profilePic} alt="profile-pic" className="post-badge__img" />
-    <span className= "post-badge__text" > Alan Dias</span>
+<a className="post-badge" href="/">
+    <img src={profilePic} alt="Alan Dias" className="post-badge__img" />
+    <div className="post-badge__content">
+        <span className="post-badge__label">Curado por</span>
+        <span className="post-badge__name">Alan Dias</span>
+    </div>
 </a>
 
 ## Product Management
@@ -23,34 +27,65 @@ Aprendizados e exemplos práticos em gestão de produtos digitais
 
 ### Livros
 
-- [ Escaping the Build Trap, by Melissa Perri](https://www.amazon.com.br/Escaping-Build-Trap-Effective-Management-ebook/dp/B07K3QBWG1/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=&_encoding=UTF8&tag=aamdiasreco0a-20&linkCode=ur2&linkId=cb699ccbd0b8d6963cda757230c76334&camp=1789&creative=9325)
-- [ Continuous Discovery Habits, by Teresa Torres](https://www.amazon.com.br/Continuous-Discovery-Habits-Discover-Products-ebook/dp/B094PVB97X/ref=sr_1_1?crid=1EX67L7Q8CA3H&amp;keywords=continuous+discovery+habits&amp;qid=1701040477&amp;s=digital-text&amp;sprefix=continuos+dis,digital-text,317&amp;sr=1-1&_encoding=UTF8&tag=aamdiasreco0a-20&linkCode=ur2&linkId=fc517ce377614069eb6d612f60c3dd00&camp=1789&creative=9325)
-- [ Shape Up, by Basecamp](https://basecamp.com/shapeup)
+<BookmarkCard 
+    title="Escaping the Build Trap"
+    link="https://www.amazon.com.br/Escaping-Build-Trap-Effective-Management-ebook/dp/B07K3QBWG1"
+>
+    How Effective Product Management Creates Real Value, by Melissa Perri
+</BookmarkCard>
+
+<BookmarkCard 
+    title="Continuous Discovery Habits"
+    link="https://www.amazon.com.br/Continuous-Discovery-Habits-Discover-Products-ebook/dp/B094PVB97X"
+>
+    Discover Products that Create Customer Value and Business Value, by Teresa Torres
+</BookmarkCard>
+
+<BookmarkCard 
+    title="Shape Up"
+    link="https://basecamp.com/shapeup"
+>
+    Stop Running in Circles and Ship Work that Matters, by Basecamp
+</BookmarkCard>
 
 ### Podcasts
 
-- [ Transição de carreira | Mariana Penido, VP de Produtos e Operações do Isaac, Deep Growth Podcast](https://open.spotify.com/episode/3oMv69mGuVllJ8pHcxNBo9?si=dba9d05b26f34114)
-- [ Lessons from scaling Stripe, Lenny's Podcast](https://open.spotify.com/episode/2FzW8RcTu6XK3NExlHJrVF?si=9c63a69131234e68)
-- [ Mastering Onboarding | Lauryn Isford (Head of Product at Airtable), Lenny's Podcast](https://open.spotify.com/episode/0a9piZBbOdJDzZ8OxTeSeP?si=3ddfa9f09243410f)
-- [ Caio Tozzini na Booking, Produto pelo Mundo](https://open.spotify.com/episode/1Gg3f597N3P5TuV4eihVUh?si=678b8fb55bc8476d)
+<BookmarkCard 
+    title="Transição de carreira | Mariana Penido"
+    link="https://open.spotify.com/episode/3oMv69mGuVllJ8pHcxNBo9"
+>
+    VP de Produtos e Operações do Isaac, Deep Growth Podcast
+</BookmarkCard>
+
+<BookmarkCard 
+    title="Lessons from scaling Stripe"
+    link="https://open.spotify.com/episode/2FzW8RcTu6XK3NExlHJrVF"
+>
+    Insights on scaling one of the most successful fintech companies, Lenny's Podcast
+</BookmarkCard>
 
 ### Artigos
 
-- [9 lessons from my 10 years working in product](https://www.reddit.com/r/ProductManagement/comments/p14pzi/9_lessons_from_my_10_years_working_in_product/)
-- [What is takes to become a gret Product Manager, HBS](https://hbr.org/2017/12/what-it-takes-to-become-a-great-product-manager#:~:text=Executive%20Summary,the%20right%20company%20for%20them)
-- [Opportunity Solution Tree, by Teresa Torres](https://www.producttalk.org/2016/08/opportunity-solution-tree/)
-- [ Time de Funcionalidades VS Time de de Produtos | Gyaco](https://www.gyaco.com/2022/11/time-de-funcionalidades-vs-time-de-produtos/)
-- [ How Facebook builds Product](https://productlife.to/p/-execution-at-facebook)
-- [ How superman built an engine to find Product Market Fit](https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit)
-- [ Design Docs at Google](https://www.industrialempathy.com/posts/design-docs-at-google/)
+<BookmarkCard 
+    title="9 lessons from my 10 years working in product"
+    link="https://www.reddit.com/r/ProductManagement/comments/p14pzi/9_lessons_from_my_10_years_working_in_product/"
+>
+    Key learnings and insights from a decade in product management
+</BookmarkCard>
 
-### Sites interativos
+<BookmarkCard 
+    title="What it takes to become a great Product Manager"
+    link="https://hbr.org/2017/12/what-it-takes-to-become-a-great-product-manager"
+>
+    Harvard Business Review's comprehensive guide on product management excellence
+</BookmarkCard>
 
-- [Product Prioritization Techniques](https://www.career.pm/briefings/product-prioritization-techniques)
-
-### Vídeos 
-
-- [ The Art Of Product Management with Sachin Rekhi](https://youtu.be/huTSPanUlQM?si=tMarfSY6yIYtBGr_)
+<BookmarkCard 
+    title="Opportunity Solution Tree"
+    link="https://www.producttalk.org/2016/08/opportunity-solution-tree/"
+>
+    A visual aid that helps product teams connect the dots between their product work and their desired business outcomes
+</BookmarkCard>
 
 ## Business
 
@@ -60,29 +95,28 @@ Enfoque nos desafios para construir e escalar tech startups
 
 ### Livros
 
-- [ Build: An Unorthodox Guide to make things Worth Making, by Tony Fadell](https://www.amazon.com.br/Build-Unorthodox-Making-Things-English-ebook/dp/B09BNJ6GBV?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1BWBVJ14PT1QZ&keywords=build&qid=1701040581&s=digital-text&sprefix=build%2Cdigital-text%2C380&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=7db0beb0f6dacf6eb1582dbed82d05b2&language=pt_BR&ref_=as_li_ss_tl)
-- [ No Rules Rules. Netflix and the Culture of Reinvention ](https://www.amazon.com.br/No-Rules-Netflix-Culture-Reinvention-ebook/dp/B081Y3R657?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=S2DPY6DUUQE3&keywords=no+rules+rules&qid=1701040647&s=digital-text&sprefix=no+rules+rul%2Cdigital-text%2C273&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=ceac2a44e2e21f5c376a428aa6b5a7e3&language=pt_BR&ref_=as_li_ss_tl)
-- [ $100M Offers: How to Make offers so good people feel stupid saying no, by Alex Hormozi](https://www.amazon.com.br/100M-Offers-People-Stupid-English-ebook/dp/B099QVG1H8?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3F3IF7UY84J3D&keywords=100+offers&qid=1701040679&s=digital-text&sprefix=100+offer%2Cdigital-text%2C339&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=9922cdcdf175f362473028a2adbe441e&language=pt_BR&ref_=as_li_ss_tl)
-- [ Never split the difference, by Chriss Voss](https://www.amazon.com.br/Never-Split-Difference-Negotiating-Depended-ebook/dp/B014DUR7L2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=T2K3DFK1D1BB&keywords=never+split+the+difference&qid=1701040706&s=digital-text&sprefix=never+split+the+differen%2Cdigital-text%2C235&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=733378e54ce56fcf7eb5e9395f355625&language=pt_BR&ref_=as_li_ss_tl)
+<BookmarkCard 
+    title="Build: An Unorthodox Guide to Making Things Worth Making"
+    link="https://www.amazon.com.br/Build-Unorthodox-Making-Things-English-ebook/dp/B09BNJ6GBV"
+>
+    Tony Fadell's practical and inspiring guide to building products and companies
+</BookmarkCard>
+
+<BookmarkCard 
+    title="No Rules Rules: Netflix and the Culture of Reinvention"
+    link="https://www.amazon.com.br/No-Rules-Netflix-Culture-Reinvention-ebook/dp/B081Y3R657"
+>
+    Reed Hastings and Erin Meyer on Netflix's innovative culture and management style
+</BookmarkCard>
 
 ### Podcasts
 
-- [ Twitter is still up ](https://open.spotify.com/episode/4iBw7J8MvffXJldOK9pdr8?si=ErSxTyddSr60ph7kV55_uQ)
-- [ A História por trás da venda bilionária da 99, Lado Difícil](https://open.spotify.com/episode/3wnaCRQ1Spj1VZ2rzcPNPY?si=d419b9e100554489)
-- [ Liderança e cultura: Por trás do crescimento DO NUBANK, Os Sócios Podcast](https://open.spotify.com/episode/78wjjSRrBwFzCUg54Rndeg?si=43f7857b6b264934)
-- [ Patrick Sigrist, Fundador do iFood e da Nomad, Podcast Oficial da Brazil at Silicon Valley](https://open.spotify.com/episode/463y6rZR68lQWCOGHUWeXX?si=0dfd771fe93745d8)
-- [ The art and science of Pricing, Lenny's Podcast](https://open.spotify.com/episode/11pgcT9I6DqUILuL0Jy1I4?si=2557d16ae6424b37)
-- [ Why Technology still matters with Marc Andreessen](https://open.spotify.com/episode/2BYIl3NSFcxRTVCkSFgXdZ?si=44ea94cf9bef41ab)
-- [ Mark Zuckerberg: Meta, Facebook, Instagram, and the Metaverse, Lex Fridman Podcast](https://open.spotify.com/episode/2CBS44Q2aTOvMR2gxIAdmp?si=ae9c4b1d21cd4e9a)
-- [ Um guia para o trabalho remoto (ou distribuído) com Pier e Trybe, Canary Cast](https://open.spotify.com/episode/3XbCOhiWf5OXiGnwWLKudh?si=b6674919ee704033)
-- [ How to know if you've got product market fit, Starting Greatness](https://open.spotify.com/episode/7GxixoVqtprGcyo52gFXpI?si=14ca9b8574ab4735)
-
-### Vídeos
-
-- [ Think Fast, Talk Smart: Communication Techniques, Stanford Graduate School of Business](https://youtu.be/HAnw168huqA?si=kUt0TZd1qs2tL3fX)
-- [ Playlist sobre Network Effects da NFX](https://youtu.be/CeUreogZq18?si=XJzxMCozHMnF9FTu)
-- [ Alexandre Liuzzi | Co-Founder na Remessa Online | Giga Cast](https://www.youtube.com/watch?v=zY1qUEUrhyA)
-
+<BookmarkCard 
+    title="Mark Zuckerberg: Meta, Facebook, Instagram, and the Metaverse"
+    link="https://open.spotify.com/episode/2CBS44Q2aTOvMR2gxIAdmp"
+>
+    Lex Fridman's in-depth conversation with Mark Zuckerberg about Meta's vision
+</BookmarkCard>
 
 ## Design & UX
 
@@ -90,47 +124,20 @@ Enfoque nos desafios para construir e escalar tech startups
 
 Design não é só fazer soluções bonitas. Quem cria soluções que resolvem problemas reais, precisa entender de Design. Foco aqui em soluções para o digital
 
-### Livros
-
-- [ Enviesados: Psicologia e Vieses Cognitivos no Design para criar produtos e serviços que ajudam usuários a tomarem as melhores decisões. Por Rian Dutra](https://www.amazon.com.br/ENVIESADOS-Psicologia-Cognitivos-produtos-servi%C3%A7os-ebook/dp/B0BMJPS4K3?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=25A6RBRQARTPD&keywords=enviesados&qid=1701040743&s=digital-text&sprefix=enviesado%2Cdigital-text%2C269&sr=1-3&linkCode=ll1&tag=aamdiasreco0a-20&linkId=ae2ca10393752d7f8a923ed7346b02db&language=pt_BR&ref_=as_li_ss_tl)
-- [ The Mom Test: How to talk to customers & learn if your business is a good idea when everyone is lying to you, by Rob Fitzpatrick](https://www.amazon.com.br/Teste-M%C3%A3e-conversar-clientes-descobrir-ebook/dp/B07QM7ZS7Q?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3UVK0TYQE7MPE&keywords=the+mom+test&qid=1701040773&s=digital-text&sprefix=the+mom+tes%2Cdigital-text%2C282&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=2ca5188c3f21d58f472ccc7ef9396b2f&language=pt_BR&ref_=as_li_ss_tl)
-- [ Redação Estratégica para UX, por Torrey  Podmajersky](https://www.amazon.com.br/Reda%C3%A7%C3%A3o-Estrat%C3%A9gica-para-engajamento-convers%C3%A3o-ebook/dp/B07ZJNXMGC?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LWR2B37QGKC9&keywords=reda%C3%A7%C3%A3o+estrat%C3%A9gica+para+ux&qid=1701040806&s=digital-text&sprefix=reda%C3%A7%C3%A3o+estrat%C3%A9gica+para+u%2Cdigital-text%2C226&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=ef618deb7edb4033ede95e8b747614dd&language=pt_BR&ref_=as_li_ss_tl)
-- [ Design for How People Learn, por Julie Dirksen](https://www.amazon.com.br/Design-People-Voices-Matter-English-ebook/dp/B018OJP5QW?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=B7EC77U8PZXN&keywords=design+for+how+people+learn&qid=1701040835&s=digital-text&sprefix=design+for+how+people+learn%2Cdigital-text%2C223&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=3bfa1a0e2412c425a008e3dc44bc933c&language=pt_BR&ref_=as_li_ss_tl)
-
-### Artigos
-
-- [ The Business Value of Design](https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design)
-- [ Why you only need to test with 5 users](https://www.notion.so/UI-Checklist-d47ae9676a004a9b9d942a7908ac9efd)
-
 ### Sites interativos
 
-- [ Human Interface Guidelines, Apple](https://developer.apple.com/design/human-interface-guidelines)
-- [ Built for Mars ](https://builtformars.com/)
-- [ Laws of UX](https://lawsofux.com/)
-- [ UI Checklist](https://www.notion.so/UI-Checklist-d47ae9676a004a9b9d942a7908ac9efd)
-- [ Checklist Design, a collection of design best practices ](https://www.checklist.design/) 
+<BookmarkCard 
+    title="Laws of UX"
+    link="https://lawsofux.com/"
+>
+    Collection of best practices that designers can consider when building user interfaces
+</BookmarkCard>
 
-### Vídeos 
-
-- [ Top 10 Web-Design Mistakes, NNGroup](https://youtu.be/VGxze7xMYJs?si=5XHYV1FVBN15dCtU)
-- [ The Laws of UX - 19 Psychological Design Principles](https://youtu.be/fYs2Mdyasuc?si=Q-julEBrwXA-DGXR)
-- [ The tree ways that good Design makes you happy](https://youtu.be/RlQEoJaLQRA?si=rImCxiK_Vp1ElCqf)
-- [ How to Make Education as addictive as Social Media, Luis Von Ahn](https://www.youtube.com/watch?v=P6FORpg0KVo)
-
-## Educação
-
----
-
-Aprendizados sobre a indústria que tem maior potencial para melhorar a humanidade no longo prazo
-
-### Livros
-
-- [ A Ignorância Custa um Mundo, por Gustavo Ioschpe](https://www.amazon.com.br/ignor%C3%A2ncia-custa-mundo-educa%C3%A7%C3%A3o-desenvolvimento-ebook/dp/B01M1A0EU6?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2UQMIZ6SPIK1G&keywords=a+ignor%C3%A2ncia+custa+um+mundo&qid=1701040870&s=digital-text&sprefix=a+ignor%C3%A2ncia+custa+um+mundo%2Cdigital-text%2C214&sr=1-1&linkCode=ll1&tag=aamdiasreco0a-20&linkId=843db7d6e436c08681894fdf160703ca&language=pt_BR&ref_=as_li_ss_tl)
-
-### Podcasts
-
-- [ The Question of Education, a16z Podcast ](https://open.spotify.com/episode/321hp14R13pX8dpAset5eL?si=41350e165a7547ff)
-- [ O ensino de programação no Brasil e no mundo, com Matheus Goyas ](https://open.spotify.com/episode/67psJtgbetil1mhByUBpUT?si=00ff54bf8b774bf1)
-
+<BookmarkCard 
+    title="Built for Mars"
+    link="https://builtformars.com/"
+>
+    UX case studies and analysis of the world's best products
+</BookmarkCard>
 
 </div>
