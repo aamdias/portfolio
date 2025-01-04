@@ -41,7 +41,7 @@ function Intro() {
                             variants={slideUp}
                         >
                             <h1 className="intro__title">
-                                Oie! Me chamo <span className="intro__accent">Alan</span>
+                                Oi! Me chamo <span className="intro__accent">Alan</span>
                             </h1>
                             <p className="intro__role">
                                 Product Manager no{' '}
