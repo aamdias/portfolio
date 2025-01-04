@@ -35,7 +35,7 @@ export default function MenuCard({ title, description, link, isExternalLink = fa
         <>
             {image && (
                 <div className="card__image">
-                    <img src={`/public/${image}`} alt={title} />
+                    <img src={`${image}`} alt={title} />
                 </div>
             )}
             {Icon && (
