@@ -1,0 +1,53 @@
+@import './../../styles/variables';
+
+.bookmark-card {
+    display: block;
+    background: white;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.02);
+        border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &__content {
+        padding: 1.25rem;
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $black;
+        margin: 0 0 0.5rem;
+        line-height: 1.4;
+    }
+
+    &__description {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: $gray;
+        margin: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .bookmark-card {
+        margin-bottom: 0.75rem;
+
+        &__content {
+            padding: 1rem;
+        }
+
+        &__title {
+            font-size: 0.9375rem;
+        }
+
+        &__description {
+            font-size: 0.8125rem;
+        }
+    }
+} 
