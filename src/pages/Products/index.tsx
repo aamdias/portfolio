@@ -2,61 +2,76 @@ import Navbar from '../../components/Navbar/navbar.tsx';
 import { motion } from 'framer-motion';
 import MenuCard from '../../components/MenuCard/menucard.tsx';
 import Footer from '../../components/Footer/footer.tsx';
+import './products.scss';
 
-const fadeInVariants = {
-    hidden: {
-      opacity: 0,
-      y: -50, 
-    },
+const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      y: 0,
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
     }
-  };
+};
 
-export default function ProductsPage () {
-    return(
-        <div className="products-page">
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5
+        }
+    }
+};
+
+export default function ProductsPage() {
+    return (
+        <div className="page">
             <Navbar />
             <motion.div 
-                className = "products-page__content"
+                className="page__content"
                 initial="hidden"
                 animate="visible"
-                variants={fadeInVariants}
-                transition={{ 
-                    ease: "easeOut", 
-                    type: "spring", 
-                    stiffness: 80,   
-                    delay: 0.2,      
-                    duration: 2.5    
-                }}  
+                variants={containerVariants}
+            >
+                <motion.div 
+                    className="page__header"
+                    variants={itemVariants}
                 >
-                <div className = "content-wrapper">
-                    <div className = "title">Produtos</div>
-                    <div className = "subtitle">Soluções prontas, feitas do zero, por mim</div>
+                    <h1 className="page__title">
+                        Meus <span className="page__title-accent">Produtos</span>
+                    </h1>
+                    <p className="page__subtitle">
+                        Conheça os produtos que desenvolvi do zero, design e código.
+                    </p>
+                </motion.div>
+
+                <motion.div 
+                    className="page__grid"
+                    variants={containerVariants}
+                >
                     <MenuCard 
                         title="Maromba AI"
                         description="Nunca mais fique parado na academia. Criador de exercícios para academia com IA"
                         link="https://www.marombaai.com"
+                        isExternalLink
                     />
                     <MenuCard 
                         title="dralorraine.com"
                         description="Website para divulgar serviços e produtos da Dra Lorraine, R1 de Dermato da UNICAMP e minha querida esposa"
                         link="https://www.dralorraine.com"
-                    />
-                    <MenuCard 
-                        title="Jamflow"
-                        description="App to help musicians choose what to play next and engage with their audience"
-                        link="https://www.jamflow.io"
+                        isExternalLink
                     />
                     <MenuCard 
                         title="TabTasks"
                         description="ToDo list to help you focus on what you should accomplish in each browser tab"
                         link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
+                        isExternalLink
                     />
-                </div>
-                <Footer />
+                </motion.div>
             </motion.div>
+            <Footer />
         </div>
     );
 }

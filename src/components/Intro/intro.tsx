@@ -1,72 +1,124 @@
-import profilePic from '/new-profile-pic.png';
-import { BsLinkedin } from 'react-icons/bs';
-import { BsGithub } from 'react-icons/bs';
-import { useEffect,useState } from 'react';
-import { Blurhash } from 'react-blurhash';
-
+import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin, FiBookOpen, FiBox } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import './intro.scss';
 
 function Intro() {
-
-    const [isImageLoaded,setImageLoaded] = useState(false);
-
-    useEffect(()=>{
-        const img = new Image();
-        img.onload = () => {
-            setImageLoaded(true);
+    const fadeIn = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { duration: 0.4 }
         }
-        img.src = profilePic;
-    },[profilePic])
+    };
 
-    const [isScreenWidthLarge, setIsScreenWidthLarge] = useState(window.innerWidth > 540);
+    const slideUp = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 50,
+                damping: 15,
+                duration: 0.6
+            }
+        }
+    };
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsScreenWidthLarge(window.innerWidth > 540);
-        };
-    
-        window.addEventListener('resize', handleResize);
-    
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    return (
+        <main className="intro">
+            <section className="intro__hero">
+                <div className="intro__container">
+                    <motion.div 
+                        className="intro__content"
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeIn}
+                    >
+                        <motion.div 
+                            className="intro__header"
+                            variants={slideUp}
+                        >
+                            <h1 className="intro__title">
+                                Oie! Me chamo <span className="intro__accent">Alan</span>
+                            </h1>
+                            <p className="intro__role">
+                                Product Manager no{' '}
+                                <a 
+                                    href="https://www.jusbrasil.com.br" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="intro__link"
+                                >
+                                    Jusbrasil
+                                </a>
+                            </p>
+                            <p className="intro__description">
+                            Entusiasta de empreendedorismo, tecnologia e educação. Adoro construir produtos digitais que fazem a diferença.
+                            </p>
+                        </motion.div>
 
-    return(
-        <div className ="intro">
-            <div className="profile-pic-container" style={{display: isImageLoaded ? 'none': 'inline'}}>
-                <Blurhash 
-                        hash="Lj9S-,uhPWo_tTjXRkafNHj]xCW="
-                        width={isScreenWidthLarge? 148: 120}
-                        height={isScreenWidthLarge? 148: 120}
-                        resolutionX={32}
-                        resolutionY={32}
-                        punch={1}
-                />
-            </div>
-            <div className="profile-pic-container" style={{display:isImageLoaded?'inline':'none'}}>
-                <img src={profilePic} alt="Profile of Alan Dias" loading="lazy" className="profile-pic"></img>
-            </div>
-            <h1 className="name_title">Alan Dias</h1>
-            <h2 className="subtitle">Entusiasta de empreendedorismo, tecnologia e educação. Adoro construir produtos digitais que fazem a diferença</h2>
-            <div className="social-logos">
-                <a href="https://www.linkedin.com/in/alan-dias-7b7a0913a/" target="_blank">
-                    <BsLinkedin className="social-logo"/>
-                </a>
-                <a href="https://github.com/aamdias/" target="_blank">
-                    <BsGithub className="social-logo"/>
-                </a>
-            </div>
-            <div className="paper">
-            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> redesenhando a forma como usamos tecnologia para interagir com informação jurídica no <a href="https://www.jusbrasil.com.br" target="_blank" className="text-link">Jusbrasil</a><br/><br/>
+                        <motion.div 
+                            className="intro__actions"
+                            variants={slideUp}
+                        >
+                            <div className="intro__buttons">
+                                <Link 
+                                    to="/conteudos" 
+                                    className="intro__button intro__button--primary"
+                                >
+                                    <FiBookOpen aria-hidden="true" />
+                                    <span>Ver Conteúdos</span>
+                                </Link>
+                                <Link 
+                                    to="/produtos" 
+                                    className="intro__button intro__button--secondary"
+                                >
+                                    <FiBox aria-hidden="true" />
+                                    <span>Meus produtos</span>
+                                </Link>
+                            </div>
 
-Sou <span className="highlight">formado no ITA</span>, e profissionalmente tenho mais de <span className="highlight">5 anos de experiência</span> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados <br/><br/>
+                            <div className="intro__social">
+                                <a 
+                                    href="https://github.com/aamdias" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="intro__social-link"
+                                >
+                                    <FiGithub aria-hidden="true" />
+                                </a>
+                                <a 
+                                    href="https://www.linkedin.com/in/alan-dias-7b7a0913a" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="intro__social-link"
+                                >
+                                    <FiLinkedin aria-hidden="true" />
+                                </a>
+                            </div>
+                        </motion.div>
+                    </motion.div>
 
-Pessoalmente, atualmente moro em Campinas, SP, e quando não estou construindo produtos digitais, provavelmente estou com pessoas queridas, tocando música 🎶, fazendo esportes como tênis 🎾 e corrida 👟, estudando 📚 ou viajando 🛬 <br/><br/>
-
-<span className="highlight"> Boas-vindas ao meu espaço na internet!</span>
-            </div>
-        </div>
+                    <motion.div 
+                        className="intro__media"
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeIn}
+                    >
+                        <div className="intro__image-wrapper">
+                            <img 
+                                src="/alan-nyc-1.png" 
+                                alt="Alan Dias" 
+                                className="intro__image"
+                                loading="eager"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+        </main>
     );
 }
 
