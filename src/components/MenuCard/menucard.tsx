@@ -10,6 +10,7 @@ type MenuCardProps = {
   link: string;
   isExternalLink?: boolean;
   icon?: 'content' | 'products' | 'build' | 'calendar';
+  image?: string;
 }
 
 const iconMap = {
@@ -26,12 +27,17 @@ const ctaMap = {
     calendar: 'Ver Agenda'
 };
 
-export default function MenuCard({ title, description, link, isExternalLink = false, icon }: MenuCardProps) {
+export default function MenuCard({ title, description, link, isExternalLink = false, icon, image }: MenuCardProps) {
     const Icon = icon ? iconMap[icon] : null;
     const cta = icon ? ctaMap[icon] : (isExternalLink ? 'Visitar site' : 'Saiba mais');
 
     const cardContent = (
         <>
+            {image && (
+                <div className="card__image">
+                    <img src={`/public/${image}`} alt={title} />
+                </div>
+            )}
             {Icon && (
                 <div className="card__icon">
                     <Icon />
