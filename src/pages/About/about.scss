@@ -6,7 +6,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    // overflow-x: auto;
 
     &__content {
         flex: 1;
@@ -68,6 +68,193 @@
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
             gap: 1.5rem;
+        }
+    }
+
+    &__bio-section {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        box-sizing: border-box;
+    }
+
+    &__bio-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: $black;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__bio-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: $gray;
+        margin: 0 auto 3rem;
+        max-width: 600px;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__bio-content {
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: $gray;
+        margin: 0 auto;
+        max-width: 800px;
+
+        p {
+            margin-bottom: 1.5rem;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .highlight {
+            color: $black;
+            font-weight: 500;
+        }
+
+        .text-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            
+            &:hover {
+                text-decoration: underline;
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+            font-size: 1rem;
+            border-radius: 1rem;
+        }
+    }
+
+    &__featured-section {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        box-sizing: border-box;
+    }
+
+    &__featured-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: $black;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__featured-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: $gray;
+        margin: 0 auto 3rem;
+        max-width: 600px;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__featured-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: $gray;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: $black;
+            }
+
+            &::after {
+                content: '→';
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+            }
+
+            &:hover::after {
+                transform: translateX(4px);
+            }
+        }
+    }
+
+    &__featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    &__bookmarks-card {
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        box-sizing: border-box;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $black;
+            margin: 0 0 0.5rem;
+        }
+
+        p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: $gray;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            padding: 1.25rem;
         }
     }
 } 
