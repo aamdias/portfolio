@@ -1,7 +1,5 @@
 import { MDXProvider } from '@mdx-js/react';
-import { Link } from 'react-router-dom';
 import React from 'react';
-import { BiArrowBack } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import './bookmarks.scss';
