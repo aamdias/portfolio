@@ -59,7 +59,7 @@ export default function About() {
                 </div>
 
                 <div className="page__featured-section">
-                    <h2 className="page__featured-title">Conteúdos em Destaque</h2>
+                    <h2 className="page__featured-title">Conteúdos</h2>
                     <div className="page__featured-subtitle">
                         Curadoria de conteúdos e artigos que escrevo sobre produtos digitais
                     </div>
@@ -88,7 +88,7 @@ export default function About() {
                 </div>
 
                 <div className="page__featured-section">
-                    <h2 className="page__featured-title">Produtos em Destaque</h2>
+                    <h2 className="page__featured-title">Produtos</h2>
                     <div className="page__featured-subtitle">
                         Produtos digitais que desenvolvi do zero, do design ao código
                     </div>
@@ -114,23 +114,11 @@ export default function About() {
                 </div>
 
                 <div className="page__menu">
-                    <div className="page__section-title">O que encontrar por aqui</div>
-                    <div className="page__section-subtitle">Minha contribuições e como posso te ajudar</div>
+                    <div className="page__section-title">Trabalhe comigo</div>
+                    <div className="page__section-subtitle">Como posso te ajudar</div>
                     <div className="page__cards">
                         <MenuCard 
-                            title="Conteúdos"
-                            description="Conteúdos originais produzidos por mim e uma curadoria de conteúdos que já me ajudaram"
-                            link="/conteudos"
-                            icon="content"
-                        />
-                        <MenuCard 
-                            title="Produtos"
-                            description="Vezes que coloquei a mão na massa para construir produtos digitais que resolvem alguma dor"
-                            link="/produtos"
-                            icon="products"
-                        />
-                        <MenuCard 
-                            title="Construa Comigo"
+                            title="Serviços"
                             description="Gostaria de ajuda de um Product Manager experiente, sem ter que contratar um Full Time?"
                             link="/construacomigo"
                             icon="build"
