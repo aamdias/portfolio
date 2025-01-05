@@ -1,7 +1,5 @@
 import { MDXProvider } from '@mdx-js/react';
-import { Link } from 'react-router-dom';
 import React from 'react';
-import { BiArrowBack } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import './bookmarks.scss';
@@ -40,16 +38,6 @@ export default function BookmarksPage () {
             animate="visible"
             variants={fadeInVariants}
         >
-            <div className="bookmarks-top-navigation">
-                <Link
-                    to="/conteudos"
-                    className="back-home-button"
-                >
-                    <span className="back-home-button__icon">
-                        <BiArrowBack /> Voltar
-                    </span>
-                </Link>
-            </div>
             <React.Suspense fallback={<div>Preparando o artigo...</div>}>
                 <MDXProvider>
                     <ArticleContent />
