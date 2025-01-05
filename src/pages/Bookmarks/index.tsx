@@ -40,16 +40,6 @@ export default function BookmarksPage () {
             animate="visible"
             variants={fadeInVariants}
         >
-            <div className="bookmarks-top-navigation">
-                <Link
-                    to="/conteudos"
-                    className="back-home-button"
-                >
-                    <span className="back-home-button__icon">
-                        <BiArrowBack /> Voltar
-                    </span>
-                </Link>
-            </div>
             <React.Suspense fallback={<div>Preparando o artigo...</div>}>
                 <MDXProvider>
                     <ArticleContent />
