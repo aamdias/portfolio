@@ -44,7 +44,7 @@ export default function About() {
                     <div className="page__bio-subtitle">Um pouco da minha história</div>
                     <div className="page__bio-content">
                         <p>
-                            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente como <span className="highlight">Product Manager</span> redesenhando a forma como advogados interagem com informação jurídica no <a href="https://www.jusbrasil.com.br" target="_blank" rel="noopener noreferrer" className="text-link">Jusbrasil</a>
+                            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente com meus amigos e sócios construindo a <span className="highlight">Vetto AI</span>, onde conectamos pessoas talentosas de países emergentes, começando pelo Brasil, com projetos de AI globais, ajudando a mover a fronteira dessa tecnologia ao mesmo tempo que geramos oportunidade e uma nova forma de trabalho
                         </p>
                         <p>
                             Sou <span className="highlight">formado no ITA</span>, e profissionalmente tenho mais de <span className="highlight">5 anos de experiência</span> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados
