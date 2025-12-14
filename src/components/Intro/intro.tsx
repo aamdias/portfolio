@@ -36,7 +36,7 @@ function Intro() {
                         animate="visible"
                         variants={fadeIn}
                     >
-                        <motion.div 
+                        <motion.div
                             className="intro__header"
                             variants={slideUp}
                         >
@@ -44,15 +44,7 @@ function Intro() {
                                 Oi! Me chamo <span className="intro__accent">Alan Dias</span>
                             </h1>
                             <p className="intro__role">
-                                Product Manager no{' '}
-                                <a 
-                                    href="https://www.jusbrasil.com.br" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="intro__link"
-                                >
-                                    Jusbrasil
-                                </a>
+                                Builder of Digital Products
                             </p>
                             <p className="intro__description">
                             Entusiasta de empreendedorismo, tecnologia e educação. Adoro construir produtos digitais que fazem a diferença.
