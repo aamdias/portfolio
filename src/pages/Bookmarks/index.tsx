@@ -88,26 +88,31 @@ export default function BookmarksPage () {
                 const button = document.createElement('button');
                 button.className = 'section-link-copy';
                 button.setAttribute('aria-label', 'Copy link to section');
-                button.textContent = '#';
+
+                // Create SVG icon
+                button.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                `;
 
                 // Apply inline styles for reliable rendering
                 Object.assign(button.style, {
-                    marginLeft: '0.75rem',
+                    marginLeft: '0.5rem',
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
                     color: 'rgba(0, 0, 0, 0.25)',
-                    padding: '0.25rem 0.5rem',
+                    padding: '0.25rem 0.375rem',
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: '0.375rem',
                     opacity: '0',
                     transition: 'all 0.2s ease',
-                    fontSize: '1.25rem',
-                    fontWeight: '400',
                     lineHeight: '1',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                    verticalAlign: 'middle'
                 });
 
                 // Add hover effects
