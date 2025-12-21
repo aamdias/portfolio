@@ -2,7 +2,6 @@ import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { FiLink } from 'react-icons/fi';
 import './bookmarks.scss';
 
 const fadeInVariants = {
@@ -79,7 +78,7 @@ export default function BookmarksPage () {
     useEffect(() => {
         // Add copy link functionality to section headings
         const addCopyButtons = () => {
-            const headings = document.querySelectorAll('h2[id]');
+            const headings = document.querySelectorAll<HTMLElement>('h2[id]');
 
             headings.forEach((heading) => {
                 // Skip if button already exists
