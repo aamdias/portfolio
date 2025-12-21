@@ -108,8 +108,16 @@ export default function BookmarksPage () {
         };
 
         // Wait for MDX content to load
-        const timer = setTimeout(addCopyButtons, 500);
-        return () => clearTimeout(timer);
+        const timer = setTimeout(addCopyButtons, 1000);
+
+        // Also add buttons on any content changes
+        const observer = new MutationObserver(addCopyButtons);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        return () => {
+            clearTimeout(timer);
+            observer.disconnect();
+        };
     }, []);
 
     return(
