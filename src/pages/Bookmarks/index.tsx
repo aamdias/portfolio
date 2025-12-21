@@ -103,7 +103,6 @@ export default function BookmarksPage () {
                     }
                 });
 
-                heading.style.position = 'relative';
                 heading.appendChild(button);
             });
         };

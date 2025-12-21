@@ -24,9 +24,11 @@
             color: $black;
             margin: 3rem 0 1rem;
             padding-bottom: 0.5rem;
+            padding-right: 2.5rem;
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             word-wrap: break-word;
             scroll-margin-top: 2rem;
+            position: relative;
         }
 
         h3 {
@@ -147,6 +149,7 @@
     &__link {
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 0.5rem;
         border-radius: 0.375rem;
         text-decoration: none;
@@ -194,6 +197,10 @@
         transition: opacity 0.3s ease;
     }
 
+    &:hover &__link {
+        justify-content: flex-start;
+    }
+
     &:hover &__label {
         opacity: 1;
     }
@@ -206,33 +213,38 @@
 .section-link-copy {
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.3);
-    padding: 0.5rem;
+    color: rgba(0, 0, 0, 0.25);
+    padding: 0.375rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.375rem;
     opacity: 0;
     transition: all 0.2s ease;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1;
 
     &:hover {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.08);
         color: $black;
     }
 
     &:active {
-        transform: translateY(-50%) scale(0.95);
+        transform: scale(0.95);
+    }
+
+    svg {
+        display: block;
     }
 }
 
-:global {
-    h2[id]:hover .section-link-copy {
+.bookmarks-page :global {
+    h2[id]:hover .section-link-copy,
+    .section-link-copy:hover {
         opacity: 1;
     }
 }
