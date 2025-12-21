@@ -24,8 +24,11 @@
             color: $black;
             margin: 3rem 0 1rem;
             padding-bottom: 0.5rem;
+            padding-right: 2.5rem;
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             word-wrap: break-word;
+            scroll-margin-top: 2rem;
+            position: relative;
         }
 
         h3 {
@@ -116,6 +119,159 @@
     font-size: 0.875rem;
     color: $gray;
     margin-bottom: 1.5rem;
+}
+
+.bookmarks-side-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 3rem;
+    transition: width 0.3s ease;
+
+    &:hover {
+        width: 16rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.625rem 0.5rem;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        color: $gray;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 0.375rem;
+            height: 0.375rem;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: $black;
+
+            &::before {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        &.active {
+            color: $black;
+
+            &::before {
+                background-color: $black;
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+    }
+
+    &:hover &__link {
+        justify-content: flex-start;
+    }
+
+    &:hover &__label {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+:global(.section-link-copy) {
+    margin-left: 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.25);
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    opacity: 0;
+    transition: all 0.2s ease;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:global(.section-link-copy:hover) {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+:global(.section-link-copy:active) {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+:global(h2[id]:hover .section-link-copy) {
+    opacity: 1;
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(1rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
 }
 
 @media (min-width: 640px) {
