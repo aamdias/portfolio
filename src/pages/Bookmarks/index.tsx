@@ -90,6 +90,56 @@ export default function BookmarksPage () {
                 button.setAttribute('aria-label', 'Copy link to section');
                 button.textContent = '#';
 
+                // Apply inline styles for reliable rendering
+                Object.assign(button.style, {
+                    marginLeft: '0.75rem',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: 'rgba(0, 0, 0, 0.25)',
+                    padding: '0.25rem 0.5rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: '0.375rem',
+                    opacity: '0',
+                    transition: 'all 0.2s ease',
+                    fontSize: '1.25rem',
+                    fontWeight: '400',
+                    lineHeight: '1',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                });
+
+                // Add hover effects
+                button.addEventListener('mouseenter', () => {
+                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
+                    button.style.color = 'rgba(0, 0, 0, 0.6)';
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    button.style.backgroundColor = 'transparent';
+                    button.style.color = 'rgba(0, 0, 0, 0.25)';
+                });
+
+                button.addEventListener('mousedown', () => {
+                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    button.style.color = 'rgba(0, 0, 0, 0.8)';
+                });
+
+                button.addEventListener('mouseup', () => {
+                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
+                    button.style.color = 'rgba(0, 0, 0, 0.6)';
+                });
+
+                // Show button when hovering over heading
+                heading.addEventListener('mouseenter', () => {
+                    button.style.opacity = '1';
+                });
+
+                heading.addEventListener('mouseleave', () => {
+                    button.style.opacity = '0';
+                });
+
                 button.addEventListener('click', async (e) => {
                     e.preventDefault();
                     const url = `${window.location.origin}${window.location.pathname}#${id}`;
