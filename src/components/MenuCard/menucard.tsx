@@ -1,35 +1,17 @@
-import { HiArrowRight } from 'react-icons/hi';
-import { FiBookOpen, FiPackage, FiUsers, FiCalendar } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import './menucard.scss'; 
+import './menucard.scss';
 
 type MenuCardProps = {
-  title: string;
-  description: string;
-  link: string;
-  isExternalLink?: boolean;
-  icon?: 'content' | 'products' | 'build' | 'calendar';
-  image?: string;
+    title: string;
+    description: string;
+    link: string;
+    isExternalLink?: boolean;
+    image?: string;
 }
 
-const iconMap = {
-    content: FiBookOpen,
-    products: FiPackage,
-    build: FiUsers,
-    calendar: FiCalendar
-};
-
-const ctaMap = {
-    content: 'Ver Conteúdos',
-    products: 'Ver Produtos',
-    build: 'Construa Comigo',
-    calendar: 'Ver Agenda'
-};
-
-export default function MenuCard({ title, description, link, isExternalLink = false, icon, image }: MenuCardProps) {
-    const Icon = icon ? iconMap[icon] : null;
-    const cta = icon ? ctaMap[icon] : (isExternalLink ? 'Visitar site' : 'Saiba mais');
+export default function MenuCard({ title, description, link, isExternalLink = false, image }: MenuCardProps) {
+    const cta = isExternalLink ? 'Visitar' : 'Ver mais';
 
     const cardContent = (
         <>
@@ -38,34 +20,25 @@ export default function MenuCard({ title, description, link, isExternalLink = fa
                     <img src={`${image}`} alt={title} />
                 </div>
             )}
-            {Icon && (
-                <div className="card__icon">
-                    <Icon />
-                </div>
-            )}
             <div className="card__content">
                 <h2 className="card__title">{title}</h2>
                 <p className="card__description">{description}</p>
             </div>
-            
             <div className="card__footer">
-                <span className="card__link">
-                    {cta}
-                    <HiArrowRight className="card__arrow" />
-                </span>
+                <span className="card__link">{cta}</span>
             </div>
         </>
     );
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="card"
         >
             {isExternalLink ? (
-                <a 
+                <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -74,7 +47,7 @@ export default function MenuCard({ title, description, link, isExternalLink = fa
                     {cardContent}
                 </a>
             ) : (
-                <Link 
+                <Link
                     to={link}
                     className="card__inner"
                 >

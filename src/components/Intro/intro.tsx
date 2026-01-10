@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiBookOpen, FiBox } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './intro.scss';
 
@@ -8,20 +7,20 @@ function Intro() {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { duration: 0.4 }
+            transition: { duration: 0.6 }
         }
     };
 
     const slideUp = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
                 type: "spring",
-                stiffness: 50,
-                damping: 15,
-                duration: 0.6
+                stiffness: 40,
+                damping: 20,
+                duration: 0.8
             }
         }
     };
@@ -30,76 +29,64 @@ function Intro() {
         <main className="intro">
             <section className="intro__hero">
                 <div className="intro__container">
-                    <motion.div 
+                    <motion.div
                         className="intro__content"
                         initial="hidden"
                         animate="visible"
                         variants={fadeIn}
                     >
-                        <motion.div
-                            className="intro__header"
-                            variants={slideUp}
-                        >
-                            <h1 className="intro__title">
-                                Oi! Me chamo <span className="intro__accent">Alan Dias</span>
-                            </h1>
-                            <p className="intro__description">
-                            Entusiasta de empreendedorismo, tecnologia e educação. Adoro construir produtos digitais que fazem a diferença.
+                        <motion.div className="intro__header" variants={slideUp}>
+                            <span className="intro__greeting">Oi! Me chamo</span>
+                            <h1 className="intro__name">Alan Dias</h1>
+                            <p className="intro__tagline">
+                                Construindo produtos digitais que fazem a diferença.
                             </p>
                         </motion.div>
 
-                        <motion.div 
-                            className="intro__actions"
-                            variants={slideUp}
-                        >
-                            <div className="intro__buttons">
-                                <Link 
-                                    to="/conteudos" 
-                                    className="intro__button intro__button--primary"
-                                >
-                                    <FiBookOpen aria-hidden="true" />
-                                    <span>Ver Conteúdos</span>
-                                </Link>
-                                <Link 
-                                    to="/produtos" 
-                                    className="intro__button intro__button--secondary"
-                                >
-                                    <FiBox aria-hidden="true" />
-                                    <span>Meus produtos</span>
-                                </Link>
-                            </div>
+                        <motion.p className="intro__description" variants={slideUp}>
+                            Entusiasta de empreendedorismo, tecnologia e educação. Atualmente construindo a Vetto AI.
+                        </motion.p>
 
-                            <div className="intro__social">
-                                <a 
-                                    href="https://github.com/aamdias" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="intro__social-link"
-                                >
-                                    <FiGithub aria-hidden="true" />
-                                </a>
-                                <a 
-                                    href="https://www.linkedin.com/in/alan-dias-7b7a0913a" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="intro__social-link"
-                                >
-                                    <FiLinkedin aria-hidden="true" />
-                                </a>
-                            </div>
+                        <motion.div className="intro__actions" variants={slideUp}>
+                            <Link to="/conteudos" className="intro__button intro__button--primary">
+                                Ver Conteúdos
+                            </Link>
+                            <Link to="/produtos" className="intro__button intro__button--secondary">
+                                Meus Produtos
+                            </Link>
+                        </motion.div>
+
+                        <motion.div className="intro__links" variants={slideUp}>
+                            <a
+                                href="https://github.com/aamdias"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="intro__link"
+                            >
+                                GitHub
+                            </a>
+                            <span className="intro__link-divider">·</span>
+                            <a
+                                href="https://www.linkedin.com/in/alan-dias-7b7a0913a"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="intro__link"
+                            >
+                                LinkedIn
+                            </a>
                         </motion.div>
                     </motion.div>
 
-                    <motion.div 
-                        className="intro__media"
+                    <motion.div
+                        className="intro__visual"
                         initial="hidden"
                         animate="visible"
                         variants={fadeIn}
                     >
-                        <div className="intro__image-wrapper">
-                            <img 
-                                src="/alan-nyc-1.png" 
-                                alt="Alan Dias" 
+                        <div className="intro__image-container">
+                            <img
+                                src="/alan-nyc-1.png"
+                                alt="Alan Dias"
                                 className="intro__image"
                                 loading="eager"
                             />

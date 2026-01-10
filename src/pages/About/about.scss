@@ -3,258 +3,225 @@
 .page {
     min-height: 100vh;
     width: 100%;
-    background-color: white;
+    background-color: $white;
     display: flex;
     flex-direction: column;
-    // overflow-x: auto;
 
     &__content {
         flex: 1;
         width: 100%;
-        padding-top: 3rem;
+        padding-top: $space-12;
 
-        @media (max-width: 64rem) {
-            padding-top: 1.5rem;
+        @media (max-width: $bp-lg) {
+            padding-top: $space-8;
         }
 
-        @media (max-width: 48rem) {
-            padding-top: 0rem;
+        @media (max-width: $bp-md) {
+            padding-top: $space-4;
+        }
+    }
+}
+
+// Unified Section Styles
+.section {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: $space-16 $space-6;
+    box-sizing: border-box;
+
+    @media (max-width: $bp-md) {
+        padding: $space-12 $space-4;
+    }
+
+    &--highlight {
+        background: $neutral-50;
+        max-width: none;
+
+        > * {
+            max-width: $container-max;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
-    &__menu {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 4rem 1rem;
-        box-sizing: border-box;
+    &__header {
+        text-align: center;
+        margin-bottom: $space-10;
+
+        @media (max-width: $bp-md) {
+            margin-bottom: $space-8;
+        }
     }
 
-    &__section-title {
-        font-size: 2.5rem;
-        font-weight: 800;
+    &__title {
+        font-size: $text-4xl;
+        font-weight: $font-bold;
         color: $black;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        text-align: center;
+        margin: 0 0 $space-3;
+        line-height: $leading-tight;
+        letter-spacing: $tracking-tight;
 
-        @media (max-width: 768px) {
-            font-size: 2rem;
+        @media (max-width: $bp-md) {
+            font-size: $text-3xl;
         }
     }
 
-    &__section-subtitle {
-        font-size: 1.25rem;
-        line-height: 1.7;
-        color: $gray;
-        margin: 0 auto 3rem;
-        max-width: 600px;
-        text-align: center;
+    &__subtitle {
+        font-size: $text-lg;
+        line-height: $leading-relaxed;
+        color: $neutral-500;
+        margin: 0;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
 
-        @media (max-width: 768px) {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
+        @media (max-width: $bp-md) {
+            font-size: $text-base;
         }
     }
 
-    &__cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        width: 100%;
-        box-sizing: border-box;
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-    }
-
-    &__bio-section {
-        width: 100%;
-        max-width: 1024px;
+    &__bio {
+        max-width: $container-narrow;
         margin: 0 auto;
-        padding: 4rem 1rem;
-        box-sizing: border-box;
-    }
+        padding: $space-8;
+        background: $neutral-50;
+        border-radius: $radius-xl;
 
-    &__bio-title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: $black;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 2rem;
+        @media (max-width: $bp-md) {
+            padding: $space-6;
+            border-radius: $radius-lg;
         }
-    }
-
-    &__bio-subtitle {
-        font-size: 1.25rem;
-        line-height: 1.7;
-        color: $gray;
-        margin: 0 auto 3rem;
-        max-width: 600px;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-        }
-    }
-
-    &__bio-content {
-        background: rgba(0, 0, 0, 0.02);
-        border-radius: 1.5rem;
-        padding: 2.5rem;
-        font-size: 1.125rem;
-        line-height: 1.7;
-        color: $gray;
-        margin: 0 auto;
-        max-width: 800px;
 
         p {
-            margin-bottom: 1.5rem;
-            
+            font-size: $text-lg;
+            line-height: $leading-relaxed;
+            color: $neutral-600;
+            margin: 0 0 $space-5;
+
             &:last-child {
                 margin-bottom: 0;
             }
-        }
 
-        .highlight {
-            color: $black;
-            font-weight: 500;
-        }
-
-        .text-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            
-            &:hover {
-                text-decoration: underline;
-                opacity: 0.8;
+            @media (max-width: $bp-md) {
+                font-size: $text-base;
             }
         }
 
-        @media (max-width: 768px) {
-            padding: 1.5rem;
-            font-size: 1rem;
-            border-radius: 1rem;
+        strong {
+            color: $black;
+            font-weight: $font-semibold;
         }
     }
 
-    &__featured-section {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $space-6;
         width: 100%;
-        max-width: 1024px;
+        max-width: 720px;
         margin: 0 auto;
-        padding: 4rem 1rem;
-        box-sizing: border-box;
-    }
 
-    &__featured-title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: $black;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 2rem;
+        @media (max-width: $bp-md) {
+            grid-template-columns: 1fr;
+            gap: $space-4;
         }
     }
 
-    &__featured-subtitle {
-        font-size: 1.25rem;
-        line-height: 1.7;
-        color: $gray;
-        margin: 0 auto 3rem;
-        max-width: 600px;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-        }
-    }
-
-    &__featured-cta {
+    &__cta {
         display: flex;
         justify-content: center;
-        margin-top: 3rem;
+        margin-top: $space-10;
 
-        a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            color: $gray;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
+        @media (max-width: $bp-md) {
+            margin-top: $space-8;
+        }
+    }
 
-            &:hover {
-                color: $black;
-            }
+    &__cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-2;
+        padding: $space-3 $space-5;
+        color: $neutral-500;
+        text-decoration: none;
+        font-size: $text-sm;
+        font-weight: $font-medium;
+        border: 1px solid $border-default;
+        border-radius: $radius-md;
+        transition: all $transition-normal;
+
+        &:hover {
+            color: $black;
+            border-color: $border-hover;
+            background: $neutral-50;
+        }
+
+        &::after {
+            content: '→';
+            font-size: $text-base;
+            transition: transform $transition-fast;
+        }
+
+        &:hover::after {
+            transform: translateX(4px);
+        }
+    }
+}
+
+// Featured Card (for Bookmarks link)
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $space-6;
+    background: $neutral-50;
+    border-radius: $radius-lg;
+    text-decoration: none;
+    transition: all $transition-normal;
+    min-height: 160px;
+
+    &:hover {
+        background: $neutral-100;
+
+        .featured-card__link {
+            color: $black;
 
             &::after {
-                content: '→';
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-            }
-
-            &:hover::after {
                 transform: translateX(4px);
             }
         }
     }
 
-    &__featured-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        width: 100%;
-        margin-bottom: 2rem;
+    &__content {
+        margin-bottom: $space-4;
     }
 
-    &__bookmarks-card {
-        background: rgba(0, 0, 0, 0.02);
-        border-radius: 1.5rem;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        box-sizing: border-box;
+    &__title {
+        font-size: $text-xl;
+        font-weight: $font-semibold;
+        color: $black;
+        margin: 0 0 $space-2;
+        letter-spacing: $tracking-tight;
+    }
 
-        &:hover {
-            background: rgba(0, 0, 0, 0.04);
-        }
+    &__description {
+        font-size: $text-sm;
+        line-height: $leading-relaxed;
+        color: $neutral-500;
+        margin: 0;
+    }
 
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: $black;
-            margin: 0 0 0.5rem;
-        }
+    &__link {
+        font-size: $text-sm;
+        font-weight: $font-medium;
+        color: $neutral-400;
+        transition: color $transition-fast;
 
-        p {
-            font-size: 0.875rem;
-            line-height: 1.6;
-            color: $gray;
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            padding: 1.25rem;
+        &::after {
+            content: ' →';
+            transition: transform $transition-fast;
+            display: inline-block;
         }
     }
-} 
+}

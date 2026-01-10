@@ -1,4 +1,4 @@
-import Intro from '../../components/Intro/intro.tsx'; 
+import Intro from '../../components/Intro/intro.tsx';
 import Footer from '../../components/Footer/footer.tsx';
 import Navbar from '../../components/Navbar/navbar.tsx';
 import { motion } from 'framer-motion';
@@ -9,13 +9,15 @@ import articles from '../../data/articles.json';
 import './about.scss';
 
 const fadeInVariants = {
-    hidden: {
-      opacity: 0,
-      y: -50, 
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      y: 0,
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
     }
 };
 
@@ -25,56 +27,66 @@ export default function About() {
     return (
         <div className="page">
             <Navbar />
-            <motion.div 
+            <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeInVariants}
-                transition={{ 
-                    ease: "easeOut", 
-                    type: "spring", 
-                    stiffness: 80,   
-                    delay: 0.2,      
-                    duration: 2.5    
-                }}  
+                transition={{
+                    ease: "easeOut",
+                    duration: 0.6
+                }}
                 className="page__content"
             >
                 <Intro />
-                <div className="page__bio-section">
-                    <h2 className="page__bio-title">Sobre mim</h2>
-                    <div className="page__bio-subtitle">Um pouco da minha história</div>
-                    <div className="page__bio-content">
+
+                {/* About Section */}
+                <section className="section">
+                    <div className="section__header">
+                        <h2 className="section__title">Sobre mim</h2>
+                        <p className="section__subtitle">Um pouco da minha história</p>
+                    </div>
+                    <div className="section__bio">
                         <p>
-                            Oi! 👋 Me chamo <span className="highlight">Alan</span>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente com meus amigos e sócios construindo a <span className="highlight">Vetto AI</span>, onde conectamos pessoas talentosas de países emergentes, começando pelo Brasil, com projetos de AI globais, ajudando a mover a fronteira dessa tecnologia ao mesmo tempo que geramos oportunidade e uma nova forma de trabalho
+                            Me chamo <strong>Alan</strong>, sou natural de Fortaleza, CE, Brasil e atuo profissionalmente construindo a <strong>Vetto AI</strong>, onde conectamos pessoas talentosas de países emergentes com projetos de AI globais.
                         </p>
                         <p>
-                            Sou <span className="highlight">formado no ITA</span>, e profissionalmente tenho mais de <span className="highlight">5 anos de experiência</span> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados
+                            Sou <strong>formado no ITA</strong>, e profissionalmente tenho mais de <strong>5 anos de experiência</strong> construindo Produtos Digitais em Start Ups em que a tecnologia é alavanca para resultados.
                         </p>
                         <p>
-                            Pessoalmente, atualmente moro em Campinas, SP, e quando não estou construindo produtos digitais, provavelmente estou com pessoas queridas, tocando música 🎶, fazendo esportes como tênis 🎾 e corrida 👟, estudando 📚 ou viajando 🛬
+                            Pessoalmente, atualmente moro em Campinas, SP. Quando não estou construindo produtos digitais, provavelmente estou com pessoas queridas, tocando música, praticando tênis ou corrida, estudando ou viajando.
                         </p>
                         <p>
-                            <span className="highlight">Boas-vindas ao meu espaço na internet!</span>
+                            <strong>Boas-vindas ao meu espaço na internet!</strong>
                         </p>
                     </div>
-                </div>
+                </section>
 
-                <div className="page__featured-section">
-                    <h2 className="page__featured-title">Conteúdos</h2>
-                    <div className="page__featured-subtitle">
-                        Curadoria de conteúdos e artigos que escrevo sobre produtos digitais
+                {/* Content Section */}
+                <motion.section
+                    className="section"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
+                    <div className="section__header">
+                        <h2 className="section__title">Conteúdos</h2>
+                        <p className="section__subtitle">
+                            Curadoria de conteúdos e artigos sobre produtos digitais
+                        </p>
                     </div>
                     <FeaturedGrid>
-                        <Link to="/bookmarks" className="page__bookmarks-card" style={{ flex: "0 0 100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                            <div>
-                                <h3>Bookmarks</h3>
-                                <p>Uma curadoria dos melhores conteúdos que já consumi sobre produtos digitais, negócios e tecnologia</p>
+                        <Link to="/bookmarks" className="featured-card">
+                            <div className="featured-card__content">
+                                <h3 className="featured-card__title">Bookmarks</h3>
+                                <p className="featured-card__description">
+                                    Uma curadoria dos melhores conteúdos sobre produtos digitais, negócios e tecnologia
+                                </p>
                             </div>
-                            <div className="page__featured-cta" style={{ color: "#6B7280", justifyContent: "flex-start" }}>
-                                <span>Ver mais →</span>
-                            </div>
+                            <span className="featured-card__link">Ver curadoria</span>
                         </Link>
                         {latestArticles.map((article) => (
-                            <MenuCard 
+                            <MenuCard
                                 key={article.slug}
                                 title={article.title}
                                 description={article.description}
@@ -82,62 +94,82 @@ export default function About() {
                             />
                         ))}
                     </FeaturedGrid>
-                    <div className="page__featured-cta">
-                        <Link to="/conteudos">Ver todos os conteúdos</Link>
+                    <div className="section__cta">
+                        <Link to="/conteudos" className="section__cta-link">
+                            Ver todos os conteúdos
+                        </Link>
                     </div>
-                </div>
+                </motion.section>
 
-                <div className="page__featured-section">
-                    <h2 className="page__featured-title">Produtos</h2>
-                    <div className="page__featured-subtitle">
-                        Produtos digitais que desenvolvi do zero, do design ao código
+                {/* Products Section */}
+                <motion.section
+                    className="section"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
+                    <div className="section__header">
+                        <h2 className="section__title">Produtos</h2>
+                        <p className="section__subtitle">
+                            Produtos digitais que desenvolvi do zero
+                        </p>
                     </div>
                     <FeaturedGrid>
-                        <MenuCard 
+                        <MenuCard
                             title="chatQL"
-                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA. Feito para PMs e Data Analysts"
+                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA"
                             link="https://www.chatql.space"
                             isExternalLink
                             image="chatql-screenshot.png"
                         />
-                        <MenuCard 
+                        <MenuCard
                             title="Maromba AI"
-                            description="Crie treinos personalizados, acompanhe seu progresso e mude sua relação com a academia com o MarombaAI. Inteligência Artificial para o seu treino."
+                            description="Crie treinos personalizados e acompanhe seu progresso com inteligência artificial"
                             link="https://www.marombaai.com"
                             isExternalLink
                             image="marombaai-screenshot.png"
                         />
-                        <MenuCard 
+                        <MenuCard
                             title="dralorraine.com"
-                            description="Website para divulgar serviços e produtos da Dra Lorraine, R1 de Dermato da UNICAMP e minha querida esposa"
+                            description="Website para divulgar serviços e produtos da Dra Lorraine"
                             link="https://www.dralorraine.com"
                             isExternalLink
                             image="dralorraine-screenshot.png"
                         />
                     </FeaturedGrid>
-                    <div className="page__featured-cta">
-                        <Link to="/produtos">Ver todos os produtos</Link>
+                    <div className="section__cta">
+                        <Link to="/produtos" className="section__cta-link">
+                            Ver todos os produtos
+                        </Link>
                     </div>
-                </div>
+                </motion.section>
 
-                <div className="page__menu">
-                    <div className="page__section-title">Trabalhe comigo</div>
-                    <div className="page__section-subtitle">Como posso te ajudar</div>
-                    <div className="page__cards">
-                        <MenuCard 
+                {/* Work With Me Section */}
+                <motion.section
+                    className="section section--highlight"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
+                    <div className="section__header">
+                        <h2 className="section__title">Trabalhe comigo</h2>
+                        <p className="section__subtitle">Como posso te ajudar</p>
+                    </div>
+                    <div className="section__grid">
+                        <MenuCard
                             title="Serviços"
-                            description="Gostaria de ajuda de um Product Manager experiente, sem ter que contratar um Full Time?"
+                            description="Gostaria de ajuda de um Product Manager experiente?"
                             link="/construacomigo"
-                            icon="build"
                         />
-                        <MenuCard 
+                        <MenuCard
                             title="Agenda"
-                            description="Horários disponíveis para um call comigo. Aceito somente após contato prévio"
+                            description="Horários disponíveis para um call comigo"
                             link="/agenda"
-                            icon="calendar"
                         />
                     </div>
-                </div>
+                </motion.section>
             </motion.div>
             <Footer />
         </div>
