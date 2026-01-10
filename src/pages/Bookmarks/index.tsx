@@ -83,20 +83,15 @@ export default function BookmarksPage() {
 
   return (
     <div className="bookmarks">
+      {/* Breadcrumb */}
+      <nav className="bookmarks__breadcrumb" aria-label="Breadcrumb">
+        <Link to="/" className="bookmarks__breadcrumb-link">Home</Link>
+        <span className="bookmarks__breadcrumb-separator">/</span>
+        <span className="bookmarks__breadcrumb-current">Bookmarks</span>
+      </nav>
+
       {/* Header */}
       <header className="bookmarks__header">
-        <Link to="/" className="bookmarks__back">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M12.5 15L7.5 10L12.5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
-
         <div className="bookmarks__header-content">
           <h1 className="bookmarks__title">Bookmarks</h1>
           <p className="bookmarks__subtitle">
