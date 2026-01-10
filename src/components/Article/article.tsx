@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HiArrowRight } from 'react-icons/hi';
 import './article.scss';
 
 type ArticleProps = {
@@ -33,7 +32,6 @@ function Article({ title, description, publishedDate, slug, thumbnail }: Article
                 
                 <Link to={`/artigos/${slug}`} className="article__link">
                     Ler artigo
-                    <HiArrowRight className="article__arrow" />
                 </Link>
             </div>
         </motion.article>

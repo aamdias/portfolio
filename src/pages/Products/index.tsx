@@ -51,15 +51,6 @@ export default function ProductsPage() {
                 >
                     <motion.div variants={itemVariants}>
                         <MenuCard
-                            title="chatQL"
-                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA. Feito para PMs e Data Analysts."
-                            link="https://www.chatql.space"
-                            isExternalLink
-                            image="chatql-screenshot.png"
-                        />
-                    </motion.div>
-                    <motion.div variants={itemVariants}>
-                        <MenuCard
                             title="Maromba AI"
                             description="Crie treinos personalizados e acompanhe seu progresso com inteligência artificial."
                             link="https://www.marombaai.com"
@@ -78,11 +69,11 @@ export default function ProductsPage() {
                     </motion.div>
                     <motion.div variants={itemVariants}>
                         <MenuCard
-                            title="TabTasks"
-                            description="ToDo list to help you focus on what you should accomplish in each browser tab."
-                            link="https://chromewebstore.google.com/detail/tab-tasks/eomncdpohliglfgmlbjhcphdlcaohnll"
+                            title="chatQL"
+                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA. Feito para PMs e Data Analysts."
+                            link="https://www.chatql.space"
                             isExternalLink
-                            image="tabtasks-sreenshot.png"
+                            image="chatql-screenshot.png"
                         />
                     </motion.div>
                 </motion.div>
