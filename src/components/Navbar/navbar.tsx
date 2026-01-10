@@ -9,6 +9,7 @@ const links = [
     { href: '/', label: 'Sobre' },
     { href: '/conteudos', label: 'Conteúdos' },
     { href: '/produtos', label: 'Produtos' },
+    { href: '/bookmarks', label: 'Bookmarks' },
 ];
 
 function Navbar() {

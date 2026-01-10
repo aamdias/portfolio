@@ -1,213 +1,290 @@
-import { MDXProvider } from '@mdx-js/react';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { bookmarks, categories, Bookmark } from '../../data/bookmarks';
+import BookmarkCard from '../../components/BookmarkCard/bookmarkcard';
 import './bookmarks.scss';
 
-const fadeInVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut"
-        }
+type CategoryFilter = 'all' | Bookmark['category'];
+
+export default function BookmarksPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  // Handle URL hash for direct category links
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && categories.some(c => c.id === hash)) {
+      setActiveCategory(hash as Bookmark['category']);
     }
-};
+  }, []);
 
-const sections = [
-    { id: 'product-management', label: 'Product Management' },
-    { id: 'business', label: 'Business' },
-    { id: 'design-ux', label: 'Design & UX' },
-    { id: 'ai', label: 'AI' }
-];
+  // Update URL hash when category changes
+  useEffect(() => {
+    if (activeCategory !== 'all') {
+      window.history.replaceState(null, '', `#${activeCategory}`);
+    } else {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, [activeCategory]);
 
-export default function BookmarksPage () {
-    const ArticleContent = React.lazy(() => import(`../../mdx/bookmarks.mdx`));
-    const [activeSection, setActiveSection] = useState('');
-    const [copiedId, setCopiedId] = useState('');
+  const filteredBookmarks = useMemo(() => {
+    let result = bookmarks;
 
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "https://tally.so/widgets/embed.js";
-        script.async = true;
+    // Filter by category
+    if (activeCategory !== 'all') {
+      result = result.filter(b => b.category === activeCategory);
+    }
 
-        document.body.appendChild(script);
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      result = result.filter(
+        b =>
+          b.title.toLowerCase().includes(query) ||
+          b.description.toLowerCase().includes(query)
+      );
+    }
 
-        return () => {
-          document.body.removeChild(script);
-        };
-    }, []);
+    return result;
+  }, [activeCategory, searchQuery]);
 
-    useEffect(() => {
-        // Add smooth scrolling behavior
-        document.documentElement.style.scrollBehavior = 'smooth';
+  // Group bookmarks by category for display
+  const groupedBookmarks = useMemo(() => {
+    if (activeCategory !== 'all' || searchQuery.trim()) {
+      return null; // Show flat list when filtering
+    }
 
-        // Scroll to top if no hash in URL
-        if (!window.location.hash) {
-            window.scrollTo(0, 0);
-        }
+    const groups: Record<string, Bookmark[]> = {};
+    categories.forEach(cat => {
+      groups[cat.id] = bookmarks.filter(b => b.category === cat.id);
+    });
+    return groups;
+  }, [activeCategory, searchQuery]);
 
-        return () => {
-            document.documentElement.style.scrollBehavior = 'auto';
-        };
-    }, []);
+  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    if (e.target.value.trim()) {
+      setActiveCategory('all');
+    }
+  }, []);
 
-    useEffect(() => {
-        // Track active section for navigation highlight
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { rootMargin: '-20% 0px -70% 0px' }
-        );
+  const handleClearSearch = useCallback(() => {
+    setSearchQuery('');
+  }, []);
 
-        sections.forEach(({ id }) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+  const handleCategoryClick = useCallback((categoryId: CategoryFilter) => {
+    setActiveCategory(categoryId);
+    setSearchQuery('');
+  }, []);
 
-        return () => observer.disconnect();
-    }, []);
+  const activeCategoryData = categories.find(c => c.id === activeCategory);
 
-    useEffect(() => {
-        // Add copy link functionality to section headings
-        const addCopyButtons = () => {
-            const headings = document.querySelectorAll<HTMLElement>('h2[id]');
+  return (
+    <div className="bookmarks">
+      {/* Header */}
+      <header className="bookmarks__header">
+        <Link to="/" className="bookmarks__back">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M12.5 15L7.5 10L12.5 5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
 
-            headings.forEach((heading) => {
-                // Skip if button already exists
-                if (heading.querySelector('.section-link-copy')) return;
+        <div className="bookmarks__header-content">
+          <h1 className="bookmarks__title">Bookmarks</h1>
+          <p className="bookmarks__subtitle">
+            Curated resources on product, business, design, and AI
+          </p>
+        </div>
+      </header>
 
-                const id = heading.getAttribute('id');
-                const button = document.createElement('button');
-                button.className = 'section-link-copy';
-                button.setAttribute('aria-label', 'Copy link to section');
-
-                // Create SVG icon
-                button.innerHTML = `
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                `;
-
-                // Apply inline styles for reliable rendering
-                Object.assign(button.style, {
-                    marginLeft: '0.5rem',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    color: 'rgba(0, 0, 0, 0.25)',
-                    padding: '0.25rem 0.375rem',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '0.375rem',
-                    opacity: '0',
-                    transition: 'all 0.2s ease',
-                    lineHeight: '1',
-                    verticalAlign: 'middle'
-                });
-
-                // Add hover effects
-                button.addEventListener('mouseenter', () => {
-                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
-                    button.style.color = 'rgba(0, 0, 0, 0.6)';
-                });
-
-                button.addEventListener('mouseleave', () => {
-                    button.style.backgroundColor = 'transparent';
-                    button.style.color = 'rgba(0, 0, 0, 0.25)';
-                });
-
-                button.addEventListener('mousedown', () => {
-                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-                    button.style.color = 'rgba(0, 0, 0, 0.8)';
-                });
-
-                button.addEventListener('mouseup', () => {
-                    button.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
-                    button.style.color = 'rgba(0, 0, 0, 0.6)';
-                });
-
-                // Show button when hovering over heading
-                heading.addEventListener('mouseenter', () => {
-                    button.style.opacity = '1';
-                });
-
-                heading.addEventListener('mouseleave', () => {
-                    button.style.opacity = '0';
-                });
-
-                button.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    const url = `${window.location.origin}${window.location.pathname}#${id}`;
-
-                    try {
-                        await navigator.clipboard.writeText(url);
-                        setCopiedId(id || '');
-                        setTimeout(() => setCopiedId(''), 2000);
-                    } catch (err) {
-                        console.error('Failed to copy link:', err);
-                    }
-                });
-
-                heading.appendChild(button);
-            });
-        };
-
-        // Wait for MDX content to load
-        const timer = setTimeout(addCopyButtons, 1000);
-
-        // Also add buttons on any content changes
-        const observer = new MutationObserver(addCopyButtons);
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        return () => {
-            clearTimeout(timer);
-            observer.disconnect();
-        };
-    }, []);
-
-    return(
-        <>
-            {copiedId && (
-                <div className="copy-toast">
-                    Link copiado!
-                </div>
-            )}
-            <nav className="bookmarks-side-nav">
-                <div className="bookmarks-side-nav__content">
-                    {sections.map(({ id, label }) => (
-                        <a
-                            key={id}
-                            href={`#${id}`}
-                            className={`bookmarks-side-nav__link ${activeSection === id ? 'active' : ''}`}
-                            title={label}
-                        >
-                            <span className="bookmarks-side-nav__label">{label}</span>
-                        </a>
-                    ))}
-                </div>
-            </nav>
-            <motion.div
-                className="bookmarks-page"
-                initial="hidden"
-                animate="visible"
-                variants={fadeInVariants}
+      {/* Search and Filters */}
+      <div className="bookmarks__controls">
+        <div className={`bookmarks__search ${isSearchFocused ? 'focused' : ''}`}>
+          <svg
+            className="bookmarks__search-icon"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <path
+              d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M15.75 15.75L12.4875 12.4875"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search bookmarks..."
+            value={searchQuery}
+            onChange={handleSearch}
+            onFocus={() => setIsSearchFocused(true)}
+            onBlur={() => setIsSearchFocused(false)}
+            className="bookmarks__search-input"
+          />
+          {searchQuery && (
+            <button
+              className="bookmarks__search-clear"
+              onClick={handleClearSearch}
+              aria-label="Clear search"
             >
-                <React.Suspense fallback={<div>Preparando o artigo...</div>}>
-                    <MDXProvider>
-                        <ArticleContent />
-                    </MDXProvider>
-                </React.Suspense>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M12 4L4 12M4 4L12 12"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        <nav className="bookmarks__categories">
+          <button
+            className={`bookmarks__category ${activeCategory === 'all' ? 'active' : ''}`}
+            onClick={() => handleCategoryClick('all')}
+          >
+            All
+          </button>
+          {categories.map(category => (
+            <button
+              key={category.id}
+              className={`bookmarks__category ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => handleCategoryClick(category.id as CategoryFilter)}
+            >
+              {category.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {/* Active category description */}
+      <AnimatePresence mode="wait">
+        {activeCategoryData && (
+          <motion.div
+            key={activeCategory}
+            className="bookmarks__category-description"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+          >
+            {activeCategoryData.description}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Results count */}
+      {(searchQuery || activeCategory !== 'all') && (
+        <div className="bookmarks__results-count">
+          {filteredBookmarks.length} {filteredBookmarks.length === 1 ? 'result' : 'results'}
+          {searchQuery && ` for "${searchQuery}"`}
+        </div>
+      )}
+
+      {/* Content */}
+      <main className="bookmarks__content">
+        <AnimatePresence mode="wait">
+          {groupedBookmarks ? (
+            // Grouped view (all categories)
+            <motion.div
+              key="grouped"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {categories.map(category => (
+                <section
+                  key={category.id}
+                  id={category.id}
+                  className="bookmarks__section"
+                >
+                  <div className="bookmarks__section-header">
+                    <h2 className="bookmarks__section-title">{category.label}</h2>
+                    <span className="bookmarks__section-count">
+                      {groupedBookmarks[category.id].length}
+                    </span>
+                  </div>
+                  <p className="bookmarks__section-description">
+                    {category.description}
+                  </p>
+                  <div className="bookmark-grid">
+                    {groupedBookmarks[category.id].map((bookmark, index) => (
+                      <BookmarkCard
+                        key={bookmark.id}
+                        bookmark={bookmark}
+                        index={index}
+                      />
+                    ))}
+                  </div>
+                </section>
+              ))}
             </motion.div>
-        </>
-    );
+          ) : (
+            // Filtered view (single category or search)
+            <motion.div
+              key="filtered"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="bookmark-grid"
+            >
+              {filteredBookmarks.length > 0 ? (
+                filteredBookmarks.map((bookmark, index) => (
+                  <BookmarkCard
+                    key={bookmark.id}
+                    bookmark={bookmark}
+                    index={index}
+                  />
+                ))
+              ) : (
+                <div className="bookmarks__empty">
+                  <p>No bookmarks found</p>
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setActiveCategory('all');
+                    }}
+                  >
+                    Clear filters
+                  </button>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+
+      {/* Footer */}
+      <footer className="bookmarks__footer">
+        <p>
+          Curated by{' '}
+          <Link to="/" className="bookmarks__footer-link">
+            Alan Dias
+          </Link>
+        </p>
+      </footer>
+    </div>
+  );
 }
