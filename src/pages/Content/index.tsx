@@ -31,36 +31,34 @@ const itemVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.5
+            duration: 0.4
         }
     }
 };
 
 export default function ContentPage() {
     return (
-        <div className="page">
+        <div className="content-page">
             <Navbar />
-            <motion.div 
-                className="page__content"
+            <motion.div
+                className="content-page__content"
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
             >
-                <motion.section className="page__section" variants={containerVariants}>
-                    <motion.div 
-                        className="page__header"
+                <motion.section className="content-page__section" variants={containerVariants}>
+                    <motion.div
+                        className="content-page__header"
                         variants={itemVariants}
                     >
-                        <h1 className="page__title">
-                            Meus <span className="page__title-accent">Conteúdos</span>
-                        </h1>
-                        <p className="page__subtitle">
+                        <h1 className="content-page__title">Conteúdos</h1>
+                        <p className="content-page__subtitle">
                             Conteúdos sobre tecnologia, produto e empreendedorismo. Registro de alguns aprendizados no caminho.
                         </p>
                     </motion.div>
 
-                    <motion.div 
-                        className="page__articles"
+                    <motion.div
+                        className="content-page__grid"
                         variants={containerVariants}
                     >
                         {articlesData.map((article: ArticleProps) => (
@@ -71,19 +69,19 @@ export default function ContentPage() {
                     </motion.div>
                 </motion.section>
 
-                <motion.section className="page__section" variants={containerVariants}>
-                    <motion.div 
-                        className="page__header"
+                <motion.section className="content-page__section" variants={containerVariants}>
+                    <motion.div
+                        className="content-page__header"
                         variants={itemVariants}
                     >
-                        <h1 className="page__title">Curadoria</h1>
-                        <p className="page__subtitle">
+                        <h2 className="content-page__section-title">Curadoria</h2>
+                        <p className="content-page__subtitle">
                             Textos, vídeos e livros que eu já consumi e recomendo
                         </p>
                     </motion.div>
 
-                    <motion.div variants={itemVariants}>
-                        <MenuCard 
+                    <motion.div className="content-page__single-card" variants={itemVariants}>
+                        <MenuCard
                             title="Bookmarks"
                             description="Minha lista de conteúdos que recomendo, separados por diferentes áreas do conhecimento"
                             link="/bookmarks"

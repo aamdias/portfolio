@@ -8,6 +8,7 @@
     flex-direction: column;
 
     &__content {
+        flex: 1;
         width: 100%;
         max-width: $container-max;
         margin: 0 auto;
@@ -21,7 +22,7 @@
 
     &__header {
         text-align: center;
-        margin-bottom: $space-12;
+        margin-bottom: $space-10;
 
         @media (max-width: $bp-md) {
             margin-bottom: $space-8;
@@ -29,15 +30,15 @@
     }
 
     &__title {
-        font-size: $text-5xl;
+        font-size: $text-4xl;
         font-weight: $font-bold;
         color: $black;
-        margin: 0 0 $space-4;
+        margin: 0 0 $space-3;
         line-height: $leading-tight;
-        letter-spacing: $tracking-tighter;
+        letter-spacing: $tracking-tight;
 
         @media (max-width: $bp-md) {
-            font-size: $text-4xl;
+            font-size: $text-3xl;
         }
     }
 
@@ -46,7 +47,7 @@
         line-height: $leading-relaxed;
         color: $neutral-500;
         margin: 0 auto;
-        max-width: 520px;
+        max-width: 480px;
 
         @media (max-width: $bp-md) {
             font-size: $text-base;
@@ -55,7 +56,7 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: $space-6;
         width: 100%;
         box-sizing: border-box;
