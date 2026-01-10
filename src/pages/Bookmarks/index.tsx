@@ -12,6 +12,11 @@ export default function BookmarksPage() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Handle URL hash for direct category links
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
