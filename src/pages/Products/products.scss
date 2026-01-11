@@ -21,7 +21,7 @@
     }
 
     &__header {
-        text-align: center;
+        text-align: left;
         margin-bottom: $space-10;
 
         @media (max-width: $bp-md) {
@@ -46,7 +46,7 @@
         font-size: $text-lg;
         line-height: $leading-relaxed;
         color: $neutral-500;
-        margin: 0 auto;
+        margin: 0;
         max-width: 480px;
 
         @media (max-width: $bp-md) {
