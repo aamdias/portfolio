@@ -117,13 +117,6 @@ export default function About() {
                     </div>
                     <FeaturedGrid>
                         <MenuCard
-                            title="chatQL"
-                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA"
-                            link="https://www.chatql.space"
-                            isExternalLink
-                            image="chatql-screenshot.png"
-                        />
-                        <MenuCard
                             title="Maromba AI"
                             description="Crie treinos personalizados e acompanhe seu progresso com inteligência artificial"
                             link="https://www.marombaai.com"
@@ -136,6 +129,13 @@ export default function About() {
                             link="https://www.dralorraine.com"
                             isExternalLink
                             image="dralorraine-screenshot.png"
+                        />
+                        <MenuCard
+                            title="chatQL"
+                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA"
+                            link="https://www.chatql.space"
+                            isExternalLink
+                            image="chatql-screenshot.png"
                         />
                     </FeaturedGrid>
                     <div className="section__cta">

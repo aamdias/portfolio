@@ -1,11 +1,9 @@
 import { MDXProvider } from '@mdx-js/react';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import React from 'react';
-import { AiFillMediumSquare } from 'react-icons/ai';
-import { BiArrowBack } from 'react-icons/bi';
-import { FaCircleArrowRight } from "react-icons/fa6";
 import { motion } from 'framer-motion';
+import Navbar from '../../components/Navbar/navbar.tsx';
+import Footer from '../../components/Footer/footer.tsx';
 import articlesData from '../../data/articles.json';
 import './article-page.scss';
 
@@ -21,51 +19,91 @@ const fadeInVariants = {
     }
 };
 
-export default function ArticlePage () {
+export default function ArticlePage() {
     const { slug } = useParams<{ slug: string }>();
     const article = articlesData.find(article => article.slug === slug);
     const external_link = article?.externalLink;
     const ArticleContent = React.lazy(() => import(`../../mdx/${slug}.mdx`));
 
-    return(
-        <motion.div 
-            className="article-page"
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-        >
-            <div className="article-top-navigation">
-                <Link
-                    to="/conteudos"
-                    className="back-home-button"
-                >
-                    <span className="back-home-button__icon">
-                        <BiArrowBack /> Voltar
-                    </span>
-                </Link>
-                <a
-                    href={external_link}
-                    target="_blank"
-                    className="read-in-medium-button"
-                    rel="noopener noreferrer"
-                >
-                    <span className="read-in-medium-button__icon">
-                        <AiFillMediumSquare />
-                    </span>
-                </a>
-            </div>
-            <React.Suspense fallback={<div>Preparando o artigo...</div>}>
-                <MDXProvider>
-                    <ArticleContent />
-                </MDXProvider>
-            </React.Suspense>
-            <Link
-                to="/conteudos"
-                className="see-all-content-button"
+    // Find next article for recommendation
+    const currentIndex = articlesData.findIndex(a => a.slug === slug);
+    const nextArticle = articlesData[(currentIndex + 1) % articlesData.length];
+
+    return (
+        <div className="article-page-wrapper">
+            <Navbar />
+            <motion.article
+                className="article-page"
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
             >
-                Ver mais conteúdo
-                <FaCircleArrowRight />
-            </Link>
-        </motion.div>
+                {/* Breadcrumb navigation */}
+                <nav className="article-page__breadcrumb">
+                    <Link to="/" className="article-page__breadcrumb-link">Início</Link>
+                    <span className="article-page__breadcrumb-separator">/</span>
+                    <Link to="/conteudos" className="article-page__breadcrumb-link">Conteúdos</Link>
+                    <span className="article-page__breadcrumb-separator">/</span>
+                    <span className="article-page__breadcrumb-current">{article?.title}</span>
+                </nav>
+
+                {/* Article header */}
+                <header className="article-page__header">
+                    <time className="article-page__date">{article?.publishedDate}</time>
+                    <h1 className="article-page__title">{article?.title}</h1>
+                    {article?.description && (
+                        <p className="article-page__subtitle">{article.description}</p>
+                    )}
+                </header>
+
+                {/* Article content */}
+                <div className="article-page__content">
+                    <React.Suspense fallback={
+                        <div className="article-page__loading">
+                            <span>Carregando artigo...</span>
+                        </div>
+                    }>
+                        <MDXProvider>
+                            <ArticleContent />
+                        </MDXProvider>
+                    </React.Suspense>
+                </div>
+
+                {/* Article footer */}
+                <footer className="article-page__footer">
+                    {external_link && (
+                        <a
+                            href={external_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="article-page__external-link"
+                        >
+                            Ler no Medium
+                        </a>
+                    )}
+
+                    <div className="article-page__divider" />
+
+                    {/* Next article recommendation */}
+                    {nextArticle && nextArticle.slug !== slug && (
+                        <div className="article-page__next">
+                            <span className="article-page__next-label">Próximo artigo</span>
+                            <Link
+                                to={`/artigos/${nextArticle.slug}`}
+                                className="article-page__next-link"
+                            >
+                                <span className="article-page__next-title">{nextArticle.title}</span>
+                                <span className="article-page__next-arrow">→</span>
+                            </Link>
+                        </div>
+                    )}
+
+                    <Link to="/conteudos" className="article-page__back-link">
+                        ← Ver todos os conteúdos
+                    </Link>
+                </footer>
+            </motion.article>
+            <Footer />
+        </div>
     );
 }
