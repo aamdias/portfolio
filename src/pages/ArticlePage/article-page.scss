@@ -163,16 +163,38 @@
     // Content (MDX styles)
     &__content {
         :global {
-            // Hide duplicate header elements from MDX
-            .post-layout > h1:first-of-type,
-            .post-layout > .update-date,
-            .post-layout > p:first-of-type > em:only-child {
-                display: none;
+            // Override global .post-layout styles for dark mode support
+            .post-layout {
+                color: var(--text-secondary);
+
+                // Hide duplicate header elements
+                > h1:first-of-type {
+                    display: none;
+                }
+
+                > .update-date {
+                    display: none;
+                }
+
+                // Hide the italic subtitle paragraph
+                > p:first-of-type {
+                    display: none;
+                }
+
+                // Override h1 color
+                h1 {
+                    color: var(--text-primary);
+                }
+
+                // Override link colors
+                a {
+                    color: var(--text-primary);
+                }
             }
 
-            // Also hide if subtitle is direct child
-            .post-layout > p:nth-of-type(1):has(em:only-child) {
-                display: none;
+            // Override .update-date global styles
+            .update-date {
+                color: var(--text-muted);
             }
 
             h1 {
