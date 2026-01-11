@@ -19,17 +19,17 @@
     background: var(--bg);
     transition: background-color 0.3s ease, color 0.3s ease;
 
-    // Dark mode - improved contrast
+    // Dark mode - high contrast
     &--dark {
         --bg: #0a0a0a;
-        --bg-subtle: #141414;
-        --bg-muted: #1f1f1f;
+        --bg-subtle: #161616;
+        --bg-muted: #222222;
         --text-primary: #ffffff;
-        --text-secondary: #d4d4d4;
-        --text-tertiary: #a3a3a3;
-        --text-muted: #737373;
-        --border: rgba(255, 255, 255, 0.1);
-        --border-hover: rgba(255, 255, 255, 0.2);
+        --text-secondary: #e8e8e8;
+        --text-tertiary: #b5b5b5;
+        --text-muted: #888888;
+        --border: rgba(255, 255, 255, 0.12);
+        --border-hover: rgba(255, 255, 255, 0.24);
     }
 }
 
@@ -105,9 +105,9 @@
 .article-page {
     flex: 1;
     width: 100%;
-    max-width: 820px;
+    max-width: 920px;
     margin: 0 auto;
-    padding: $space-10 $space-6;
+    padding: $space-10 $space-4;
 
     @media (max-width: $bp-md) {
         padding: $space-8 $space-4;
