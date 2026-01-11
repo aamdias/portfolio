@@ -2,26 +2,22 @@
 
 .article {
     width: 100%;
-    min-height: 280px;
     margin: 0;
     border-radius: $radius-lg;
     transition: all $transition-normal;
     background: $white;
     border: 1px solid $border-default;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 
     &:hover {
         border-color: $border-hover;
         box-shadow: $shadow-hover;
-        transform: translateY(-2px);
 
         .article__thumbnail {
             transform: scale(1.03);
         }
 
-        .article__link {
+        .article__cta {
             color: $black;
 
             &::after {
@@ -30,19 +26,24 @@
         }
     }
 
+    &__link-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+    }
+
     &__image {
         position: relative;
         width: 100%;
-        padding-top: 52%;
+        height: 140px;
         overflow: hidden;
         flex-shrink: 0;
         background: $neutral-100;
     }
 
     &__thumbnail {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -51,32 +52,27 @@
 
     &__content {
         flex: 1;
-        padding: $space-5;
+        padding: $space-4;
         display: flex;
         flex-direction: column;
-        min-height: 0;
-
-        @media (max-width: $bp-md) {
-            padding: $space-4;
-        }
     }
 
     &__meta {
-        margin-bottom: $space-2;
+        margin-bottom: $space-1;
         flex-shrink: 0;
     }
 
     &__date {
-        font-size: $text-sm;
+        font-size: $text-xs;
         color: $neutral-400;
         font-weight: $font-medium;
     }
 
     &__title {
-        font-size: $text-xl;
+        font-size: $text-base;
         font-weight: $font-semibold;
         color: $black;
-        margin: 0 0 $space-2;
+        margin: 0 0 $space-1;
         line-height: $leading-snug;
         letter-spacing: $tracking-tight;
         overflow: hidden;
@@ -85,17 +81,13 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         flex-shrink: 0;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-lg;
-        }
     }
 
     &__description {
         font-size: $text-sm;
         line-height: $leading-relaxed;
         color: $neutral-500;
-        margin: 0 0 $space-4;
+        margin: 0 0 $space-3;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -104,13 +96,12 @@
         flex: 1;
     }
 
-    &__link {
+    &__cta {
         display: inline-flex;
         align-items: center;
         font-size: $text-sm;
         font-weight: $font-medium;
         color: $neutral-400;
-        text-decoration: none;
         transition: color $transition-fast;
         margin-top: auto;
 

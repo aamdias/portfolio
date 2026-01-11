@@ -32,8 +32,9 @@ body {
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: calc(100vw);
+  padding: 0 24px;
   .back-home-button{
     margin-top: 12px;
   }
@@ -43,42 +44,30 @@ body {
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
-  width: calc(100vw - 16px);
-  &__content{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 140px;
-  }
+  align-items: flex-start;
+  width: 100%;
 }
 
 .content-page{
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
-  width: calc(100vw - 16px);
-  &__content{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 140px;
-  }
+  align-items: flex-start;
+  width: 100%;
 }
 
 .agenda{
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: calc(100vw - 16px);
+  padding: 0 24px;
   &__content{
     width: 100%;
+    max-width: 800px;
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 80px;
   }
 
@@ -90,11 +79,11 @@ body {
 .buildwithme{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 80px; 
+  align-items: flex-start;
+  padding-top: 80px;
   padding-bottom: 80px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 800px;
 }
 
 .title {
@@ -106,7 +95,7 @@ body {
   font-weight: 800;
   line-height: normal;
   margin: 8px 16px 8px;
-  text-align: center;
+  text-align: left;
 }
 
 .subtitle{
@@ -118,7 +107,7 @@ body {
   line-height: normal;
   letter-spacing: 1.4px;
   margin: 8px 0px 8px 0px;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
@@ -133,8 +122,8 @@ body {
 .email-copy{
   display: flex;
   padding: 8px;
-  margin: 8px;
-  justify-content: center;
+  margin: 8px 0;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   border-radius: 8px;

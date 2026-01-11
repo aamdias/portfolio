@@ -56,44 +56,36 @@
     }
 
     &__header {
-        text-align: center;
-        margin-bottom: $space-10;
+        text-align: left;
+        margin-bottom: $space-6;
 
         @media (max-width: $bp-md) {
-            margin-bottom: $space-8;
+            margin-bottom: $space-5;
         }
     }
 
     &__title {
-        font-size: $text-4xl;
+        font-size: $text-2xl;
         font-weight: $font-bold;
         color: $black;
-        margin: 0 0 $space-3;
+        margin: 0 0 $space-2;
         line-height: $leading-tight;
         letter-spacing: $tracking-tight;
 
         @media (max-width: $bp-md) {
-            font-size: $text-3xl;
+            font-size: $text-xl;
         }
     }
 
     &__subtitle {
-        font-size: $text-lg;
+        font-size: $text-sm;
         line-height: $leading-relaxed;
         color: $neutral-500;
         margin: 0;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-base;
-        }
     }
 
     &__bio {
-        max-width: $container-narrow;
-        margin: 0 auto;
+        width: 100%;
         padding: $space-8;
         background: $neutral-50;
         border-radius: $radius-xl;
@@ -126,11 +118,9 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: $space-6;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-5;
         width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
 
         @media (max-width: $bp-md) {
             grid-template-columns: 1fr;
@@ -140,7 +130,7 @@
 
     &__cta {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: $space-10;
 
         @media (max-width: $bp-md) {
@@ -184,12 +174,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: $space-6;
+    padding: $space-5;
     background: $neutral-50;
     border-radius: $radius-lg;
     text-decoration: none;
     transition: all $transition-normal;
-    min-height: 160px;
 
     &:hover {
         background: $neutral-100;
@@ -204,14 +193,14 @@
     }
 
     &__content {
-        margin-bottom: $space-4;
+        margin-bottom: $space-3;
     }
 
     &__title {
-        font-size: $text-xl;
+        font-size: $text-base;
         font-weight: $font-semibold;
         color: $black;
-        margin: 0 0 $space-2;
+        margin: 0 0 $space-1;
         letter-spacing: $tracking-tight;
     }
 

@@ -43,7 +43,6 @@ export default function About() {
                 <section className="section">
                     <div className="section__header">
                         <h2 className="section__title">Sobre mim</h2>
-                        <p className="section__subtitle">Um pouco da minha história</p>
                     </div>
                     <div className="section__bio">
                         <p>
@@ -71,9 +70,6 @@ export default function About() {
                 >
                     <div className="section__header">
                         <h2 className="section__title">Conteúdos</h2>
-                        <p className="section__subtitle">
-                            Curadoria de conteúdos e artigos sobre produtos digitais
-                        </p>
                     </div>
                     <FeaturedGrid>
                         <Link to="/bookmarks" className="featured-card">
@@ -111,9 +107,6 @@ export default function About() {
                 >
                     <div className="section__header">
                         <h2 className="section__title">Produtos</h2>
-                        <p className="section__subtitle">
-                            Produtos digitais que desenvolvi do zero
-                        </p>
                     </div>
                     <FeaturedGrid>
                         <MenuCard
@@ -155,7 +148,6 @@ export default function About() {
                 >
                     <div className="section__header">
                         <h2 className="section__title">Trabalhe comigo</h2>
-                        <p className="section__subtitle">Como posso te ajudar</p>
                     </div>
                     <div className="section__grid">
                         <MenuCard

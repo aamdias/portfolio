@@ -13,27 +13,29 @@ type ArticleProps = {
 
 function Article({ title, description, publishedDate, slug, thumbnail }: ArticleProps) {
     return (
-        <motion.article 
+        <motion.article
             className="article"
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
         >
-            <div className="article__image">
-                <img src={thumbnail} alt={title} className="article__thumbnail" />
-            </div>
-            
-            <div className="article__content">
-                <div className="article__meta">
-                    <time className="article__date">{publishedDate}</time>
+            <Link to={`/artigos/${slug}`} className="article__link-wrapper">
+                <div className="article__image">
+                    <img src={thumbnail} alt={title} className="article__thumbnail" />
                 </div>
-                
-                <h2 className="article__title">{title}</h2>
-                <p className="article__description">{description}</p>
-                
-                <Link to={`/artigos/${slug}`} className="article__link">
-                    Ler artigo
-                </Link>
-            </div>
+
+                <div className="article__content">
+                    <div className="article__meta">
+                        <time className="article__date">{publishedDate}</time>
+                    </div>
+
+                    <h2 className="article__title">{title}</h2>
+                    <p className="article__description">{description}</p>
+
+                    <span className="article__cta">
+                        Ler artigo
+                    </span>
+                </div>
+            </Link>
         </motion.article>
     );
 }
