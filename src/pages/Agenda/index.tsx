@@ -1,37 +1,32 @@
-import { Link } from 'react-router-dom';
-import { BiArrowBack } from 'react-icons/bi';
-import {  useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import Navbar from '../../components/Navbar/navbar.tsx';
+import Footer from '../../components/Footer/footer.tsx';
+import './agenda.scss';
 
-const fadeInVariants = {
-    hidden: {
-      opacity: 0,
-      y: -50, 
-    },
+const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      y: 0,
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
     }
-  };
+};
 
-export default function Agenda () {
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.4
+        }
+    }
+};
 
-    const location = useLocation();
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    };
-
+export default function Agenda() {
     useEffect(() => {
-        scrollToTop();
-    }, [location.pathname]);
-
-    useEffect(() => {
-
         const script = document.createElement('script');
         script.src = "https://assets.calendly.com/assets/external/widget.js";
         script.async = true;
@@ -40,40 +35,37 @@ export default function Agenda () {
         return () => {
             document.body.removeChild(script);
         };
-;
     }, []);
 
-    const isSmallScreen = window.innerWidth <= 540;
-
-    return(
-        <div className = "agenda">
-            <Link
-                to="/"
-                className="back-home-button"
-            >
-            <span className ="back-home-button__icon">< BiArrowBack /> Voltar </span>
-            </Link>
-                <motion.div 
-                className = "agenda__content"
+    return (
+        <div className="agenda-page">
+            <Navbar />
+            <motion.div
+                className="agenda-page__content"
                 initial="hidden"
                 animate="visible"
-                variants={fadeInVariants}
-                transition={{ 
-                    ease: "easeOut", 
-                    type: "spring", 
-                    stiffness: 80,   
-                    delay: 0.2,      
-                    duration: 2.5    
-                }}  
-                >
-                <h1 className="title"> Horários disponíveis </h1>
-                <h2 className="subtitle"> Aceito somente após contato prévio </h2>
-                <div
-                    className="calendly-inline-widget"
-                    data-url="https://calendly.com/alan-dias-trybe/1-1?hide_event_type_details=1&hide_gdpr_banner=1&text_color=828282&primary_color=333333"
-                    style={isSmallScreen ? {minWidth: '320px', height: '500px', position: 'relative'} : {minWidth: '400px', height: '500px', position: 'relative'}}
-                ></div> 
-                </motion.div>
+                variants={containerVariants}
+            >
+                <motion.section className="agenda-page__section" variants={containerVariants}>
+                    <motion.div
+                        className="agenda-page__header"
+                        variants={itemVariants}
+                    >
+                        <h1 className="agenda-page__title">Agenda</h1>
+                        <p className="agenda-page__subtitle">
+                            Horários disponíveis para uma conversa. Aceito somente após contato prévio.
+                        </p>
+                    </motion.div>
+
+                    <motion.div className="agenda-page__calendly" variants={itemVariants}>
+                        <div
+                            className="calendly-inline-widget"
+                            data-url="https://calendly.com/alan-dias-trybe/1-1?hide_event_type_details=1&hide_gdpr_banner=1&text_color=525252&primary_color=111111"
+                        />
+                    </motion.div>
+                </motion.section>
+            </motion.div>
+            <Footer />
         </div>
     );
 }

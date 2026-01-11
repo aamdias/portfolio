@@ -1,0 +1,138 @@
+@import './../../styles/variables';
+
+.workwithme-page {
+    min-height: 100vh;
+    width: 100%;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        flex: 1;
+        width: 100%;
+        max-width: $container-max;
+        margin: 0 auto;
+        padding: $space-20 $space-6 $space-16;
+        box-sizing: border-box;
+
+        @media (max-width: $bp-md) {
+            padding: $space-16 $space-4 $space-12;
+        }
+    }
+
+    &__section {
+        margin-bottom: $space-16;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $bp-md) {
+            margin-bottom: $space-12;
+        }
+    }
+
+    &__header {
+        text-align: left;
+        margin-bottom: $space-6;
+
+        @media (max-width: $bp-md) {
+            margin-bottom: $space-5;
+        }
+    }
+
+    &__title {
+        font-size: $text-2xl;
+        font-weight: $font-bold;
+        color: $black;
+        margin: 0 0 $space-2;
+        line-height: $leading-tight;
+        letter-spacing: $tracking-tight;
+
+        @media (max-width: $bp-md) {
+            font-size: $text-xl;
+        }
+    }
+
+    &__section-title {
+        font-size: $text-2xl;
+        font-weight: $font-bold;
+        color: $black;
+        margin: 0 0 $space-2;
+        line-height: $leading-tight;
+        letter-spacing: $tracking-tight;
+
+        @media (max-width: $bp-md) {
+            font-size: $text-xl;
+        }
+    }
+
+    &__subtitle {
+        font-size: $text-sm;
+        line-height: $leading-relaxed;
+        color: $neutral-500;
+        margin: 0;
+    }
+
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-5;
+        width: 100%;
+
+        @media (max-width: $bp-md) {
+            grid-template-columns: 1fr;
+            gap: $space-4;
+        }
+    }
+
+    &__contact {
+        width: 100%;
+    }
+
+    &__email-box {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-3;
+        padding: $space-3 $space-4;
+        background: $neutral-50;
+        border-radius: $radius-md;
+        border: 1px solid $border-default;
+    }
+
+    &__email {
+        font-size: $text-sm;
+        font-weight: $font-medium;
+        color: $neutral-600;
+        font-family: monospace;
+    }
+
+    &__copy-button {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-2;
+        padding: $space-2;
+        background: transparent;
+        border: none;
+        border-radius: $radius-sm;
+        color: $neutral-400;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:hover {
+            color: $black;
+            background: $neutral-100;
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &__copied {
+        font-size: $text-xs;
+        font-weight: $font-medium;
+        color: $neutral-600;
+    }
+}

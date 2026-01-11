@@ -68,8 +68,11 @@ export default function About() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <div className="section__header">
+                    <div className="section__header section__header--with-action">
                         <h2 className="section__title">Conteúdos</h2>
+                        <Link to="/conteudos" className="section__header-link">
+                            Ver todos
+                        </Link>
                     </div>
                     <FeaturedGrid>
                         <Link to="/bookmarks" className="featured-card">
@@ -90,11 +93,6 @@ export default function About() {
                             />
                         ))}
                     </FeaturedGrid>
-                    <div className="section__cta">
-                        <Link to="/conteudos" className="section__cta-link">
-                            Ver todos os conteúdos
-                        </Link>
-                    </div>
                 </motion.section>
 
                 {/* Products Section */}
@@ -105,8 +103,11 @@ export default function About() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <div className="section__header">
+                    <div className="section__header section__header--with-action">
                         <h2 className="section__title">Produtos</h2>
+                        <Link to="/produtos" className="section__header-link">
+                            Ver todos
+                        </Link>
                     </div>
                     <FeaturedGrid>
                         <MenuCard
@@ -131,11 +132,6 @@ export default function About() {
                             image="chatql-screenshot.png"
                         />
                     </FeaturedGrid>
-                    <div className="section__cta">
-                        <Link to="/produtos" className="section__cta-link">
-                            Ver todos os produtos
-                        </Link>
-                    </div>
                 </motion.section>
 
                 {/* Work With Me Section */}
