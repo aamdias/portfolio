@@ -25,9 +25,9 @@
         --bg-subtle: #161616;
         --bg-muted: #222222;
         --text-primary: #ffffff;
-        --text-secondary: #e8e8e8;
-        --text-tertiary: #b5b5b5;
-        --text-muted: #888888;
+        --text-secondary: #f0f0f0;
+        --text-tertiary: #c0c0c0;
+        --text-muted: #909090;
         --border: rgba(255, 255, 255, 0.12);
         --border-hover: rgba(255, 255, 255, 0.24);
     }
@@ -163,6 +163,18 @@
     // Content (MDX styles)
     &__content {
         :global {
+            // Hide duplicate header elements from MDX
+            .post-layout > h1:first-of-type,
+            .post-layout > .update-date,
+            .post-layout > p:first-of-type > em:only-child {
+                display: none;
+            }
+
+            // Also hide if subtitle is direct child
+            .post-layout > p:nth-of-type(1):has(em:only-child) {
+                display: none;
+            }
+
             h1 {
                 font-size: $text-3xl;
                 font-weight: $font-bold;
