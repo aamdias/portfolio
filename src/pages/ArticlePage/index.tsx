@@ -1,6 +1,6 @@
 import { MDXProvider } from '@mdx-js/react';
 import { useParams, Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import articlesData from '../../data/articles.json';
 import './article-page.scss';
@@ -29,9 +29,33 @@ export default function ArticlePage() {
         return saved ? JSON.parse(saved) : false;
     });
 
+    // Scroll-aware header visibility
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+    const lastScrollY = useRef(0);
+
     useEffect(() => {
         localStorage.setItem('article-dark-mode', JSON.stringify(isDarkMode));
     }, [isDarkMode]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            const scrollThreshold = 10;
+
+            if (currentScrollY < 50) {
+                // Always show header at the top
+                setIsHeaderVisible(true);
+            } else if (Math.abs(currentScrollY - lastScrollY.current) > scrollThreshold) {
+                // Hide on scroll down, show on scroll up
+                setIsHeaderVisible(currentScrollY < lastScrollY.current);
+            }
+
+            lastScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     // Find next article for recommendation
     const currentIndex = articlesData.findIndex(a => a.slug === slug);
@@ -40,7 +64,7 @@ export default function ArticlePage() {
     return (
         <div className={`article-page-wrapper ${isDarkMode ? 'article-page-wrapper--dark' : ''}`}>
             {/* Minimal top bar */}
-            <nav className="article-page__topbar">
+            <nav className={`article-page__topbar ${!isHeaderVisible ? 'article-page__topbar--hidden' : ''}`}>
                 <Link to="/" className="article-page__home-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M15 18l-6-6 6-6"/>

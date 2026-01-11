@@ -19,17 +19,17 @@
     background: var(--bg);
     transition: background-color 0.3s ease, color 0.3s ease;
 
-    // Dark mode
+    // Dark mode - improved contrast
     &--dark {
         --bg: #0a0a0a;
         --bg-subtle: #141414;
-        --bg-muted: #1a1a1a;
-        --text-primary: #fafafa;
-        --text-secondary: #a3a3a3;
-        --text-tertiary: #737373;
-        --text-muted: #525252;
-        --border: rgba(255, 255, 255, 0.08);
-        --border-hover: rgba(255, 255, 255, 0.15);
+        --bg-muted: #1f1f1f;
+        --text-primary: #ffffff;
+        --text-secondary: #d4d4d4;
+        --text-tertiary: #a3a3a3;
+        --text-muted: #737373;
+        --border: rgba(255, 255, 255, 0.1);
+        --border-hover: rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -44,6 +44,14 @@
     padding: $space-4 $space-6;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &--hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
 
     @media (max-width: $bp-md) {
         padding: $space-3 $space-4;
@@ -97,9 +105,9 @@
 .article-page {
     flex: 1;
     width: 100%;
-    max-width: 760px;
+    max-width: 820px;
     margin: 0 auto;
-    padding: $space-10 $space-8;
+    padding: $space-10 $space-6;
 
     @media (max-width: $bp-md) {
         padding: $space-8 $space-4;
@@ -256,7 +264,7 @@
                 list-style-type: decimal;
 
                 li::marker {
-                    color: var(--text-muted);
+                    color: var(--text-tertiary);
                     font-weight: $font-medium;
                 }
             }
