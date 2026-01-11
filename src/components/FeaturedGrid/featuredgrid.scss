@@ -94,8 +94,8 @@
 @media (min-width: $bp-md) {
     .featured-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: $space-6;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space-4;
         width: 100%;
     }
 }

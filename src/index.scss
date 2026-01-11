@@ -44,30 +44,16 @@ body {
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
-  width: calc(100vw - 16px);
-  &__content{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 140px;
-  }
+  align-items: flex-start;
+  width: 100%;
 }
 
 .content-page{
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
-  width: calc(100vw - 16px);
-  &__content{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 140px;
-  }
+  align-items: flex-start;
+  width: 100%;
 }
 
 .agenda{
