@@ -78,20 +78,14 @@
     }
 
     &__subtitle {
-        font-size: $text-lg;
+        font-size: $text-base;
         line-height: $leading-relaxed;
         color: $neutral-500;
         margin: 0;
-        max-width: 480px;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-base;
-        }
     }
 
     &__bio {
         max-width: $container-narrow;
-        margin: 0 auto;
         padding: $space-8;
         background: $neutral-50;
         border-radius: $radius-xl;
@@ -128,7 +122,6 @@
         gap: $space-6;
         width: 100%;
         max-width: 720px;
-        margin: 0 auto;
 
         @media (max-width: $bp-md) {
             grid-template-columns: 1fr;
@@ -138,7 +131,7 @@
 
     &__cta {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: $space-10;
 
         @media (max-width: $bp-md) {

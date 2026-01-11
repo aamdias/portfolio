@@ -32,8 +32,9 @@ body {
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: calc(100vw);
+  padding: 0 24px;
   .back-home-button{
     margin-top: 12px;
   }
@@ -72,13 +73,15 @@ body {
 .agenda{
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: calc(100vw - 16px);
+  padding: 0 24px;
   &__content{
     width: 100%;
+    max-width: 800px;
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 80px;
   }
 
@@ -90,11 +93,11 @@ body {
 .buildwithme{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 80px; 
+  align-items: flex-start;
+  padding-top: 80px;
   padding-bottom: 80px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 800px;
 }
 
 .title {
@@ -133,8 +136,8 @@ body {
 .email-copy{
   display: flex;
   padding: 8px;
-  margin: 8px;
-  justify-content: center;
+  margin: 8px 0;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   border-radius: 8px;

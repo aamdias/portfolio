@@ -68,15 +68,10 @@
     }
 
     &__subtitle {
-        font-size: $text-lg;
+        font-size: $text-base;
         line-height: $leading-relaxed;
         color: $neutral-500;
         margin: 0;
-        max-width: 520px;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-base;
-        }
     }
 
     &__grid {
@@ -99,7 +94,6 @@
 
     &__single-card {
         max-width: 400px;
-        margin: 0 auto;
 
         @media (max-width: $bp-md) {
             max-width: none;
