@@ -12,11 +12,11 @@
         width: 100%;
         max-width: $container-max;
         margin: 0 auto;
-        padding: $space-8 $space-6 $space-16;
+        padding: $space-16 $space-6 $space-16;
         box-sizing: border-box;
 
         @media (max-width: $bp-md) {
-            padding: $space-6 $space-4 $space-12;
+            padding: $space-12 $space-4 $space-12;
         }
     }
 
