@@ -2,13 +2,17 @@
 
 .card {
     width: 100%;
-    min-height: 200px;
     border-radius: $radius-lg;
     transition: all $transition-normal;
     background: $white;
     border: 1px solid $border-default;
     overflow: hidden;
     display: flex;
+    flex-direction: row;
+
+    @media (max-width: $bp-md) {
+        flex-direction: column;
+    }
 
     &:hover {
         border-color: $border-hover;
@@ -31,12 +35,13 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        padding: $space-6;
+        padding: $space-5;
         text-decoration: none;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
 
         @media (max-width: $bp-md) {
-            padding: $space-5;
+            padding: $space-4;
         }
     }
 
@@ -44,20 +49,16 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        margin-bottom: $space-5;
+        margin-bottom: $space-3;
     }
 
     &__title {
-        font-size: $text-xl;
+        font-size: $text-base;
         font-weight: $font-semibold;
         color: $black;
-        margin: 0 0 $space-2;
+        margin: 0 0 $space-1;
         line-height: $leading-snug;
         letter-spacing: $tracking-tight;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-lg;
-        }
     }
 
     &__description {
@@ -66,7 +67,7 @@
         color: $neutral-500;
         margin: 0;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -91,10 +92,9 @@
     }
 
     &__image {
-        width: 100%;
-        height: 180px;
-        margin-bottom: $space-5;
-        border-radius: $radius-md;
+        width: 200px;
+        height: 120px;
+        flex-shrink: 0;
         overflow: hidden;
         background: $neutral-100;
 
@@ -106,8 +106,8 @@
         }
 
         @media (max-width: $bp-md) {
+            width: 100%;
             height: 160px;
-            margin-bottom: $space-4;
         }
     }
 }
