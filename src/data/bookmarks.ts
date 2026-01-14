@@ -305,6 +305,14 @@ export const bookmarks: Bookmark[] = [
     category: 'ai',
     type: 'article',
   },
+  {
+    id: 'ai-7',
+    title: 'Claude Code in Action',
+    description: 'Official Anthropic course on using Claude Code - an AI-powered coding assistant for software development',
+    url: 'https://anthropic.skilljar.com/claude-code-in-action/303235',
+    category: 'ai',
+    type: 'video',
+  },
 ];
 
 // Utility to extract domain from URL for favicon fetching
