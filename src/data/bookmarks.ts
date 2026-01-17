@@ -313,6 +313,14 @@ export const bookmarks: Bookmark[] = [
     category: 'ai',
     type: 'video',
   },
+  {
+    id: 'ai-8',
+    title: 'RLVR Explained: Reinforcement Learning from Verifiable Rewards',
+    description: 'Deep dive into RLVR, an advanced technique for training AI models using verifiable rewards instead of human feedback',
+    url: 'https://www.promptfoo.dev/blog/rlvr-explained/',
+    category: 'ai',
+    type: 'article',
+  },
 ];
 
 // Utility to extract domain from URL for favicon fetching
