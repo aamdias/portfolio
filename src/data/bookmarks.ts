@@ -237,6 +237,15 @@ export const bookmarks: Bookmark[] = [
     category: 'design-ux',
     type: 'video',
   },
+  // Design & UX - Articles
+  {
+    id: 'design-4',
+    title: 'Mastering Vibecoding: the new competitive edge for Designers',
+    description: 'O Coelho Branco #026 EXTRA — how vibecoding is becoming a key competitive skill for designers',
+    url: 'https://ocoelhobranco.substack.com/p/o-coelho-branco-026-extra-mastering',
+    category: 'design-ux',
+    type: 'article',
+  },
   // Design & UX - Websites
   {
     id: 'design-2',
@@ -251,6 +260,14 @@ export const bookmarks: Bookmark[] = [
     title: 'Built for Mars',
     description: 'UX case studies and analysis of the world\'s best products',
     url: 'https://builtformars.com/',
+    category: 'design-ux',
+    type: 'website',
+  },
+  {
+    id: 'design-5',
+    title: 'Layers',
+    description: 'Repository for UI/UX inspiration',
+    url: 'https://layers.to/explore',
     category: 'design-ux',
     type: 'website',
   },
