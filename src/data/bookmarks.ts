@@ -271,6 +271,22 @@ export const bookmarks: Bookmark[] = [
     category: 'design-ux',
     type: 'website',
   },
+  {
+    id: 'design-6',
+    title: '21st.dev Components',
+    description: 'Community-curated library of UI components for building modern web interfaces',
+    url: 'https://21st.dev/community/components',
+    category: 'design-ux',
+    type: 'website',
+  },
+  {
+    id: 'design-7',
+    title: 'Mobbin',
+    description: 'World\'s largest collection of mobile and web app screenshots for design reference and inspiration',
+    url: 'https://mobbin.com/',
+    category: 'design-ux',
+    type: 'website',
+  },
   // AI - Videos
   {
     id: 'ai-1',
@@ -289,6 +305,14 @@ export const bookmarks: Bookmark[] = [
     type: 'video',
   },
   // AI - Websites
+  {
+    id: 'ai-9',
+    title: 'AI Hero',
+    description: 'Practical AI development resources, tutorials, and tools for building with modern AI models',
+    url: 'https://www.aihero.dev/',
+    category: 'ai',
+    type: 'website',
+  },
   {
     id: 'ai-3',
     title: 'LLM Visualization',
