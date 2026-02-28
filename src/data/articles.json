@@ -30,5 +30,13 @@
       "thumbnail":"/front-end-para-pms-thumb.png",
       "slug":"front-end-para-pms",
       "externalLink": "https://medium.com/@aamdias/"
+    },
+    {
+      "title": "Build Tunnels, Not Escalators",
+      "description": "Why product-first teams should redesign how value reaches customers, not just automate the existing path",
+      "publishedDate": "28 de Fevereiro de 2026",
+      "thumbnail":"/build-tunnels-thumbnail.png",
+      "slug":"build-tunnels-not-escalators",
+      "externalLink": "https://medium.com/@aamdias/build-tunnels-not-escalators-a2504fe61ea7"
     }
   ]
