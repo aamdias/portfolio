@@ -378,6 +378,14 @@ export const bookmarks: Bookmark[] = [
     category: 'ai',
     type: 'article',
   },
+  {
+    id: 'ai-10',
+    title: 'Anthropic Economic Index',
+    description: 'How Anthropic measures and calculates the economic impact of AI on jobs, tasks, and industries',
+    url: 'https://www.anthropic.com/economic-index#us-usage',
+    category: 'ai',
+    type: 'article',
+  },
 ];
 
 // Utility to extract domain from URL for favicon fetching
