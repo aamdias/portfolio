@@ -287,6 +287,22 @@ export const bookmarks: Bookmark[] = [
     category: 'design-ux',
     type: 'website',
   },
+  {
+    id: 'design-8',
+    title: 'Jenny Wen: O processo de design está morto',
+    description: 'Líder de Design da Anthropic explica por que o processo de design tradicional falha no mundo atual e como um ótimo trabalho é feito hoje. Hatch Conference, Berlim.',
+    url: 'https://www.youtube.com/watch?v=4u94juYwLLM',
+    category: 'design-ux',
+    type: 'video',
+  },
+  {
+    id: 'design-9',
+    title: 'Design Tools',
+    description: 'Curated directory of modern design tools, spanning UI/UX design, motion design, AI-powered design, and design-to-code tools',
+    url: 'https://designtools.fyi/',
+    category: 'design-ux',
+    type: 'website',
+  },
   // AI - Videos
   {
     id: 'ai-1',
@@ -359,6 +375,14 @@ export const bookmarks: Bookmark[] = [
     title: 'RLVR Explained: Reinforcement Learning from Verifiable Rewards',
     description: 'Deep dive into RLVR, an advanced technique for training AI models using verifiable rewards instead of human feedback',
     url: 'https://www.promptfoo.dev/blog/rlvr-explained/',
+    category: 'ai',
+    type: 'article',
+  },
+  {
+    id: 'ai-10',
+    title: 'Anthropic Economic Index',
+    description: 'How Anthropic measures and calculates the economic impact of AI on jobs, tasks, and industries',
+    url: 'https://www.anthropic.com/economic-index#us-usage',
     category: 'ai',
     type: 'article',
   },
