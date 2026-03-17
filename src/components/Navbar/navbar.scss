@@ -45,7 +45,9 @@
         &--active {
             color: $black;
             background: $white;
-            box-shadow: $shadow-sm;
+            box-shadow:
+                0 0 0 1px $border-hover,
+                $shadow-md;
         }
     }
 }
