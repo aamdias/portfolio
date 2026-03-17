@@ -386,6 +386,14 @@ export const bookmarks: Bookmark[] = [
     category: 'ai',
     type: 'article',
   },
+  {
+    id: 'ai-11',
+    title: 'Data-Centric vs Model-Centric AI',
+    description: 'MIT CSAIL lecture exploring the shift from model-centric to data-centric AI development, and why data quality matters as much as model architecture',
+    url: 'https://dcai.csail.mit.edu/2024/data-centric-model-centric/',
+    category: 'ai',
+    type: 'article',
+  },
 ];
 
 // Utility to extract domain from URL for favicon fetching
