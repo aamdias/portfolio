@@ -90,12 +90,6 @@ export default function BookmarksPage() {
   return (
     <div className="bookmarks">
       <Navbar />
-      {/* Breadcrumb */}
-      <nav className="bookmarks__breadcrumb" aria-label="Breadcrumb">
-        <Link to="/" className="bookmarks__breadcrumb-link">Home</Link>
-        <span className="bookmarks__breadcrumb-separator">/</span>
-        <span className="bookmarks__breadcrumb-current">Bookmarks</span>
-      </nav>
 
       {/* Header */}
       <header className="bookmarks__header">
