@@ -5,52 +5,23 @@
     max-width: 960px;
     margin: 0 auto;
     padding: $space-4 $space-4 $space-16;
+    padding-top: $space-16;
     min-height: 100vh;
     box-sizing: border-box;
     overflow-x: hidden;
 
     @media (min-width: $bp-sm) {
         padding: $space-6 $space-6 $space-20;
+        padding-top: $space-20;
     }
 
     @media (min-width: $bp-md) {
         padding: $space-8 $space-8 $space-20;
+        padding-top: $space-20;
     }
 
     * {
         box-sizing: border-box;
-    }
-
-    // Breadcrumb
-    &__breadcrumb {
-        display: flex;
-        align-items: center;
-        gap: $space-2;
-        margin-bottom: $space-6;
-        font-size: $text-sm;
-
-        @media (min-width: $bp-sm) {
-            margin-bottom: $space-8;
-        }
-    }
-
-    &__breadcrumb-link {
-        color: $neutral-500;
-        text-decoration: none;
-        transition: color $transition-fast;
-
-        &:hover {
-            color: $black;
-        }
-    }
-
-    &__breadcrumb-separator {
-        color: $neutral-300;
-    }
-
-    &__breadcrumb-current {
-        color: $neutral-700;
-        font-weight: $font-medium;
     }
 
     // Header

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { bookmarks, categories, Bookmark } from '../../data/bookmarks';
 import BookmarkCard from '../../components/BookmarkCard/bookmarkcard';
+import Navbar from '../../components/Navbar/navbar';
 import './bookmarks.scss';
 
 type CategoryFilter = 'all' | Bookmark['category'];
@@ -88,12 +89,7 @@ export default function BookmarksPage() {
 
   return (
     <div className="bookmarks">
-      {/* Breadcrumb */}
-      <nav className="bookmarks__breadcrumb" aria-label="Breadcrumb">
-        <Link to="/" className="bookmarks__breadcrumb-link">Home</Link>
-        <span className="bookmarks__breadcrumb-separator">/</span>
-        <span className="bookmarks__breadcrumb-current">Bookmarks</span>
-      </nav>
+      <Navbar />
 
       {/* Header */}
       <header className="bookmarks__header">
