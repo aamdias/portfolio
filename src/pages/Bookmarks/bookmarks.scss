@@ -5,16 +5,19 @@
     max-width: 960px;
     margin: 0 auto;
     padding: $space-4 $space-4 $space-16;
+    padding-top: $space-16;
     min-height: 100vh;
     box-sizing: border-box;
     overflow-x: hidden;
 
     @media (min-width: $bp-sm) {
         padding: $space-6 $space-6 $space-20;
+        padding-top: $space-20;
     }
 
     @media (min-width: $bp-md) {
         padding: $space-8 $space-8 $space-20;
+        padding-top: $space-20;
     }
 
     * {
