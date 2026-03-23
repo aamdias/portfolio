@@ -303,6 +303,14 @@ export const bookmarks: Bookmark[] = [
     category: 'design-ux',
     type: 'website',
   },
+  {
+    id: 'design-10',
+    title: 'Interaction Design',
+    description: 'Rauno Freiberg\'s notes on interaction design — exploring the nuances of designing digital interfaces that feel natural and responsive',
+    url: 'https://rauno.me/craft/interaction-design',
+    category: 'design-ux',
+    type: 'article',
+  },
   // AI - Videos
   {
     id: 'ai-1',
