@@ -402,6 +402,22 @@ export const bookmarks: Bookmark[] = [
     category: 'ai',
     type: 'article',
   },
+  {
+    id: 'ai-12',
+    title: 'Stanford AIMS Lab Textbook',
+    description: 'Open-access textbook from Stanford\'s AI in Medicine and Imaging Lab, covering foundational concepts and applications of AI',
+    url: 'https://aimslab.stanford.edu/textbook/',
+    category: 'ai',
+    type: 'website',
+  },
+  {
+    id: 'ai-13',
+    title: 'LLM Benchmarks: The Good, The Bad, and The Ugly',
+    description: 'Cameron R. Wolfe\'s deep dive into how LLMs are evaluated, the limitations of current benchmarks, and what it takes to meaningfully measure model quality',
+    url: 'https://cameronrwolfe.substack.com/p/llm-bench',
+    category: 'ai',
+    type: 'article',
+  },
 ];
 
 // Utility to extract domain from URL for favicon fetching
