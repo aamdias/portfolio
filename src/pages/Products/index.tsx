@@ -51,17 +51,8 @@ export default function ProductsPage() {
                 >
                     <motion.div variants={itemVariants}>
                         <MenuCard
-                            title="Maromba AI"
-                            description="Crie treinos personalizados e acompanhe seu progresso com inteligência artificial."
-                            link="https://www.marombaai.com"
-                            isExternalLink
-                            image="marombaai-screenshot.png"
-                        />
-                    </motion.div>
-                    <motion.div variants={itemVariants}>
-                        <MenuCard
                             title="dralorraine.com"
-                            description="Website para divulgar serviços e produtos da Dra Lorraine."
+                            description="Site da dermatologista Lorraine Souza: consulta em Campinas e videoconsulta, tratamentos e conteúdo para médicos."
                             link="https://www.dralorraine.com"
                             isExternalLink
                             image="dralorraine-screenshot.png"
@@ -69,11 +60,20 @@ export default function ProductsPage() {
                     </motion.div>
                     <motion.div variants={itemVariants}>
                         <MenuCard
-                            title="chatQL"
-                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA. Feito para PMs e Data Analysts."
-                            link="https://www.chatql.space"
+                            title="Convoca"
+                            description="Todos os concursos públicos do Brasil em um só lugar, com busca e filtros por órgão, cargo, estado e banca."
+                            link="https://useconvoca.com.br"
                             isExternalLink
-                            image="chatql-screenshot.png"
+                            image="convoca-screenshot.png"
+                        />
+                    </motion.div>
+                    <motion.div variants={itemVariants}>
+                        <MenuCard
+                            title="Lume"
+                            description="Fotografe o rótulo e entenda a garrafa: o vinho conferido em fontes reais e explicado em português simples."
+                            link="https://lumewines.app"
+                            isExternalLink
+                            image="lume-screenshot.png"
                         />
                     </motion.div>
                 </motion.div>
