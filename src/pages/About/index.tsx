@@ -111,25 +111,25 @@ export default function About() {
                     </div>
                     <FeaturedGrid>
                         <MenuCard
-                            title="Maromba AI"
-                            description="Crie treinos personalizados e acompanhe seu progresso com inteligência artificial"
-                            link="https://www.marombaai.com"
-                            isExternalLink
-                            image="marombaai-screenshot.png"
-                        />
-                        <MenuCard
                             title="dralorraine.com"
-                            description="Website para divulgar serviços e produtos da Dra Lorraine"
+                            description="Site da dermatologista Lorraine Souza: consulta, tratamentos e conteúdo para médicos"
                             link="https://www.dralorraine.com"
                             isExternalLink
                             image="dralorraine-screenshot.png"
                         />
                         <MenuCard
-                            title="chatQL"
-                            description="Espaço de trabalho para criar e organizar consultas em SQL com IA"
-                            link="https://www.chatql.space"
+                            title="Convoca"
+                            description="Todos os concursos públicos do Brasil em um só lugar, com busca e filtros"
+                            link="https://useconvoca.com.br"
                             isExternalLink
-                            image="chatql-screenshot.png"
+                            image="convoca-screenshot.png"
+                        />
+                        <MenuCard
+                            title="Lume"
+                            description="Fotografe o rótulo e entenda a garrafa, em português simples"
+                            link="https://lumewines.app"
+                            isExternalLink
+                            image="lume-screenshot.png"
                         />
                     </FeaturedGrid>
                 </motion.section>
