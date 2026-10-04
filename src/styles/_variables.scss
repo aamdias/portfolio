@@ -1,154 +1,40 @@
-// ==========================================================================
-// Design Tokens - World-Class Portfolio Design System
-// ==========================================================================
-
-// Typography
-// --------------------------------------------------------------------------
-$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-// Type Scale (elegant hierarchy)
-$text-xs: 0.75rem;      // 12px
-$text-sm: 0.875rem;     // 14px
-$text-base: 1rem;       // 16px
-$text-lg: 1.125rem;     // 18px
-$text-xl: 1.25rem;      // 20px
-$text-2xl: 1.5rem;      // 24px
-$text-3xl: 2rem;        // 32px
-$text-4xl: 2.5rem;      // 40px
-$text-5xl: 3.25rem;     // 52px
-
-// Font Weights
-$font-light: 300;
-$font-normal: 400;
-$font-medium: 500;
-$font-semibold: 600;
-$font-bold: 700;
-
-// Line Heights
-$leading-tight: 1.15;
-$leading-snug: 1.3;
-$leading-normal: 1.5;
-$leading-relaxed: 1.7;
-
-// Letter Spacing
-$tracking-tighter: -0.04em;
-$tracking-tight: -0.025em;
-$tracking-normal: 0;
-
-// Colors - Refined Neutral Palette
-// --------------------------------------------------------------------------
-$black: #111111;
-$neutral-900: #171717;
-$neutral-800: #262626;
-$neutral-700: #404040;
-$neutral-600: #525252;
-$neutral-500: #737373;
-$neutral-400: #a3a3a3;
-$neutral-300: #d4d4d4;
-$neutral-200: #e5e5e5;
-$neutral-100: #f5f5f5;
-$neutral-50: #fafafa;
-$white: #ffffff;
-
-// Legacy aliases (backwards compatibility)
-$light-black: $neutral-800;
-$dark-gray: $neutral-600;
-$gray: $neutral-500;
-$light-gray: $neutral-400;
-$very-light-gray: $neutral-100;
-$extra-light-gray: $neutral-50;
-
-// Backgrounds
-$light-background: $neutral-50;
-$dark-background: $neutral-900;
-
-// Accent (minimal, used sparingly)
-$accent: $black;
-$accent-light: rgba(0, 0, 0, 0.03);
-
-// Borders
-// --------------------------------------------------------------------------
-$border-subtle: rgba(0, 0, 0, 0.04);
-$border-light: rgba(0, 0, 0, 0.06);
-$border-default: rgba(0, 0, 0, 0.08);
-$border-hover: rgba(0, 0, 0, 0.12);
-
-// Shadows - Soft, realistic
-// --------------------------------------------------------------------------
-$shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-$shadow-lg: 0 10px 20px -5px rgba(0, 0, 0, 0.06), 0 4px 8px -2px rgba(0, 0, 0, 0.03);
-$shadow-hover: 0 14px 32px -8px rgba(0, 0, 0, 0.1), 0 6px 14px -4px rgba(0, 0, 0, 0.04);
-
-// Border Radius
-// --------------------------------------------------------------------------
-$radius-sm: 6px;
-$radius-md: 10px;
-$radius-lg: 14px;
-$radius-xl: 18px;
-$radius-2xl: 24px;
-$radius-full: 9999px;
-
-// Spacing Scale
-// --------------------------------------------------------------------------
-$space-1: 0.25rem;   // 4px
-$space-2: 0.5rem;    // 8px
-$space-3: 0.75rem;   // 12px
-$space-4: 1rem;      // 16px
-$space-5: 1.25rem;   // 20px
-$space-6: 1.5rem;    // 24px
-$space-8: 2rem;      // 32px
-$space-10: 2.5rem;   // 40px
-$space-12: 3rem;     // 48px
-$space-16: 4rem;     // 64px
-$space-20: 5rem;     // 80px
-
-// Layout
-// --------------------------------------------------------------------------
-$container-max: 1080px;
-$container-narrow: 680px;
-
-// Transitions
-// --------------------------------------------------------------------------
-$ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-
-$duration-fast: 0.15s;
-$duration-normal: 0.2s;
-$duration-slow: 0.3s;
-
-$transition-fast: $duration-fast $ease-out;
-$transition-normal: $duration-normal $ease-out;
-$transition-smooth: $duration-slow $ease-in-out;
-
-// Z-Index
-// --------------------------------------------------------------------------
-$z-sticky: 20;
-$z-fixed: 30;
-$z-modal: 50;
-
-// Breakpoints
-// --------------------------------------------------------------------------
-$bp-sm: 640px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-
-// Mixins
-// --------------------------------------------------------------------------
-@mixin container {
-  width: 100%;
-  max-width: $container-max;
-  margin: 0 auto;
-  padding: 0 $space-4;
-  box-sizing: border-box;
-
-  @media (min-width: $bp-md) {
-    padding: 0 $space-8;
-  }
+:root {
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-wordmark: 'Bricolage Grotesque', system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --bg: #fff;
+  --bg-subtle: #fafafa;
+  --bg-muted: #f5f5f5;
+  --fg: #111;
+  --fg-2: #262626;
+  --fg-3: #525252;
+  --muted: #737373;
+  --faint: #a3a3a3;
+  --line: rgba(0, 0, 0, 0.06);
+  --line-2: rgba(0, 0, 0, 0.09);
+  --line-strong: #d4d4d4;
+  --btn-bg: #111;
+  --btn-fg: #fff;
+  --btn-hover: #262626;
+  --bar: rgba(255, 255, 255, 0.86);
+  color-scheme: light;
 }
-
-@mixin focus-ring {
-  outline: none;
-  box-shadow: 0 0 0 2px $white, 0 0 0 4px rgba(0, 0, 0, 0.08);
+html[data-theme='dark'] {
+  --bg: #0b0b0b;
+  --bg-subtle: #141414;
+  --bg-muted: #1f1f1f;
+  --fg: #f5f5f5;
+  --fg-2: #e2e2e2;
+  --fg-3: #b8b8b8;
+  --muted: #929292;
+  --faint: #6e6e6e;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-2: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --btn-bg: #f5f5f5;
+  --btn-fg: #0b0b0b;
+  --btn-hover: #fff;
+  --bar: rgba(11, 11, 11, 0.82);
+  color-scheme: dark;
 }

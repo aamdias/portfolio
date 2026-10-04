@@ -1,164 +1,252 @@
-import { MDXProvider } from '@mdx-js/react';
-import { useParams, Link } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import articlesData from '../../data/articles.json';
+import {
+  Component,
+  lazy,
+  Suspense,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentType,
+  type ReactNode,
+} from 'react';
+import { Link, useParams } from 'react-router-dom';
+import articles from '../../data/articles.json';
+import ThemeToggle from '../../components/ThemeToggle';
+import Navbar from '../../components/Navbar/navbar';
+import Footer from '../../components/Footer/footer';
+import NotFound from '../NotFound';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import './article-page.scss';
 
-const fadeInVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut"
-        }
-    }
-};
+const modules = import.meta.glob<{ default: ComponentType }>('../../mdx/*.mdx');
+const articleComponents = Object.fromEntries(
+  Object.entries(modules).map(([path, loader]) => [path, lazy(loader)]),
+);
+type Section = { id: string; label: string };
+
+class ArticleErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? (
+      <p role="alert">
+        Não foi possível carregar este artigo.{' '}
+        <a className="inline-link" href={window.location.pathname}>
+          Tentar novamente
+        </a>
+      </p>
+    ) : (
+      this.props.children
+    );
+  }
+}
+
+function ArticleBody({
+  slug,
+  onReady,
+}: {
+  slug: string;
+  onReady: (element: HTMLDivElement) => void;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const Content = articleComponents[`../../mdx/${slug}.mdx`];
+  useEffect(() => {
+    if (ref.current) onReady(ref.current);
+  }, [slug, onReady]);
+  return (
+    <div ref={ref} className="article-prose" id="introducao" data-sec="introducao">
+      <Content />
+    </div>
+  );
+}
 
 export default function ArticlePage() {
-    const { slug } = useParams<{ slug: string }>();
-    const article = articlesData.find(article => article.slug === slug);
-    const external_link = article?.externalLink;
-    const ArticleContent = React.lazy(() => import(`../../mdx/${slug}.mdx`));
+  const { slug = '' } = useParams();
+  return <ArticleExperience key={slug} slug={slug} />;
+}
 
-    // Dark mode state with localStorage persistence
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        const saved = localStorage.getItem('article-dark-mode');
-        return saved ? JSON.parse(saved) : false;
-    });
-
-    // Scroll-aware header visibility
-    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-    const lastScrollY = useRef(0);
-
-    useEffect(() => {
-        localStorage.setItem('article-dark-mode', JSON.stringify(isDarkMode));
-    }, [isDarkMode]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const scrollThreshold = 10;
-
-            if (currentScrollY < 50) {
-                // Always show header at the top
-                setIsHeaderVisible(true);
-            } else if (Math.abs(currentScrollY - lastScrollY.current) > scrollThreshold) {
-                // Hide on scroll down, show on scroll up
-                setIsHeaderVisible(currentScrollY < lastScrollY.current);
-            }
-
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Find next article for recommendation
-    const currentIndex = articlesData.findIndex(a => a.slug === slug);
-    const nextArticle = articlesData[(currentIndex + 1) % articlesData.length];
-
+function ArticleExperience({ slug }: { slug: string }) {
+  const article = articles.find((item) => item.slug === slug);
+  usePageTitle(article?.title || 'Artigo não encontrado');
+  const [sections, setSections] = useState<Section[]>([{ id: 'introducao', label: 'Introdução' }]);
+  const [activeSection, setActiveSection] = useState('introducao');
+  const [progress, setProgress] = useState(0);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const onReady = useMemo(
+    () => (element: HTMLDivElement) => {
+      contentRef.current = element;
+      const nextSections = [{ id: 'introducao', label: 'Introdução' }];
+      element.querySelectorAll('h2').forEach((heading, index) => {
+        const id = `secao-${index + 1}`;
+        heading.id = id;
+        heading.setAttribute('data-sec', id);
+        nextSections.push({ id, label: heading.textContent || '' });
+      });
+      element.querySelector('.post-layout > p')?.classList.add('article-lead');
+      setSections(nextSections);
+    },
+    [],
+  );
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.max(0, Math.min(1, window.scrollY / max)) : 0);
+      let active = 'introducao';
+      contentRef.current?.querySelectorAll('[data-sec]').forEach((element) => {
+        if (element.getBoundingClientRect().top < 160)
+          active = element.getAttribute('data-sec') || active;
+      });
+      setActiveSection(active);
+    };
+    const handleScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    const observer = new ResizeObserver(handleScroll);
+    observer.observe(document.body);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    update();
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [slug, sections]);
+  if (!article || !modules[`../../mdx/${slug}.mdx`])
     return (
-        <div className={`article-page-wrapper ${isDarkMode ? 'article-page-wrapper--dark' : ''}`}>
-            {/* Minimal top bar */}
-            <nav className={`article-page__topbar ${!isHeaderVisible ? 'article-page__topbar--hidden' : ''}`}>
-                <Link to="/" className="article-page__home-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                    <span>Início</span>
-                </Link>
-
-                <button
-                    className="article-page__theme-toggle"
-                    onClick={() => setIsDarkMode(!isDarkMode)}
-                    aria-label={isDarkMode ? 'Ativar modo claro' : 'Ativar modo escuro'}
-                >
-                    {isDarkMode ? (
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="5"/>
-                            <line x1="12" y1="1" x2="12" y2="3"/>
-                            <line x1="12" y1="21" x2="12" y2="23"/>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                            <line x1="1" y1="12" x2="3" y2="12"/>
-                            <line x1="21" y1="12" x2="23" y2="12"/>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                        </svg>
-                    ) : (
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                        </svg>
-                    )}
-                </button>
-            </nav>
-
-            <motion.article
-                className="article-page"
-                initial="hidden"
-                animate="visible"
-                variants={fadeInVariants}
-            >
-                {/* Article header */}
-                <header className="article-page__header">
-                    <time className="article-page__date">{article?.publishedDate}</time>
-                    <h1 className="article-page__title">{article?.title}</h1>
-                    {article?.description && (
-                        <p className="article-page__subtitle">{article.description}</p>
-                    )}
-                </header>
-
-                {/* Article content */}
-                <div className="article-page__content">
-                    <React.Suspense fallback={
-                        <div className="article-page__loading">
-                            <span>Carregando artigo...</span>
-                        </div>
-                    }>
-                        <MDXProvider>
-                            <ArticleContent />
-                        </MDXProvider>
-                    </React.Suspense>
-                </div>
-
-                {/* Article footer */}
-                <footer className="article-page__footer">
-                    {external_link && (
-                        <a
-                            href={external_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="article-page__external-link"
-                        >
-                            Ler no Medium
-                        </a>
-                    )}
-
-                    <div className="article-page__divider" />
-
-                    {/* Next article recommendation */}
-                    {nextArticle && nextArticle.slug !== slug && (
-                        <div className="article-page__next">
-                            <span className="article-page__next-label">Próximo artigo</span>
-                            <Link
-                                to={`/artigos/${nextArticle.slug}`}
-                                className="article-page__next-link"
-                            >
-                                <span className="article-page__next-title">{nextArticle.title}</span>
-                                <span className="article-page__next-arrow">→</span>
-                            </Link>
-                        </div>
-                    )}
-
-                    <Link to="/conteudos" className="article-page__back-link">
-                        ← Ver todos os conteúdos
-                    </Link>
-                </footer>
-            </motion.article>
-        </div>
+      <div className="site-layout">
+        <Navbar />
+        <main id="main-content">
+          <NotFound />
+        </main>
+        <Footer />
+      </div>
     );
+  const next = articles[(articles.indexOf(article) + 1) % articles.length];
+  const remaining = Math.ceil(article.minutes * (1 - progress));
+  const currentSection =
+    sections.find((section) => section.id === activeSection)?.label || 'Introdução';
+  function jumpTo(id: string) {
+    const element = document.getElementById(id);
+    if (element)
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.scrollY - 96,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'instant'
+          : 'smooth',
+      });
+  }
+  return (
+    <main className="article-page" id="main-content" tabIndex={-1}>
+      <nav className="reading-bar" aria-label="Navegação do artigo">
+        <div className="reading-bar__inner">
+          <Link to="/artigos" className="reading-bar__back" aria-label="Voltar para artigos">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m14.5 6-6 6 6 6" />
+            </svg>
+            <span>Alan Dias</span>
+          </Link>
+          <span className="reading-bar__section">{currentSection}</span>
+          <div className="reading-bar__actions">
+            <span>{remaining > 0 ? `${remaining} min restantes` : 'Fim'}</span>
+            <ThemeToggle />
+          </div>
+        </div>
+        <div
+          className="reading-progress"
+          style={{ transform: `scaleX(${progress})` }}
+          role="progressbar"
+          aria-label="Progresso de leitura"
+          aria-valuenow={Math.round(progress * 100)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
+      </nav>
+      <header className="article-opening">
+        <span className="article-meta">
+          <time dateTime={article.date}>{article.publishedDate}</time> · {article.minutes} min de
+          leitura
+        </span>
+        <h1>{article.title}</h1>
+        <p>{article.description}</p>
+        <div className="author">
+          <img src="/alan-nyc-1.png" width="32" height="32" alt="" />
+          <span>Alan Dias</span>
+        </div>
+      </header>
+      <div className="article-body-layout">
+        <aside>
+          <nav className="article-toc" aria-label="Neste artigo">
+            <h2 className="label">Neste artigo</h2>
+            {sections.map((section) => (
+              <a
+                href={`#${section.id}`}
+                key={section.id}
+                className={activeSection === section.id ? 'active' : ''}
+                aria-current={activeSection === section.id ? 'location' : undefined}
+                onClick={(event) => {
+                  event.preventDefault();
+                  jumpTo(section.id);
+                }}
+              >
+                {section.label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+        <div className="article-body-column">
+          <ArticleErrorBoundary key={slug}>
+            <Suspense
+              fallback={
+                <p className="article-loading" role="status">
+                  Carregando artigo…
+                </p>
+              }
+            >
+              <ArticleBody key={slug} slug={slug} onReady={onReady} />
+            </Suspense>
+          </ArticleErrorBoundary>
+          <footer className="article-author-footer">
+            <div className="author">
+              <img src="/alan-nyc-1.png" width="48" height="48" alt="" />
+              <span>Alan Dias</span>
+            </div>
+            <a
+              href={article.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-outline"
+            >
+              Ler no Medium ↗
+            </a>
+          </footer>
+        </div>
+        <div aria-hidden="true" />
+      </div>
+      <Link className="next-article" to={`/artigos/${next.slug}`}>
+        <div>
+          <span className="label">Próximo artigo</span>
+          <h2>{next.title}</h2>
+          <p>{next.description}</p>
+          <span className="text-link">Continuar lendo →</span>
+        </div>
+      </Link>
+    </main>
+  );
 }

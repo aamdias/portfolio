@@ -1,88 +1,62 @@
-@import './../../styles/variables';
-
-.agenda-page {
-    min-height: 100vh;
-    width: 100%;
-    background: $white;
+.agenda-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 64px;
+  align-items: flex-start;
+}
+.agenda-sidebar {
+  flex: 0 1 240px;
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  section {
     display: flex;
     flex-direction: column;
-
-    &__content {
-        flex: 1;
-        width: 100%;
-        max-width: $container-max;
-        margin: 0 auto;
-        padding: $space-20 $space-6 $space-16;
-        box-sizing: border-box;
-
-        @media (max-width: $bp-md) {
-            padding: $space-16 $space-4 $space-12;
-        }
-    }
-
-    &__section {
-        margin-bottom: $space-16;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: $bp-md) {
-            margin-bottom: $space-12;
-        }
-    }
-
-    &__header {
-        text-align: left;
-        margin-bottom: $space-6;
-
-        @media (max-width: $bp-md) {
-            margin-bottom: $space-5;
-        }
-    }
-
-    &__title {
-        font-size: $text-2xl;
-        font-weight: $font-bold;
-        color: $black;
-        margin: 0 0 $space-2;
-        line-height: $leading-tight;
-        letter-spacing: $tracking-tight;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-xl;
-        }
-    }
-
-    &__subtitle {
-        font-size: $text-sm;
-        line-height: $leading-relaxed;
-        color: $neutral-500;
-        margin: 0;
-    }
-
-    &__calendly {
-        width: 100%;
-        background: $neutral-50;
-        border-radius: $radius-xl;
-        overflow: hidden;
-        border: 1px solid $border-default;
-
-        @media (max-width: $bp-md) {
-            border-radius: $radius-lg;
-        }
-
-        .calendly-inline-widget {
-            min-width: 100%;
-            height: 650px;
-
-            @media (max-width: $bp-md) {
-                height: 580px;
-            }
-
-            @media (max-width: $bp-sm) {
-                height: 520px;
-            }
-        }
-    }
+    gap: 12px;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--fg-3);
+  }
+  a {
+    font-size: 14px;
+    align-self: flex-start;
+  }
+}
+.calendar-card {
+  flex: 1 1 520px;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  color-scheme: light;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px var(--line-2),
+    0 24px 48px -32px rgba(0, 0, 0, 0.25);
+  iframe {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 760px;
+    border: 0;
+    display: block;
+  }
+}
+.calendar-loading {
+  position: absolute;
+  inset: 64px 0 auto;
+  text-align: center;
+  color: #737373;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .agenda-sidebar {
+    flex-basis: 100%;
+    position: static;
+  }
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Convoca",
+    "domain": "useconvoca.com.br",
+    "link": "https://useconvoca.com.br",
+    "image": "/convoca-screenshot.png",
+    "short": "Todos os concursos públicos do Brasil em um só lugar, com busca e filtros.",
+    "description": "Todos os concursos públicos do Brasil em um só lugar, com busca e filtros por órgão, cargo, estado e banca."
+  },
+  {
+    "title": "Lume",
+    "domain": "lumewines.app",
+    "link": "https://lumewines.app",
+    "image": "/lume-screenshot.jpg",
+    "short": "Fotografe o rótulo e entenda a garrafa, em português simples.",
+    "description": "Fotografe o rótulo e entenda a garrafa: o vinho conferido em fontes reais e explicado em português simples."
+  },
+  {
+    "title": "dralorraine.com",
+    "domain": "dralorraine.com",
+    "link": "https://www.dralorraine.com",
+    "image": "/dralorraine-screenshot.png",
+    "short": "Site da dermatologista Lorraine Souza: consulta, tratamentos e conteúdo para médicos.",
+    "description": "Site da dermatologista Lorraine Souza: consulta em Campinas e videoconsulta, tratamentos e conteúdo para médicos."
+  }
+]

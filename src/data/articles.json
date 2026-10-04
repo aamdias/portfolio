@@ -1,42 +1,57 @@
 [
-    {
-      "title": "Prove seu valor como Product Manager",
-      "description": "Após contribuir com um crescimento de 30x da Trybe, compartilhei os 4 principais aprendizados que tive sobre como provar seu valor como PM",
-      "publishedDate": "02 de Abril de 2023",
-      "thumbnail":"/prove-seu-valor-thumbnail.png",
-      "slug":"prove-seu-valor-como-pm",
-      "externalLink": "https://medium.com/@aamdias/prove-seu-valor-como-product-manager-98cb396a6bab"
-    },
-    {
-      "title": "Apetite: O antídoto para estimativas",
-      "description": "Aprendizados sobre um conceito simples, mas poderoso, que ajuda a trabalhar com datas em desenvolvimento de software",
-      "publishedDate": "27 de Maio de 2023",
-      "thumbnail":"/apetite-thumbnail.png",
-      "slug":"apetite",
-      "externalLink": "https://medium.com/@aamdias/apetite-o-ant%C3%ADdoto-para-estimativas-e0a0876b1dd9"
-    },
-    {
-      "title": "O custo oculto que drena a produtividade",
-      "description": "Cuidados para evitar acumular software que gera pouco valor e custa caro para manter",
-      "publishedDate": "01 de Outubro de 2023",
-      "thumbnail":"/custo-oculto-thumbnail.png",
-      "slug":"custo-oculto",
-      "externalLink": "https://medium.com/@aamdias/o-custo-oculto-que-drena-produtividade-a43b34c502a7"
-    },
-    {
-      "title": "Front-End para Product Managers",
-      "description": "Guia sobre os principais conceitos e problemas que o Front se dispõe a resolver para Product Managers",
-      "publishedDate": "15 de Novembro de 2023",
-      "thumbnail":"/front-end-para-pms-thumb.png",
-      "slug":"front-end-para-pms",
-      "externalLink": "https://medium.com/@aamdias/"
-    },
-    {
-      "title": "Build Tunnels, Not Escalators",
-      "description": "Why product-first teams should redesign how value reaches customers, not just automate the existing path",
-      "publishedDate": "28 de Fevereiro de 2026",
-      "thumbnail":"/build-tunnels-thumbnail.png",
-      "slug":"build-tunnels-not-escalators",
-      "externalLink": "https://medium.com/@aamdias/build-tunnels-not-escalators-a2504fe61ea7"
-    }
-  ]
+  {
+    "title": "Build Tunnels, Not Escalators",
+    "description": "Why product-first teams should redesign how value reaches customers, not just automate the existing path",
+    "publishedDate": "28 de fevereiro de 2026",
+    "thumbnail": "/build-tunnels-thumbnail.png",
+    "slug": "build-tunnels-not-escalators",
+    "externalLink": "https://medium.com/@aamdias/build-tunnels-not-escalators-a2504fe61ea7",
+    "date": "2026-02-28",
+    "minutes": 5,
+    "year": "2026"
+  },
+  {
+    "title": "Front-End para Product Managers",
+    "description": "Guia sobre os principais conceitos e problemas que o Front se dispõe a resolver para Product Managers",
+    "publishedDate": "15 de novembro de 2023",
+    "thumbnail": "/front-end-para-pms-thumb.png",
+    "slug": "front-end-para-pms",
+    "externalLink": "https://medium.com/@aamdias/",
+    "date": "2023-11-15",
+    "minutes": 12,
+    "year": "2023"
+  },
+  {
+    "title": "O custo oculto que drena a produtividade",
+    "description": "Cuidados para evitar acumular software que gera pouco valor e custa caro para manter",
+    "publishedDate": "1 de outubro de 2023",
+    "thumbnail": "/custo-oculto-thumbnail.png",
+    "slug": "custo-oculto",
+    "externalLink": "https://medium.com/@aamdias/o-custo-oculto-que-drena-produtividade-a43b34c502a7",
+    "date": "2023-10-01",
+    "minutes": 14,
+    "year": "2023"
+  },
+  {
+    "title": "Apetite: o antídoto para estimativas",
+    "description": "Aprendizados sobre um conceito simples, mas poderoso, que ajuda a trabalhar com datas em desenvolvimento de software",
+    "publishedDate": "27 de maio de 2023",
+    "thumbnail": "/apetite-thumbnail.png",
+    "slug": "apetite",
+    "externalLink": "https://medium.com/@aamdias/apetite-o-ant%C3%ADdoto-para-estimativas-e0a0876b1dd9",
+    "date": "2023-05-27",
+    "minutes": 14,
+    "year": "2023"
+  },
+  {
+    "title": "Prove seu valor como Product Manager",
+    "description": "Após contribuir com um crescimento de 30x da Trybe, compartilhei os 4 principais aprendizados que tive sobre como provar seu valor como PM",
+    "publishedDate": "2 de abril de 2023",
+    "thumbnail": "/prove-seu-valor-thumbnail.png",
+    "slug": "prove-seu-valor-como-pm",
+    "externalLink": "https://medium.com/@aamdias/prove-seu-valor-como-product-manager-98cb396a6bab",
+    "date": "2023-04-02",
+    "minutes": 14,
+    "year": "2023"
+  }
+]

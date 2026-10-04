@@ -1,266 +1,79 @@
-@import './../../styles/variables';
-
-.page {
-    min-height: 100vh;
-    width: 100%;
-    background-color: $white;
+.about-bio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 80px;
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+  > img {
+    flex: 0 1 340px;
+    min-width: 0;
+    width: 340px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  > div {
+    flex: 1 1 440px;
+    min-width: 0;
+    font-family: var(--font-editorial);
+    font-size: 22px;
+    line-height: 1.65;
+    color: var(--fg-2);
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-
-    &__content {
-        flex: 1;
-        width: 100%;
-        padding-top: $space-12;
-        overflow-x: hidden;
-
-        @media (max-width: $bp-lg) {
-            padding-top: $space-8;
-        }
-
-        @media (max-width: $bp-md) {
-            padding-top: $space-4;
-        }
+    gap: 22px;
+    p {
+      margin: 0;
     }
+    p:first-child {
+      font-size: 27px;
+      line-height: 1.45;
+      color: var(--fg);
+    }
+  }
 }
-
-// Unified Section Styles
-.section {
-    width: 100%;
-    max-width: $container-max;
-    margin: 0 auto;
-    padding: $space-16 $space-6;
-    box-sizing: border-box;
-    overflow-x: hidden;
-
-    @media (max-width: $bp-md) {
-        padding: $space-10 $space-4;
-    }
-
-    @media (max-width: $bp-sm) {
-        padding: $space-8 $space-3;
-    }
-
-    &--highlight {
-        background: $neutral-50;
-        max-width: none;
-        overflow-x: hidden;
-        padding-left: $space-6;
-        padding-right: $space-6;
-
-        @media (max-width: $bp-md) {
-            padding-left: $space-4;
-            padding-right: $space-4;
-        }
-
-        > * {
-            max-width: $container-max;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    &__header {
-        text-align: left;
-        margin-bottom: $space-6;
-
-        @media (max-width: $bp-md) {
-            margin-bottom: $space-5;
-        }
-
-        &--with-action {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    }
-
-    &__header-link {
-        display: inline-flex;
-        align-items: center;
-        gap: $space-1;
-        color: $neutral-500;
-        text-decoration: none;
-        font-size: $text-sm;
-        font-weight: $font-medium;
-        transition: all $transition-normal;
-        white-space: nowrap;
-
-        &::after {
-            content: '→';
-            font-size: $text-sm;
-            transition: transform $transition-fast;
-        }
-
-        &:hover {
-            color: $black;
-
-            &::after {
-                transform: translateX(3px);
-            }
-        }
-    }
-
-    &__title {
-        font-size: $text-2xl;
-        font-weight: $font-bold;
-        color: $black;
-        margin: 0 0 $space-2;
-        line-height: $leading-tight;
-        letter-spacing: $tracking-tight;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-xl;
-        }
-    }
-
-    &__subtitle {
-        font-size: $text-sm;
-        line-height: $leading-relaxed;
-        color: $neutral-500;
-        margin: 0;
-    }
-
-    &__bio {
-        width: 100%;
-        padding: $space-8;
-        background: $neutral-50;
-        border-radius: $radius-xl;
-        box-sizing: border-box;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-
-        @media (max-width: $bp-md) {
-            padding: $space-5;
-            border-radius: $radius-lg;
-        }
-
-        p {
-            font-size: $text-lg;
-            line-height: $leading-relaxed;
-            color: $neutral-600;
-            margin: 0 0 $space-5;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            @media (max-width: $bp-md) {
-                font-size: $text-base;
-            }
-        }
-
-        strong {
-            color: $black;
-            font-weight: $font-semibold;
-        }
-    }
-
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: $space-5;
-        width: 100%;
-
-        @media (max-width: $bp-md) {
-            grid-template-columns: 1fr;
-            gap: $space-4;
-        }
-    }
-
-    &__cta {
-        display: flex;
-        justify-content: flex-start;
-        margin-top: $space-10;
-
-        @media (max-width: $bp-md) {
-            margin-top: $space-8;
-        }
-    }
-
-    &__cta-link {
-        display: inline-flex;
-        align-items: center;
-        gap: $space-2;
-        padding: $space-3 $space-5;
-        color: $neutral-500;
-        text-decoration: none;
-        font-size: $text-sm;
-        font-weight: $font-medium;
-        border: 1px solid $border-default;
-        border-radius: $radius-md;
-        transition: all $transition-normal;
-
-        &:hover {
-            color: $black;
-            border-color: $border-hover;
-            background: $neutral-50;
-        }
-
-        &::after {
-            content: '→';
-            font-size: $text-base;
-            transition: transform $transition-fast;
-        }
-
-        &:hover::after {
-            transform: translateX(4px);
-        }
-    }
-}
-
-// Featured Card (for Bookmarks link)
-.featured-card {
+.about-contact {
+  margin-top: 96px;
+  padding: 48px;
+  border-radius: 18px;
+  background: var(--bg-subtle);
+  box-shadow: inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+  align-items: flex-end;
+  justify-content: space-between;
+  > div:first-child {
+    flex: 1 1 440px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: $space-5;
-    background: $neutral-50;
-    border-radius: $radius-lg;
-    text-decoration: none;
-    transition: all $transition-normal;
-
-    &:hover {
-        background: $neutral-100;
-
-        .featured-card__link {
-            color: $black;
-
-            &::after {
-                transform: translateX(4px);
-            }
-        }
-    }
-
-    &__content {
-        margin-bottom: $space-3;
-    }
-
-    &__title {
-        font-size: $text-base;
-        font-weight: $font-semibold;
-        color: $black;
-        margin: 0 0 $space-1;
-        letter-spacing: $tracking-tight;
-    }
-
-    &__description {
-        font-size: $text-sm;
-        line-height: $leading-relaxed;
-        color: $neutral-500;
-        margin: 0;
-    }
-
-    &__link {
-        font-size: $text-sm;
-        font-weight: $font-medium;
-        color: $neutral-400;
-        transition: color $transition-fast;
-
-        &::after {
-            content: ' →';
-            transition: transform $transition-fast;
-            display: inline-block;
-        }
-    }
+    gap: 16px;
+  }
+  h3 {
+    font-family: var(--font-editorial);
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--fg-3);
+    max-width: 560px;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .about-contact {
+    padding: 28px;
+    margin-top: 56px;
+  }
 }
