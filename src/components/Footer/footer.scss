@@ -1,32 +1,23 @@
-@import './../../styles/variables';
-
-.footer {
-    width: 100%;
-    padding: $space-12 $space-4 $space-8;
-    margin-top: auto;
-    border-top: 1px solid $border-light;
-
-    &__content {
-        max-width: $container-narrow;
-        margin: 0 auto;
-        text-align: center;
+.site-footer {
+  padding-top: 28px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  font-size: 13px;
+  color: var(--muted);
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+  a {
+    color: var(--muted);
+    transition: color 200ms;
+    &:hover {
+      color: var(--fg);
     }
-
-    &__text {
-        font-size: $text-sm;
-        color: $neutral-400;
-        margin: 0;
-        line-height: $leading-normal;
-    }
-
-    &__link {
-        color: $neutral-500;
-        text-decoration: none;
-        font-weight: $font-medium;
-        transition: color $transition-fast;
-
-        &:hover {
-            color: $black;
-        }
-    }
+  }
 }

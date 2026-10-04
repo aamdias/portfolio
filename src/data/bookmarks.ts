@@ -32,7 +32,8 @@ export const categories: Category[] = [
   {
     id: 'ai',
     label: 'AI',
-    description: 'Principais recursos sobre GenAI e LLMs - como e porque essa tecnologia cria novas oportunidades',
+    description:
+      'Principais recursos sobre GenAI e LLMs: como e por que essa tecnologia cria novas oportunidades',
   },
 ];
 
@@ -49,7 +50,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-2',
     title: 'Continuous Discovery Habits',
-    description: 'Discover Products that Create Customer Value and Business Value, by Teresa Torres',
+    description:
+      'Discover Products that Create Customer Value and Business Value, by Teresa Torres',
     url: 'https://www.amazon.com.br/Continuous-Discovery-Habits-Discover-Products-ebook/dp/B094PVB97X',
     category: 'product-management',
     type: 'book',
@@ -65,7 +67,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-4',
     title: 'Transformação digital e cultura de produto',
-    description: 'Como colocar a tecnologia no centro da estratégia de sua empresa, por Joaquim Torres',
+    description:
+      'Como colocar a tecnologia no centro da estratégia de sua empresa, por Joaquim Torres',
     url: 'https://www.amazon.com.br/Transforma%C3%A7%C3%A3o-digital-cultura-produto-tecnologia-ebook/dp/B0CNSKN11X',
     category: 'product-management',
     type: 'book',
@@ -82,15 +85,17 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-6',
     title: 'Lessons from scaling Stripe',
-    description: 'Insights on scaling one of the most successful fintech companies, Lenny\'s Podcast',
+    description:
+      "Insights on scaling one of the most successful fintech companies, Lenny's Podcast",
     url: 'https://open.spotify.com/episode/2FzW8RcTu6XK3NExlHJrVF',
     category: 'product-management',
     type: 'podcast',
   },
   {
     id: 'pm-7',
-    title: '4 questions Shreyas Doshi wishes he\'d asked himself sooner',
-    description: 'Lessons from Shreyas Doshi, former Product Leader at Stripe, Twitter and Google, Lenny\'s Podcast',
+    title: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
+    description:
+      "Lessons from Shreyas Doshi, former Product Leader at Stripe, Twitter and Google, Lenny's Podcast",
     url: 'https://open.spotify.com/episode/5sRhCbjGYpmSDi0d9jUnzq',
     category: 'product-management',
     type: 'podcast',
@@ -107,7 +112,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-9',
     title: 'What it takes to become a great Product Manager',
-    description: 'Harvard Business Review\'s comprehensive guide on product management excellence',
+    description: "Harvard Business Review's comprehensive guide on product management excellence",
     url: 'https://hbr.org/2017/12/what-it-takes-to-become-a-great-product-manager',
     category: 'product-management',
     type: 'article',
@@ -115,7 +120,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-10',
     title: 'Opportunity Solution Tree',
-    description: 'A visual aid that helps product teams connect the dots between their product work and their desired business outcomes',
+    description:
+      'A visual aid that helps product teams connect the dots between their product work and their desired business outcomes',
     url: 'https://www.producttalk.org/2016/08/opportunity-solution-tree/',
     category: 'product-management',
     type: 'article',
@@ -123,7 +129,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'pm-11',
     title: 'How Duolingo reignited user growth',
-    description: 'The story behind Duolingo\'s 350% growth acceleration, leaderboards, streaks, notifications, and innovative growth model',
+    description:
+      "The story behind Duolingo's 350% growth acceleration, leaderboards, streaks, notifications, and innovative growth model",
     url: 'https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth',
     category: 'product-management',
     type: 'article',
@@ -141,7 +148,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-1',
     title: 'Build: An Unorthodox Guide to Making Things Worth Making',
-    description: 'Tony Fadell\'s practical and inspiring guide to building products and companies',
+    description: "Tony Fadell's practical and inspiring guide to building products and companies",
     url: 'https://www.amazon.com.br/Build-Unorthodox-Making-Things-English-ebook/dp/B09BNJ6GBV',
     category: 'business',
     type: 'book',
@@ -149,7 +156,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-2',
     title: 'No Rules Rules: Netflix and the Culture of Reinvention',
-    description: 'Reed Hastings and Erin Meyer on Netflix\'s innovative culture and management style',
+    description:
+      "Reed Hastings and Erin Meyer on Netflix's innovative culture and management style",
     url: 'https://www.amazon.com.br/No-Rules-Netflix-Culture-Reinvention-ebook/dp/B081Y3R657',
     category: 'business',
     type: 'book',
@@ -157,7 +165,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-3',
     title: 'Competing Against Luck',
-    description: 'How do companies know how to grow? Harvard Business School professor Clayton Christensen has the answer.',
+    description:
+      'How do companies know how to grow? Harvard Business School professor Clayton Christensen has the answer.',
     url: 'https://www.amazon.com/Competing-Against-Luck-Innovation-Customer/dp/0062435612',
     category: 'business',
     type: 'book',
@@ -165,7 +174,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-4',
     title: 'The Hard Thing About Hard Things',
-    description: 'Building a Business When There Are No Easy Answers, by Ben Horowitz. Essential reading on the difficult decisions and challenges of running a startup.',
+    description:
+      'Building a Business When There Are No Easy Answers, by Ben Horowitz. Essential reading on the difficult decisions and challenges of running a startup.',
     url: 'https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205',
     category: 'business',
     type: 'book',
@@ -174,7 +184,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-5',
     title: 'Mark Zuckerberg: Meta, Facebook, Instagram, and the Metaverse',
-    description: 'Lex Fridman\'s in-depth conversation with Mark Zuckerberg about Meta\'s vision',
+    description: "Lex Fridman's in-depth conversation with Mark Zuckerberg about Meta's vision",
     url: 'https://open.spotify.com/episode/2CBS44Q2aTOvMR2gxIAdmp',
     category: 'business',
     type: 'podcast',
@@ -190,7 +200,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-7',
     title: 'The Myth of the Overnight Sensation',
-    description: 'Co-founders of 37signals, Jason Fried and David Heinemeier Hansson delve into the chapter title "The Myth of Overnight Sensation" of their book REWORK',
+    description:
+      'Co-founders of 37signals, Jason Fried and David Heinemeier Hansson delve into the chapter title "The Myth of Overnight Sensation" of their book REWORK',
     url: 'https://open.spotify.com/episode/4hhTXjORXvVPb7Lt65C77I?si=867ff6b9e9ff4748',
     category: 'business',
     type: 'podcast',
@@ -198,7 +209,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-8',
     title: 'Twitter is Still Up',
-    description: 'Co-founders of 37signals, Jason Fried and David Heinemeier Hansson discuss the aftermath of Elon\'s controversial acquisition of Twitter',
+    description:
+      "Co-founders of 37signals, Jason Fried and David Heinemeier Hansson discuss the aftermath of Elon's controversial acquisition of Twitter",
     url: 'https://open.spotify.com/episode/4iBw7J8MvffXJldOK9pdr8?si=c9aede040c5b4b59',
     category: 'business',
     type: 'podcast',
@@ -206,7 +218,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'biz-9',
     title: 'How I Built A $30M Business Without A VC',
-    description: 'Founder of Ruby on Rails, David Heinemeier Hansson, shares his learnings on how to build a company and have a great life',
+    description:
+      'Founder of Ruby on Rails, David Heinemeier Hansson, shares his learnings on how to build a company and have a great life',
     url: 'https://www.youtube.com/watch?v=uAFCvQtjZ7o',
     category: 'business',
     type: 'podcast',
@@ -214,16 +227,18 @@ export const bookmarks: Bookmark[] = [
   // Business - Articles
   {
     id: 'biz-10',
-    title: 'Amazon\'s original 1997 letter to shareholders',
-    description: 'Jeff Bezos\'s first letter to shareholders outlining Amazon\'s long-term thinking and customer obsession philosophy',
+    title: "Amazon's original 1997 letter to shareholders",
+    description:
+      "Jeff Bezos's first letter to shareholders outlining Amazon's long-term thinking and customer obsession philosophy",
     url: 'https://www.aboutamazon.com/news/company-news/amazons-original-1997-letter-to-shareholders',
     category: 'business',
     type: 'article',
   },
   {
     id: 'biz-11',
-    title: 'Sam Altman\'s framework to becoming an A.I. billionaire',
-    description: 'Sam Altman\'s insights on building successful AI companies and navigating the AI revolution',
+    title: "Sam Altman's framework to becoming an A.I. billionaire",
+    description:
+      "Sam Altman's insights on building successful AI companies and navigating the AI revolution",
     url: 'https://www.aiweekly.com/p/sam-altmans-framework-to-becoming-a-a-i-billionaire',
     category: 'business',
     type: 'article',
@@ -232,7 +247,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-1',
     title: 'WWDC18: The Qualities of Great Design | Apple',
-    description: 'Explore the characteristics of great design through the voices of designers from Apple and our developer community',
+    description:
+      'Explore the characteristics of great design through the voices of designers from Apple and our developer community',
     url: 'https://www.youtube.com/watch?v=RsbS5JWxFyk',
     category: 'design-ux',
     type: 'video',
@@ -241,7 +257,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-4',
     title: 'Mastering Vibecoding: the new competitive edge for Designers',
-    description: 'O Coelho Branco #026 EXTRA — how vibecoding is becoming a key competitive skill for designers',
+    description:
+      'O Coelho Branco #026 EXTRA: how vibecoding is becoming a key competitive skill for designers',
     url: 'https://ocoelhobranco.substack.com/p/o-coelho-branco-026-extra-mastering',
     category: 'design-ux',
     type: 'article',
@@ -250,7 +267,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-2',
     title: 'Laws of UX',
-    description: 'Collection of best practices that designers can consider when building user interfaces',
+    description:
+      'Collection of best practices that designers can consider when building user interfaces',
     url: 'https://lawsofux.com/',
     category: 'design-ux',
     type: 'website',
@@ -258,7 +276,7 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-3',
     title: 'Built for Mars',
-    description: 'UX case studies and analysis of the world\'s best products',
+    description: "UX case studies and analysis of the world's best products",
     url: 'https://builtformars.com/',
     category: 'design-ux',
     type: 'website',
@@ -282,7 +300,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-7',
     title: 'Mobbin',
-    description: 'World\'s largest collection of mobile and web app screenshots for design reference and inspiration',
+    description:
+      "World's largest collection of mobile and web app screenshots for design reference and inspiration",
     url: 'https://mobbin.com/',
     category: 'design-ux',
     type: 'website',
@@ -290,7 +309,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-8',
     title: 'Jenny Wen: O processo de design está morto',
-    description: 'Líder de Design da Anthropic explica por que o processo de design tradicional falha no mundo atual e como um ótimo trabalho é feito hoje. Hatch Conference, Berlim.',
+    description:
+      'Líder de Design da Anthropic explica por que o processo de design tradicional falha no mundo atual e como um ótimo trabalho é feito hoje. Hatch Conference, Berlim.',
     url: 'https://www.youtube.com/watch?v=4u94juYwLLM',
     category: 'design-ux',
     type: 'video',
@@ -298,7 +318,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-9',
     title: 'Design Tools',
-    description: 'Curated directory of modern design tools, spanning UI/UX design, motion design, AI-powered design, and design-to-code tools',
+    description:
+      'Curated directory of modern design tools, spanning UI/UX design, motion design, AI-powered design, and design-to-code tools',
     url: 'https://designtools.fyi/',
     category: 'design-ux',
     type: 'website',
@@ -306,7 +327,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'design-10',
     title: 'Interaction Design',
-    description: 'Rauno Freiberg\'s notes on interaction design — exploring the nuances of designing digital interfaces that feel natural and responsive',
+    description:
+      "Rauno Freiberg's notes on interaction design: exploring the nuances of designing digital interfaces that feel natural and responsive",
     url: 'https://rauno.me/craft/interaction-design',
     category: 'design-ux',
     type: 'article',
@@ -323,7 +345,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-2',
     title: 'Andrej Karpathy playlist on AI',
-    description: 'Zero to Hero - A course by Andrej Karpathy on building neural networks from scratch',
+    description:
+      'Zero to Hero - A course by Andrej Karpathy on building neural networks from scratch',
     url: 'https://karpathy.ai/zero-to-hero.html',
     category: 'ai',
     type: 'video',
@@ -332,7 +355,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-9',
     title: 'AI Hero',
-    description: 'Practical AI development resources, tutorials, and tools for building with modern AI models',
+    description:
+      'Practical AI development resources, tutorials, and tools for building with modern AI models',
     url: 'https://www.aihero.dev/',
     category: 'ai',
     type: 'website',
@@ -348,7 +372,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-4',
     title: 'RLHF: Reinforcement Learning from Human Feedback',
-    description: 'Comprehensive overview of RLHF, the technique used to align AI models with human preferences',
+    description:
+      'Comprehensive overview of RLHF, the technique used to align AI models with human preferences',
     url: 'https://huyenchip.com/2023/05/02/rlhf.html#rlhf_overview',
     category: 'ai',
     type: 'website',
@@ -356,7 +381,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-5',
     title: 'Spinning Up in Deep RL',
-    description: 'OpenAI\'s educational resource for learning deep reinforcement learning, with tutorials, exercises, and key papers',
+    description:
+      "OpenAI's educational resource for learning deep reinforcement learning, with tutorials, exercises, and key papers",
     url: 'https://spinningup.openai.com/en/latest/user/introduction.html#what-this-is',
     category: 'ai',
     type: 'website',
@@ -365,7 +391,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-6',
     title: 'Transformers Explained Visually',
-    description: 'Visual explanation of how Transformers work - the architecture behind modern AI models',
+    description:
+      'Visual explanation of how Transformers work - the architecture behind modern AI models',
     url: 'https://towardsdatascience.com/transformers-explained-visually-part-1-overview-of-functionality-95a6dd460452/',
     category: 'ai',
     type: 'article',
@@ -373,7 +400,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-7',
     title: 'Claude Code in Action',
-    description: 'Official Anthropic course on using Claude Code - an AI-powered coding assistant for software development',
+    description:
+      'Official Anthropic course on using Claude Code - an AI-powered coding assistant for software development',
     url: 'https://anthropic.skilljar.com/claude-code-in-action/303235',
     category: 'ai',
     type: 'video',
@@ -381,7 +409,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-8',
     title: 'RLVR Explained: Reinforcement Learning from Verifiable Rewards',
-    description: 'Deep dive into RLVR, an advanced technique for training AI models using verifiable rewards instead of human feedback',
+    description:
+      'Deep dive into RLVR, an advanced technique for training AI models using verifiable rewards instead of human feedback',
     url: 'https://www.promptfoo.dev/blog/rlvr-explained/',
     category: 'ai',
     type: 'article',
@@ -389,7 +418,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-10',
     title: 'Anthropic Economic Index',
-    description: 'How Anthropic measures and calculates the economic impact of AI on jobs, tasks, and industries',
+    description:
+      'How Anthropic measures and calculates the economic impact of AI on jobs, tasks, and industries',
     url: 'https://www.anthropic.com/economic-index#us-usage',
     category: 'ai',
     type: 'article',
@@ -397,7 +427,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-11',
     title: 'Data-Centric vs Model-Centric AI',
-    description: 'MIT CSAIL lecture exploring the shift from model-centric to data-centric AI development, and why data quality matters as much as model architecture',
+    description:
+      'MIT CSAIL lecture exploring the shift from model-centric to data-centric AI development, and why data quality matters as much as model architecture',
     url: 'https://dcai.csail.mit.edu/2024/data-centric-model-centric/',
     category: 'ai',
     type: 'article',
@@ -405,7 +436,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-12',
     title: 'Stanford AIMS Lab Textbook',
-    description: 'Open-access textbook from Stanford\'s AI in Medicine and Imaging Lab, covering foundational concepts and applications of AI',
+    description:
+      "Open-access textbook from Stanford's AI in Medicine and Imaging Lab, covering foundational concepts and applications of AI",
     url: 'https://aimslab.stanford.edu/textbook/',
     category: 'ai',
     type: 'website',
@@ -413,7 +445,8 @@ export const bookmarks: Bookmark[] = [
   {
     id: 'ai-13',
     title: 'LLM Benchmarks: The Good, The Bad, and The Ugly',
-    description: 'Cameron R. Wolfe\'s deep dive into how LLMs are evaluated, the limitations of current benchmarks, and what it takes to meaningfully measure model quality',
+    description:
+      "Cameron R. Wolfe's deep dive into how LLMs are evaluated, the limitations of current benchmarks, and what it takes to meaningfully measure model quality",
     url: 'https://cameronrwolfe.substack.com/p/llm-bench',
     category: 'ai',
     type: 'article',

@@ -1,9 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon-32x32.png">
+    <script>
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem('alan-theme');
+        } catch (_) {}
+        if (theme !== 'light' && theme !== 'dark')
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alan Dias. Produtos digitais, tecnologia e empreendedorismo. Artigos, projetos e uma curadoria de bookmarks."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Alan Dias</title>
   </head>
   <body>

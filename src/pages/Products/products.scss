@@ -1,67 +1,46 @@
-@import './../../styles/variables';
-
-.products-page {
-    min-height: 100vh;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 56px 32px;
+}
+.product-card {
+  display: block;
+  min-width: 0;
+  transition: transform 400ms var(--ease);
+  &:hover {
+    transform: translateY(-4px);
+  }
+  img {
     width: 100%;
-    background: $white;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px var(--line);
+    display: block;
+  }
+  &__title {
     display: flex;
-    flex-direction: column;
-
-    &__content {
-        flex: 1;
-        width: 100%;
-        max-width: $container-max;
-        margin: 0 auto;
-        padding: $space-20 $space-6 $space-16;
-        box-sizing: border-box;
-
-        @media (max-width: $bp-md) {
-            padding: $space-16 $space-4 $space-12;
-        }
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 14px;
+    margin: 20px 0 10px;
+    h2 {
+      font-family: var(--font-editorial);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin: 0;
     }
-
-    &__header {
-        text-align: left;
-        margin-bottom: $space-6;
-
-        @media (max-width: $bp-md) {
-            margin-bottom: $space-5;
-        }
+    span {
+      font-size: 13px;
+      color: var(--muted);
     }
-
-    &__title {
-        font-size: $text-2xl;
-        font-weight: $font-bold;
-        color: $black;
-        margin: 0 0 $space-2;
-        line-height: $leading-tight;
-        letter-spacing: $tracking-tight;
-
-        @media (max-width: $bp-md) {
-            font-size: $text-xl;
-        }
-    }
-
-    &__subtitle {
-        font-size: $text-sm;
-        line-height: $leading-relaxed;
-        color: $neutral-500;
-        margin: 0;
-    }
-
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: $space-4;
-        width: 100%;
-        box-sizing: border-box;
-
-        @media (max-width: $bp-lg) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @media (max-width: $bp-md) {
-            grid-template-columns: 1fr;
-        }
-    }
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--fg-3);
+    margin: 0;
+  }
 }
