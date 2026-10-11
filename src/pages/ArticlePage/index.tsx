@@ -84,7 +84,6 @@ function ArticleExperience({ slug }: { slug: string }) {
         heading.setAttribute('data-sec', id);
         nextSections.push({ id, label: heading.textContent || '' });
       });
-      element.querySelector('.post-layout > p')?.classList.add('article-lead');
       setSections(nextSections);
     },
     [],

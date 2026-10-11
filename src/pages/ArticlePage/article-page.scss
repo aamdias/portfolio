@@ -155,7 +155,7 @@
 }
 .article-prose {
   font-family: var(--font-editorial);
-  font-size: 20px;
+  font-size: 1.375rem;
   line-height: 1.7;
   color: var(--fg-2);
   text-wrap: pretty;
@@ -163,13 +163,8 @@
   p {
     margin: 0 0 24px;
   }
-  p.article-lead {
-    font-size: 23px;
-    line-height: 1.55;
-    color: var(--fg);
-  }
   h2 {
-    font-size: 28px;
+    font-size: 1.4em;
     line-height: 1.25;
     font-weight: 400;
     letter-spacing: -0.015em;
@@ -177,13 +172,14 @@
     margin: 64px 0 20px;
   }
   h3 {
-    font-size: 23px;
+    font-size: 1.15em;
     line-height: 1.3;
     font-weight: 500;
     margin: 40px 0 16px;
   }
   h4 {
-    font-size: 21px;
+    font-size: 1em;
+    line-height: 1.4;
     font-weight: 500;
   }
   ul,
@@ -224,12 +220,7 @@
     padding: 28px 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    font-size: 24px;
-    line-height: 1.5;
-    font-style: italic;
     color: var(--fg);
-    text-align: center;
-    text-wrap: balance;
     p:last-child {
       margin-bottom: 0;
     }
@@ -246,12 +237,6 @@
     letter-spacing: 0.8em;
     color: var(--faint);
     margin: 64px 0;
-  }
-  .post-layout > p:has(> strong:only-child) {
-    font-size: 25px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    margin-bottom: 4px;
   }
   .post-layout > h1,
   .update-date,
@@ -359,23 +344,9 @@
     gap: 12px;
   }
   .article-prose {
-    font-size: 18px;
-    p.article-lead {
-      font-size: 21px;
-    }
+    font-size: 1.25rem;
     h2 {
-      font-size: 25px;
       margin-top: 48px;
-    }
-    h3 {
-      font-size: 22px;
-    }
-    .highlight-callout,
-    blockquote {
-      font-size: 22px;
-    }
-    .post-layout > p:has(> strong:only-child) {
-      font-size: 23px;
     }
   }
   .next-article {
