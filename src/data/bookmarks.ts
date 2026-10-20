@@ -243,6 +243,15 @@ export const bookmarks: Bookmark[] = [
     category: 'business',
     type: 'article',
   },
+  // Business - Videos
+  {
+    id: 'biz-12',
+    title: 'The Hidden Patterns of Great Startup Ideas (NFX Masterclass)',
+    description: 'NFX masterclass on the hidden patterns behind great startup ideas',
+    url: 'https://www.youtube.com/watch?v=My02IkUg7Ug',
+    category: 'business',
+    type: 'video',
+  },
   // Design & UX - Videos
   {
     id: 'design-1',

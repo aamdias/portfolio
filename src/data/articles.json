@@ -1,5 +1,20 @@
 [
   {
+    "title": "What happens when everyone is a builder? The cooking analogy",
+    "description": "Billions of people cook, and chefs still thrive. Cheaper software may widen the field of builders while making excellence worth more.",
+    "publishedDate": "20 de outubro de 2026",
+    "slug": "what-happens-when-everyone-is-a-builder",
+    "externalLink": "https://medium.com/@aamdias/what-happens-when-everyone-is-a-builder-the-cooking-analogy-9d442fcf4257?postPublishedType=initial",
+    "audio": {
+      "src": "/audio/cooking-analogy.mp3",
+      "durationSeconds": 410,
+      "label": "Narração em inglês"
+    },
+    "date": "2026-10-20",
+    "minutes": 6,
+    "year": "2026"
+  },
+  {
     "title": "Build Tunnels, Not Escalators",
     "description": "Why product-first teams should redesign how value reaches customers, not just automate the existing path",
     "publishedDate": "28 de fevereiro de 2026",

@@ -12,6 +12,7 @@ import {
 import { Link, useParams } from 'react-router-dom';
 import articles from '../../data/articles.json';
 import ThemeToggle from '../../components/ThemeToggle';
+import ArticleAudio from '../../components/ArticleAudio';
 import Navbar from '../../components/Navbar/navbar';
 import Footer from '../../components/Footer/footer';
 import NotFound from '../NotFound';
@@ -189,6 +190,7 @@ function ArticleExperience({ slug }: { slug: string }) {
           <span>Alan Dias</span>
         </div>
       </header>
+      {article.audio && <ArticleAudio key={slug} {...article.audio} />}
       <div className="article-body-layout">
         <aside>
           <nav className="article-toc" aria-label="Neste artigo">
@@ -226,14 +228,16 @@ function ArticleExperience({ slug }: { slug: string }) {
               <img src="/alan-nyc-1.png" width="48" height="48" alt="" />
               <span>Alan Dias</span>
             </div>
-            <a
-              href={article.externalLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-outline"
-            >
-              Ler no Medium ↗
-            </a>
+            {article.externalLink && (
+              <a
+                href={article.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-outline"
+              >
+                Ler no Medium ↗
+              </a>
+            )}
           </footer>
         </div>
         <div aria-hidden="true" />

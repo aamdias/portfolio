@@ -163,6 +163,13 @@
   p {
     margin: 0 0 24px;
   }
+  .figure-note {
+    margin-top: -16px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
   h2 {
     font-size: 1.4em;
     line-height: 1.25;
