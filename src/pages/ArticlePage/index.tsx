@@ -226,14 +226,16 @@ function ArticleExperience({ slug }: { slug: string }) {
               <img src="/alan-nyc-1.png" width="48" height="48" alt="" />
               <span>Alan Dias</span>
             </div>
-            <a
-              href={article.externalLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-outline"
-            >
-              Ler no Medium ↗
-            </a>
+            {article.externalLink && (
+              <a
+                href={article.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-outline"
+              >
+                Ler no Medium ↗
+              </a>
+            )}
           </footer>
         </div>
         <div aria-hidden="true" />
