@@ -1,0 +1,78 @@
+.article-audio {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  z-index: 45;
+
+  audio {
+    display: none;
+  }
+  &__toggle {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bar);
+    color: var(--fg-3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: color 180ms, background-color 180ms;
+    &:hover {
+      background: var(--bg-muted);
+      color: var(--fg);
+    }
+  }
+  &__ring {
+    position: absolute;
+    inset: 0;
+    width: 48px;
+    height: 48px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+  }
+  &__track {
+    stroke: var(--line-strong);
+    stroke-width: 1;
+  }
+  &__elapsed {
+    stroke: var(--fg);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: audioSpin 800ms linear infinite;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+  &__status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  @media (max-width: 767px) {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
+
+@keyframes audioSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

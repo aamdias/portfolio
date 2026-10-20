@@ -43,3 +43,9 @@ HTML aplica o tema antes de montar a aplicação. Animações respeitam
 
 Artigos e metadados ficam em `src/mdx` e `src/data/articles.json`. Links de contato,
 redes sociais e o endereço incorporável do calendário ficam em `src/data/links.ts`.
+
+Para oferecer narração em um artigo, adicione um objeto `audio` aos seus metadados,
+com `src` (caminho do arquivo em `public/audio`), `durationSeconds` e `label`
+(por exemplo, `Narração em inglês`). Um botão circular de play/pausa flutua no
+canto inferior direito, com progresso no aro e velocidade normal. O MP3 só
+carrega após o play.

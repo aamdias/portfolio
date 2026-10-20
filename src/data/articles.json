@@ -5,6 +5,11 @@
     "publishedDate": "20 de outubro de 2026",
     "slug": "what-happens-when-everyone-is-a-builder",
     "externalLink": "https://medium.com/@aamdias/what-happens-when-everyone-is-a-builder-the-cooking-analogy-9d442fcf4257?postPublishedType=initial",
+    "audio": {
+      "src": "/audio/cooking-analogy.mp3",
+      "durationSeconds": 410,
+      "label": "Narração em inglês"
+    },
     "date": "2026-10-20",
     "minutes": 6,
     "year": "2026"
