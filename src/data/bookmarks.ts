@@ -180,6 +180,15 @@ export const bookmarks: Bookmark[] = [
     category: 'business',
     type: 'book',
   },
+  {
+    id: 'biz-13',
+    title: 'The Charisma Myth',
+    description:
+      'How Anyone Can Master the Art and Science of Personal Magnetism, by Olivia Fox Cabane',
+    url: 'https://www.amazon.com.br/Charisma-Myth-Science-Personal-Magnetism-ebook/dp/B005GSZZ24',
+    category: 'business',
+    type: 'book',
+  },
   // Business - Podcasts
   {
     id: 'biz-5',
@@ -221,6 +230,15 @@ export const bookmarks: Bookmark[] = [
     description:
       'Founder of Ruby on Rails, David Heinemeier Hansson, shares his learnings on how to build a company and have a great life',
     url: 'https://www.youtube.com/watch?v=uAFCvQtjZ7o',
+    category: 'business',
+    type: 'podcast',
+  },
+  {
+    id: 'biz-14',
+    title: 'Airbnb CEO Brian Chesky: "I Was a Great Founder and a Terrible CEO"',
+    description:
+      'How I Built This with Guy Raz: Brian Chesky on the journey from founder to CEO and rebuilding how he runs Airbnb',
+    url: 'https://www.youtube.com/watch?v=ZYf-DfxJg1c&t=1074s',
     category: 'business',
     type: 'podcast',
   },
